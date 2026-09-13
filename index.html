@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="color-scheme" content="light" />
+  <meta name="color-scheme" content="light only" />
   <meta name="theme-color" content="#152019" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -47,7 +47,7 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; background: #152019; }
+    html { scroll-behavior: smooth; background: #152019; color-scheme: light only; }
     body {
       margin: 0;
       background: var(--paper);
@@ -69,7 +69,7 @@
     .page { min-height: 100vh; overflow: clip; }
     .hero {
       position: relative;
-      padding: clamp(38px, 6vw, 82px) 20px 42px;
+      padding: calc(clamp(38px, 6vw, 82px) + env(safe-area-inset-top, 0px)) 20px 42px;
       background: var(--ink);
       color: var(--white);
       isolation: isolate;
