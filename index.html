@@ -237,7 +237,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
     }
     .quick-btn:hover { border-color: var(--ink); }
     .quick-btn[aria-pressed="true"] { background: transparent; border-color: var(--yellow); color: var(--yellow); }
-    .drawer-stack-btn { margin-top: 12px; }
+    .detail-actions { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
 
     .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
     .api-card {
@@ -641,6 +641,51 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
     const drawer = document.getElementById("drawer");
     const detail = document.getElementById("detail");
 
+    function slugify(name) {
+      return ((name || "api").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")) || "api";
+    }
+    const slugToApi = {};
+    const apiToSlug = new Map();
+    APIS.forEach(api => {
+      const base = slugify(api.name);
+      let slug = base, n = 2;
+      while (slugToApi[slug]) slug = base + "-" + (n++);
+      slugToApi[slug] = api;
+      apiToSlug.set(api, slug);
+    });
+    function apiUrl(api) {
+      return location.origin + location.pathname + "?api=" + apiToSlug.get(api);
+    }
+    function shareTextFor(api) {
+      const lines = [];
+      lines.push(api.name);
+      lines.push(api.tagline);
+      lines.push("");
+      lines.push("WHAT IT DOES");
+      lines.push(api.description);
+      if (api.use_cases && api.use_cases.length) {
+        lines.push("");
+        lines.push("THINGS YOU CAN DO WITH IT");
+        api.use_cases.forEach(u => lines.push("- " + u));
+      }
+      lines.push("");
+      lines.push(agentPrompt(api));
+      lines.push("");
+      lines.push("Link: " + apiUrl(api));
+      return lines.join("\n");
+    }
+    async function shareApi(api, btn) {
+      const url = apiUrl(api);
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: api.name + " on PlugMyAgent", text: shareTextFor(api), url });
+          return;
+        } catch (err) {
+          if (err && err.name === "AbortError") return;
+        }
+      }
+      copyText(shareTextFor(api), btn);
+    }
     function effortLabel(auth) {
       if (auth === "No key") return "No signup";
       if (auth === "Free key (no card)") return "Free account";
@@ -869,7 +914,13 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
         updateStackUI();
         renderCatalog();
       });
-      head.append(drawerStackBtn);
+      const actions = el("div", "detail-actions");
+      const shareBtn = el("button", "quick-btn", "Share");
+      shareBtn.type = "button";
+      shareBtn.setAttribute("aria-label", `Share ${api.name}`);
+      shareBtn.addEventListener("click", () => shareApi(api, shareBtn));
+      actions.append(drawerStackBtn, shareBtn);
+      head.append(actions);
 
       const body = el("div", "detail-body");
       const about = el("section");
@@ -938,6 +989,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
       advanced.append(advancedBody); body.append(advanced);
 
       detail.append(head, body);
+      try { history.replaceState(null, "", location.pathname + "?api=" + apiToSlug.get(api)); } catch (_) {}
       overlay.classList.add("open");
       overlay.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
@@ -948,6 +1000,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
       overlay.classList.remove("visible");
       overlay.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
+      try { history.replaceState(null, "", location.pathname); } catch (_) {}
       setTimeout(() => overlay.classList.remove("open"), 220);
       if (lastFocused) lastFocused.focus();
     }
@@ -975,6 +1028,14 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
     const counts = APIS.reduce((acc, api) => { const label = effortLabel(api.auth); acc[label] = (acc[label] || 0) + 1; return acc; }, {});
     document.getElementById("heroStats").innerHTML = `<span><b>${APIS.length}</b> free APIs</span><span><b>${counts["No signup"]}</b> need no signup</span><span><b>${new Set(APIS.map(api => api.category)).size}</b> categories</span>`;
     renderGoals(); renderEfforts(); renderCatalog();
+    (function () {
+      let deep = null;
+      try {
+        deep = new URLSearchParams(location.search).get("api");
+        if (!deep && location.hash.indexOf("#api=") === 0) deep = decodeURIComponent(location.hash.slice(5));
+      } catch (_) {}
+      if (deep && slugToApi[deep]) openDetail(slugToApi[deep], null);
+    })();
   </script>
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
