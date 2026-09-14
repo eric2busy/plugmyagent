@@ -54,8 +54,9 @@
 h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
 .site-header { position: sticky; top: 0; z-index: 40; background: var(--white); border-bottom: 1px solid var(--line); }
 .site-header-inner { width: min(1120px, 100%); margin: 0 auto; padding: 11px clamp(16px, 4vw, 32px); display: flex; align-items: center; min-height: 56px; }
-.brandmark { position: absolute; left: -75px; top: 50%; transform: translateY(-50%); display: inline-flex; }
-.brandmark svg { display: block; }
+.brandmark { position: absolute; left: -46px; top: 50%; transform: translateY(-50%); display: inline-flex; }
+.brandmark img { display: block; height: 30px; width: auto; }
+@media (max-width: 560px) { .brandmark img { height: 24px; } .brandmark { left: -37px; } }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; background: #ffffff; color-scheme: light only; overflow-x: clip; }
     body {
@@ -505,7 +506,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
 </style>
 </head>
 <body>
-  <div class="site-header"><div class="site-header-inner"><a class="brandmark" href="#" id="brandHome" aria-label="Plug My Agent — home"><svg width="160" height="32" viewBox="0 0 320 64" aria-hidden="true"><defs><mask id="usbcut"><rect x="255" y="21" width="43" height="22" rx="2" fill="#fff"/><rect x="281" y="25" width="10" height="7" fill="#000"/><rect x="281" y="35" width="10" height="7" fill="#000"/></mask></defs><rect x="0" y="28.5" width="206" height="7" fill="#2dd4bf"/><polygon points="204,27 220,19 220,45 204,37" fill="#2dd4bf"/><rect x="218" y="17" width="37" height="30" rx="6" fill="#2dd4bf"/><rect x="255" y="21" width="43" height="22" rx="2" fill="#2dd4bf" mask="url(#usbcut)"/></svg></a></div></div>
+  <div class="site-header"><div class="site-header-inner"><a class="brandmark" href="#" id="brandHome" aria-label="Plug My Agent — home"><img src="plug-lockup.png" alt="" /></a></div></div>
   <div class="page">
     <header class="hero">
       <div class="hero-inner">
