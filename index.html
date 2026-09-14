@@ -53,11 +53,10 @@
 
 h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
 .site-header { position: sticky; top: 0; z-index: 40; background: var(--white); border-bottom: 1px solid var(--line); }
-.site-header-inner { position: relative; width: min(1120px, 100%); margin: 0 auto; padding: 11px clamp(16px, 4vw, 32px); display: flex; align-items: center; min-height: 56px; }
+.site-header-inner { width: min(1120px, 100%); margin: 0 auto; padding: 11px clamp(16px, 4vw, 32px); display: flex; align-items: center; min-height: 56px; }
 .brandmark { position: absolute; left: -46px; top: 50%; transform: translateY(-50%); display: inline-flex; }
 .brandmark img { display: block; height: 30px; width: auto; }
-@media (max-width: 560px) { .brandmark img { height: 24px; } .brandmark { left: 16px; } }
-@media (max-width: 1212px) { .brandmark { left: 16px; } }
+@media (max-width: 560px) { .brandmark img { height: 24px; } .brandmark { left: -37px; } }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; background: #ffffff; color-scheme: light only; overflow-x: clip; }
     body {
