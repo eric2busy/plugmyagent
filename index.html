@@ -330,6 +330,7 @@
       width: min(760px, 94vw);
       height: 100%;
       overflow-y: auto;
+      overflow-x: hidden;
       overscroll-behavior: contain;
       background: var(--paper);
       transform: translateX(100%);
@@ -391,7 +392,7 @@
     }
     .primary-link:active { transform: translate(1px,1px); box-shadow: 2px 2px 0 var(--ink); }
     .provider-steps { margin: 12px 0 0; padding-left: 20px; color: #344139; font-size: 14px; }
-    .provider-steps li { margin-bottom: 7px; }
+    .provider-steps li { margin-bottom: 7px; overflow-wrap: anywhere; }
     .agent-message { position: relative; margin-top: 12px; padding: 16px 96px 16px 15px; border-radius: 11px; background: #edf1eb; color: #27332c; font: 500 12px/1.55 "Azeret Mono", ui-monospace, monospace; overflow-wrap: anywhere; }
     .copy-btn { position: absolute; right: 9px; top: 9px; padding: 8px 10px; border: 0; border-radius: 8px; background: var(--ink); color: white; cursor: pointer; font: 600 11px "Azeret Mono", ui-monospace, monospace; }
     .key-note { display: flex; gap: 9px; margin-top: 11px !important; color: #65501a !important; }
