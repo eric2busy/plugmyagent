@@ -441,7 +441,59 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
     }
-  </style>
+  
+/* ---- Dark mode: same design, follows the visitor's system setting ---- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f2f5f5;
+    --muted: #9aa8a8;
+    --paper: #141617;
+    --white: #1e2223;
+    --line: rgba(255,255,255,.12);
+    --yellow: #2dd4bf;
+    --yellow-soft: rgba(45,212,191,.14);
+    --coral: #ff8a70;
+    --coral-soft: rgba(255,138,112,.14);
+    --green: #4ade80;
+    --green-soft: rgba(74,222,128,.12);
+    --blue: #7fb5ec;
+    --blue-soft: rgba(127,181,236,.12);
+    --amber: #f0be4f;
+    --amber-soft: rgba(240,190,79,.12);
+    --shadow: 0 22px 60px rgba(0,0,0,.55);
+  }
+  html { color-scheme: light dark; background: #141617; }
+  body { background: #141617; }
+  .hero { background: #141617; }
+  .search-wrap svg { color: #8fa3a3; }
+  #search::placeholder { color: #7d8f8f; }
+  .shortcut { color: #7d8f8f; border-color: rgba(255,255,255,.16); background: rgba(255,255,255,.06); }
+  .starter p { color: #9aa8a8; }
+  .starter-intro h2 { color: #052e2a; }
+  .starter-intro p { color: rgba(5,46,42,.78); }
+  .chip { border-color: var(--line); }
+  .chip[aria-pressed="true"] { color: #052e2a; }
+  .quick-btn[aria-pressed="true"] { color: #052e2a; }
+  .load-more { color: #052e2a; }
+  .primary-link { color: #431009; }
+  .setup-number { color: #052e2a; }
+  .api-card:hover { border-color: var(--yellow); }
+  .tagline { color: var(--muted); }
+  .empty { border-color: var(--line); background: var(--white); }
+  footer { background: #1a1d1e; border-top-color: var(--line); }
+  .footer-inner { color: var(--muted); }
+  .footer-credit { border-top-color: var(--line); }
+  .footer-sep { color: #5f6f6f; }
+  .detail-category { color: #8fa3a3; }
+  .detail-body .full-desc { color: var(--ink); }
+  .use-list li { color: var(--ink); }
+  .provider-steps { color: var(--ink); }
+  .agent-message { background: rgba(45,212,191,.10); color: var(--ink); }
+  .key-note { color: var(--amber); }
+  details { border-color: var(--line); }
+  pre { background: #242a2b; }
+}
+</style>
 </head>
 <body>
   <div class="page">
