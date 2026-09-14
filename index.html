@@ -473,11 +473,11 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
   .starter-intro h2 { color: #052e2a; }
   .starter-intro p { color: rgba(5,46,42,.78); }
   .chip { border-color: var(--line); }
-  .chip[aria-pressed="true"] { color: #052e2a; }
+  .chip[aria-pressed="true"], .quick-btn[aria-pressed="true"] { color: #052e2a; border-color: var(--yellow); }
   .quick-btn[aria-pressed="true"] { color: #052e2a; }
   .load-more { color: #052e2a; }
-  .primary-link { color: #431009; }
-  .setup-number { color: #052e2a; }
+  .primary-link { color: #431009; border-color: transparent; }
+  .setup-number { color: #052e2a; border-color: transparent; }
   .api-card:hover { border-color: var(--yellow); }
   .tagline { color: var(--muted); }
   .empty { border-color: var(--line); background: var(--white); }
@@ -491,6 +491,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
   .use-list li { color: var(--ink); }
   .provider-steps { color: var(--ink); }
   .agent-message { background: rgba(45,212,191,.10); color: var(--ink); }
+  .copy-btn { background: var(--yellow); color: #052e2a; }
   .key-note { color: var(--amber); }
   details { border-color: var(--line); }
   pre { background: #242a2b; }
