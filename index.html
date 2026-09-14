@@ -240,6 +240,7 @@
     }
     .quick-btn:hover { border-color: var(--ink); }
     .quick-btn[aria-pressed="true"] { background: var(--yellow); border-color: var(--ink); }
+    .drawer-stack-btn { margin-top: 12px; }
 
     .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
     .api-card {
@@ -636,34 +637,6 @@
       card.append(el("h3", "", api.name));
       card.append(el("p", "tagline", api.tagline));
       card.append(el("p", "description", api.description));
-      const quick = el("div", "quick-row");
-      const keyUrl = api.signup_url || api.docs_url;
-      if (keyUrl) {
-        const keyLink = safeLink(keyUrl, api.auth === "No key" ? "Open guide \u2197" : "Get key \u2197", "quick-btn");
-        keyLink.setAttribute("aria-label", api.auth === "No key" ? `Open ${api.name} guide` : `Get a free ${api.name} API key`);
-        quick.append(keyLink);
-      }
-      const promptBtn = el("button", "quick-btn", "Copy prompt");
-      promptBtn.type = "button";
-      promptBtn.setAttribute("aria-label", `Copy agent setup prompt for ${api.name}`);
-      promptBtn.addEventListener("click", () => copyText(agentPrompt(api), promptBtn));
-      quick.append(promptBtn);
-      const stackBtn = el("button", "quick-btn", "+ Stack");
-      stackBtn.type = "button";
-      const paintStackBtn = () => {
-        const inStack = stack.has(api.name);
-        stackBtn.textContent = inStack ? "\u2713 In stack" : "+ Stack";
-        stackBtn.setAttribute("aria-pressed", String(inStack));
-      };
-      paintStackBtn();
-      stackBtn.setAttribute("aria-label", `Save ${api.name} to My Stack`);
-      stackBtn.addEventListener("click", () => {
-        if (stack.has(api.name)) stack.delete(api.name); else stack.add(api.name);
-        saveStack(); paintStackBtn(); updateStackUI();
-        if (stackOnly) renderCatalog();
-      });
-      quick.append(stackBtn);
-      card.append(quick);
       const action = el("button", "card-action");
       action.type = "button";
       action.setAttribute("aria-label", `Set up ${api.name}`);
@@ -737,6 +710,20 @@
       head.append(meta);
       const title = el("h2", "", api.name); title.id = "detailTitle";
       head.append(title, el("p", "detail-tagline", api.tagline));
+      const drawerStackBtn = el("button", "quick-btn drawer-stack-btn", stack.has(api.name) ? "\u2713 In stack" : "+ Stack");
+      drawerStackBtn.type = "button";
+      drawerStackBtn.setAttribute("aria-pressed", String(stack.has(api.name)));
+      drawerStackBtn.setAttribute("aria-label", `Save ${api.name} to My Stack`);
+      drawerStackBtn.addEventListener("click", () => {
+        if (stack.has(api.name)) stack.delete(api.name); else stack.add(api.name);
+        saveStack();
+        const inStack = stack.has(api.name);
+        drawerStackBtn.textContent = inStack ? "\u2713 In stack" : "+ Stack";
+        drawerStackBtn.setAttribute("aria-pressed", String(inStack));
+        updateStackUI();
+        renderCatalog();
+      });
+      head.append(drawerStackBtn);
 
       const body = el("div", "detail-body");
       const about = el("section");
