@@ -199,7 +199,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
     }
     .chip:hover { border-color: var(--ink); background: var(--white); }
     .chip:active { transform: translateY(1px); }
-    .chip[aria-pressed="true"] { color: var(--ink); background: var(--yellow); border-color: var(--ink); box-shadow: none; }
+    .chip[aria-pressed="true"] { color: var(--yellow); background: transparent; border-color: var(--yellow); box-shadow: none; }
 
     .catalog-toolbar {
       display: flex;
@@ -224,7 +224,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
       font-weight: 650;
     }
     .effort:hover { border-color: var(--ink); }
-    .effort[aria-pressed="true"] { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    .effort[aria-pressed="true"] { background: transparent; color: var(--yellow); border-color: var(--yellow); }
     .stack-filter { margin-left: 4px; }
     .quick-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
     .quick-btn {
@@ -235,7 +235,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
       color: var(--ink); text-decoration: none; font-family: inherit;
     }
     .quick-btn:hover { border-color: var(--ink); }
-    .quick-btn[aria-pressed="true"] { background: var(--yellow); border-color: var(--ink); }
+    .quick-btn[aria-pressed="true"] { background: transparent; border-color: var(--yellow); color: var(--yellow); }
     .drawer-stack-btn { margin-top: 12px; }
 
     .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
@@ -290,14 +290,15 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
       min-width: 180px;
       margin: 28px auto 0;
       padding: 13px 20px;
-      border: 2px solid var(--ink);
+      border: 2px solid var(--yellow);
       border-radius: 12px;
-      background: var(--yellow);
+      background: var(--white);
       box-shadow: none;
       cursor: pointer;
       font-weight: 750;
+      color: var(--yellow);
     }
-    .load-more:active { transform: translate(2px,2px); box-shadow: 2px 2px 0 var(--ink); }
+    .load-more:active { transform: translate(2px,2px); box-shadow: 2px 2px 0 var(--yellow); }
     .load-more[hidden] { display: none !important; }
     .empty { display: none; padding: 60px 20px; text-align: center; border: 1.5px dashed #9ba69d; border-radius: 18px; background: rgba(255,255,255,.58); }
     .empty h3 { margin: 0 0 6px; font-size: 26px; }
@@ -376,7 +377,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
     }
     .setup-step { display: grid; grid-template-columns: 42px 1fr; gap: 14px; padding: 22px; border-bottom: 1px solid var(--line); }
     .setup-step:last-child { border-bottom: 0; }
-    .setup-number { display: grid; place-items: center; align-self: start; width: 36px; height: 36px; border-radius: 50%; background: var(--yellow); border: 1.5px solid var(--ink); font: 600 13px "Azeret Mono", ui-monospace, monospace; }
+    .setup-number { display: grid; place-items: center; align-self: start; width: 36px; height: 36px; border-radius: 50%; background: var(--yellow); border: 0; font: 600 13px "Azeret Mono", ui-monospace, monospace; }
     .setup-step h4 { margin: 3px 0 5px; font-size: 19px; }
     .setup-step p { margin: 0; color: var(--muted); font-size: 14px; }
     .primary-link {
@@ -406,7 +407,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
     details[open] summary::after { content: "−"; }
     .advanced { padding-top: 19px; }
     .advanced-links { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
-    .advanced-links a { padding: 9px 12px; border: 1.5px solid var(--ink); border-radius: 9px; background: var(--white); text-decoration: none; font-weight: 700; }
+    .advanced-links a { padding: 9px 12px; border: 1.5px solid var(--yellow); border-radius: 9px; background: var(--white); color: var(--yellow); text-decoration: none; font-weight: 700; }
     .advanced h4 { margin: 18px 0 8px; font-size: 15px; }
     pre { margin: 0; overflow-wrap: anywhere; white-space: pre-wrap; padding: 16px; border-radius: 12px; background: var(--ink); color: #e9f2eb; font: 500 12px/1.55 "Azeret Mono", ui-monospace, monospace; }
 
@@ -481,11 +482,10 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
   .starter-intro h2 { color: var(--yellow); }
   .starter-intro p { color: var(--yellow); }
   .chip { border-color: var(--line); }
-  .chip[aria-pressed="true"], .quick-btn[aria-pressed="true"] { color: #052e2a; border-color: var(--yellow); }
-  .quick-btn[aria-pressed="true"] { color: #052e2a; }
-  .load-more { color: #052e2a; }
+  .chip[aria-pressed="true"], .quick-btn[aria-pressed="true"] { color: var(--yellow); border-color: var(--yellow); background: transparent; }
+  .load-more { color: var(--yellow); }
   .primary-link { color: var(--yellow); border-color: var(--yellow); background: transparent; }
-  .setup-number { color: #052e2a; border-color: transparent; }
+  .setup-number { color: #052e2a; }
   .api-card:hover { border-color: var(--yellow); }
   .tagline { color: var(--muted); }
   .empty { border-color: var(--line); background: var(--white); }
