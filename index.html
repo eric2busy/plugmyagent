@@ -338,19 +338,19 @@
       float: right;
       margin: 14px 16px -58px 0;
       width: 42px; height: 42px;
-      border: 1.5px solid rgba(255,255,255,.45);
+      border: 1.5px solid #052e2a;
       border-radius: 50%;
-      background: rgba(21,32,25,.84);
-      color: var(--white);
+      background: #052e2a;
+      color: #fff;
       cursor: pointer;
       font-size: 24px;
       line-height: 1;
     }
-    .detail-head { padding: 62px clamp(24px, 6vw, 62px) 36px; background: var(--ink); color: white; }
+    .detail-head { padding: 62px clamp(24px, 6vw, 62px) 36px; background: var(--yellow); color: #052e2a; }
     .detail-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 20px; }
-    .detail-category { font: 600 12px "Azeret Mono", ui-monospace, monospace; color: #c3cec6; }
+    .detail-category { font: 600 12px "Azeret Mono", ui-monospace, monospace; color: #052e2a; }
     .detail-head h2 { margin: 0 0 10px; max-width: 570px; font-size: clamp(38px, 6vw, 58px); line-height: .98; letter-spacing: -.05em; }
-    .detail-tagline { margin: 0; max-width: 590px; color: #dce5de; font-size: 19px; line-height: 1.4; }
+    .detail-tagline { margin: 0; max-width: 590px; color: rgba(5,46,42,.82); font-size: 19px; line-height: 1.4; }
     .detail-body { padding: 34px clamp(24px, 6vw, 62px) 64px; }
     .detail-body section { margin-bottom: 38px; }
     .detail-body h3 { margin: 0 0 13px; font-size: 25px; letter-spacing: -.03em; }
@@ -362,7 +362,7 @@
       display: grid;
       gap: 0;
       overflow: hidden;
-      border: 2px solid var(--ink);
+      border: 1.5px solid var(--line);
       border-radius: 20px;
       background: var(--white);
     }
@@ -484,7 +484,8 @@
   .footer-inner { color: var(--muted); }
   .footer-credit { border-top-color: var(--line); }
   .footer-sep { color: #5f6f6f; }
-  .detail-category { color: #8fa3a3; }
+  .detail-category { color: #052e2a; }
+  .detail-tagline { color: rgba(5,46,42,.82); }
   .detail-body .full-desc { color: var(--ink); }
   .use-list li { color: var(--ink); }
   .provider-steps { color: var(--ink); }
