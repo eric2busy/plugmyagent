@@ -826,6 +826,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
       lines.push(`FREE LIMIT: ${api.rate_limit}`);
       lines.push("");
       lines.push(`TEST: once it's set up, ${testFor(api)}.`);
+      lines.push(`If you can't make web requests yourself, give me the exact curl command with my key filled in so I can run it.`);
       lines.push("");
       lines.push(`Docs if you get stuck: ${api.docs_url}`);
       return lines.join("\n");
@@ -913,7 +914,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
       three.append(el("span", "setup-number", "3"));
       const threeCopy = el("div");
       threeCopy.append(el("h4", "", "Tell your agent"));
-      threeCopy.append(el("p", "", "Copy the message, paste it into ChatGPT, Claude, Grok, or a similar agent \u2014 no code needed. Replace PASTE_KEY_HERE with your key first."));
+      threeCopy.append(el("p", "", "Copy the message, paste it into ChatGPT, Claude, Grok, or a similar agent \u2014 no code needed. Replace PASTE_KEY_HERE with your key first. Your agent will either set it up directly or hand you the exact command to run."));
       const messageText = agentPrompt(api);
       const message = el("div", "agent-message", messageText);
       const copy = el("button", "copy-btn", "Copy"); copy.type = "button";
