@@ -837,5 +837,9 @@
     document.getElementById("heroStats").innerHTML = `<span><b>${APIS.length}</b> free APIs</span><span><b>${counts["No signup"]}</b> need no signup</span><span><b>${new Set(APIS.map(api => api.category)).size}</b> categories</span>`;
     renderGoals(); renderEfforts(); renderCatalog();
   </script>
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
