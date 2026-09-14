@@ -656,35 +656,17 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
     function apiUrl(api) {
       return location.origin + location.pathname + "?api=" + apiToSlug.get(api);
     }
-    function shareTextFor(api) {
-      const lines = [];
-      lines.push(api.name);
-      lines.push(api.tagline);
-      lines.push("");
-      lines.push("WHAT IT DOES");
-      lines.push(api.description);
-      if (api.use_cases && api.use_cases.length) {
-        lines.push("");
-        lines.push("THINGS YOU CAN DO WITH IT");
-        api.use_cases.forEach(u => lines.push("- " + u));
-      }
-      lines.push("");
-      lines.push(agentPrompt(api));
-      lines.push("");
-      lines.push("Link: " + apiUrl(api));
-      return lines.join("\n");
-    }
     async function shareApi(api, btn) {
       const url = apiUrl(api);
       if (navigator.share) {
         try {
-          await navigator.share({ title: api.name + " on PlugMyAgent", text: shareTextFor(api), url });
+          await navigator.share({ title: api.name + " on PlugMyAgent", url });
           return;
         } catch (err) {
           if (err && err.name === "AbortError") return;
         }
       }
-      copyText(shareTextFor(api), btn);
+      copyText(url, btn);
     }
     function effortLabel(auth) {
       if (auth === "No key") return "No signup";
