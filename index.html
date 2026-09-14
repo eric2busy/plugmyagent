@@ -227,6 +227,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
     .effort:hover { border-color: var(--ink); }
     .effort[aria-pressed="true"] { background: transparent; color: var(--yellow); border-color: var(--yellow); }
     .stack-filter { margin-left: 4px; }
+    .stack-export { margin-left: 4px; color: var(--yellow); border-color: var(--yellow); background: transparent; }
     .quick-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
     .quick-btn {
       display: inline-flex; align-items: center; gap: 6px;
@@ -314,6 +315,10 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
     .footer-credit a:hover { text-decoration: underline; }
     .footer-credit svg { width: 14px; height: 14px; fill: currentColor; }
     .footer-inner strong { color: var(--ink); }
+    .footer-trust { margin: 10px 0 0; }
+    .footer-how { margin-top: 10px; }
+    .footer-how summary { cursor: pointer; color: var(--ink); font-weight: 700; display: inline-block; }
+    .footer-how p { margin: 8px 0 0; max-width: 72ch; }
 
     .overlay {
       position: fixed;
@@ -396,7 +401,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
     .primary-link:active { transform: translate(1px,1px); box-shadow: 2px 2px 0 var(--yellow); }
     .provider-steps { margin: 12px 0 0; padding-left: 20px; color: #344139; font-size: 14px; }
     .provider-steps li { margin-bottom: 7px; overflow-wrap: anywhere; }
-    .agent-message { position: relative; margin-top: 12px; padding: 16px 96px 16px 15px; border-radius: 11px; background: #edf1eb; color: #27332c; font: 500 12px/1.55 "Azeret Mono", ui-monospace, monospace; overflow-wrap: anywhere; }
+    .agent-message { position: relative; margin-top: 12px; padding: 16px 96px 16px 15px; border-radius: 11px; background: #edf1eb; color: #27332c; font: 500 12px/1.55 "Azeret Mono", ui-monospace, monospace; overflow-wrap: anywhere; white-space: pre-wrap; }
     .copy-btn { position: absolute; right: 9px; top: 9px; padding: 8px 10px; border: 0; border-radius: 8px; background: var(--ink); color: white; cursor: pointer; font: 600 11px "Azeret Mono", ui-monospace, monospace; }
     .key-note { display: flex; gap: 9px; margin-top: 11px !important; color: #65501a !important; }
     .limit-box { padding: 18px 20px; border-radius: 14px; background: var(--yellow-soft); }
@@ -552,6 +557,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
             <div class="effort-filters" id="effortFilters" aria-label="Filter by setup effort"></div>
           </div>
           <button class="effort stack-filter" id="stackFilter" type="button" aria-pressed="false">My Stack (0)</button>
+          <button class="effort stack-export" id="stackExport" type="button" hidden>Copy combined setup</button>
         </div>
         <div class="grid" id="grid"></div>
         <div class="empty" id="empty">
@@ -565,6 +571,8 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
 
     <footer>
       <div class="footer-inner"><strong>421 APIs, checked against official documentation on September 13, 2026.</strong> Free plans can change, so double-check the official docs before building something you rely on.
+        <p class="footer-trust">Your API keys never touch our servers &#8212; they go straight from you to your agent.</p>
+        <details class="footer-how"><summary>How we picked these</summary><p>We researched hundreds of APIs across two rounds and kept 421 with a genuinely free path &#8212; no card where we say no card. Every listing was checked against the provider&#8217;s official docs in September 2026, and every setup message is written so you can paste it into your agent and get a result. We show the effort level up front (no signup, free account, card, trial) so there are no surprises.</p></details>
         <div class="footer-credit"><span>&copy; 2026 hiddeninwest</span><span class="footer-sep" aria-hidden="true">&middot;</span><a href="https://x.com/hiddeninwest" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg>@hiddeninwest</a></div>
       </div>
     </footer>
@@ -610,6 +618,16 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
       if (!btn) return;
       btn.textContent = `My Stack (${stack.size})`;
       btn.setAttribute("aria-pressed", String(stackOnly));
+      const exp = document.getElementById("stackExport");
+      if (exp) exp.hidden = stack.size === 0;
+    }
+    function stackPrompt() {
+      const apis = APIS.filter(a => stack.has(a.name));
+      const parts = apis.map(a => {
+        const body = agentPrompt(a).split("\n").slice(2).join("\n");
+        return `--- ${a.name} ---\n${body}`;
+      });
+      return `Set up each of these ${apis.length} APIs for me so you can use them. One section per API:\n\n${parts.join("\n\n")}`;
     }
     let lastFocused = null;
 
@@ -739,11 +757,79 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
       link.rel = "noopener noreferrer";
       return link;
     }
+    const GOAL_TESTS = {
+      "Send messages & alerts": "have it send you the message \u201cplugmyagent test\u201d",
+      "Organize my life": "have it create an item called \u201cplugmyagent test\u201d, then delete it",
+      "Weather": "ask it: \u201cwhat's the weather in Covina, California right now?\u201d",
+      "Maps, travel & getting around": "ask it to look up an address you know well",
+      "News & web search": "ask it for today's top headlines",
+      "Movies, music & fun": "ask it to look something up for you",
+      "Money & markets": "ask it: \u201cwhat's the price of Bitcoin in USD?\u201d",
+      "Health, food & science": "ask it to look up one item you know",
+      "Government, jobs & civic": "ask it to find one real record for you",
+      "Safety & networks": "ask it to check a domain or IP address you know",
+      "Build & code": "ask it to fetch one small thing, like a repo or a fresh UUID"
+    };
+    const AUTH_HOW = {
+      "Telegram Bot API": "Your bot token goes right in the URL where the example shows it.",
+      "Discord Webhooks": "No separate key \u2014 your webhook URL (Discord channel settings \u2192 Integrations \u2192 Webhooks) is the secret. Swap your full URL in for the example.",
+      "Slack Incoming Webhooks": "No separate key \u2014 your webhook URL from the Slack app setup is the secret. Swap your full URL in for the example.",
+      "ntfy": "No key \u2014 just pick a topic name and put it in the URL.",
+      "Gotify": "Your app token goes in the URL as ?token=PASTE_KEY_HERE (it runs on a server).",
+      "OpenWeather": "Your key goes in the URL as ?appid=PASTE_KEY_HERE.",
+      "CoinGecko Demo API": "Your demo key goes in the x-cg-demo-api-key header.",
+      "ExchangeRate-API v6": "Your key goes right in the URL where the example shows it.",
+      "Todoist API": "Your token goes in the Authorization header as: Bearer PASTE_KEY_HERE",
+      "Notion API": "Your token goes in the Authorization header as: Bearer PASTE_KEY_HERE (plus a Notion-Version header).",
+      "Twilio Programmable Messaging/Voice": "Uses your Account SID and Auth Token with HTTP Basic Auth; the SID also goes in the URL.",
+      "Twilio Verify": "Uses your Account SID and Auth Token with HTTP Basic Auth; the SID also goes in the URL.",
+      "Stripe API Test Mode": "Your test secret key goes as the Basic Auth username: -u sk_test_PASTE_KEY_HERE: (blank password).",
+      "Gmail API": "Uses Google OAuth 2.0 (not a simple key) \u2014 follow the setup steps above; your agent will need the OAuth credentials.",
+      "Google Calendar API": "Uses Google OAuth 2.0 (not a simple key) \u2014 follow the setup steps above; your agent will need the OAuth credentials."
+    };
+    function normalizeExample(example) {
+      return String(example || "")
+        .replace(/<YOUR_API_KEY>/gi, "PASTE_KEY_HERE")
+        .replace(/<API_KEY>/gi, "PASTE_KEY_HERE")
+        .replace(/\{api_key\}/gi, "PASTE_KEY_HERE")
+        .replace(/<TOKEN>/g, "PASTE_KEY_HERE")
+        .replace(/<token>/g, "PASTE_KEY_HERE")
+        .replace(/\bYOUR_API_KEY\b/g, "PASTE_KEY_HERE")
+        .replace(/\bYOUR_KEY\b/g, "PASTE_KEY_HERE")
+        .replace(/YOUR_KEYSTRING/g, "PASTE_KEY_HERE")
+        .replace(/sk_test_YOUR_KEY/g, "sk_test_PASTE_KEY_HERE")
+        .replace(/_YOUR_KEY/g, "_PASTE_KEY_HERE")
+        .replace(/YOUR_APP_TOKEN/g, "PASTE_KEY_HERE");
+    }
+    function testFor(api) {
+      const goal = GOALS.find(g => g.categories.includes(api.category));
+      const t = goal && GOAL_TESTS[goal.label];
+      return t || "try one small real request to confirm it works";
+    }
     function agentPrompt(api) {
       const noKey = api.auth === "No key";
-      return noKey
-        ? `Hey, set this API up for me: ${api.name}. It doesn't need an API key. Official docs: ${api.docs_url}`
-        : `Hey, set this API up for me: ${api.name}. Here's my API key: PASTE_YOUR_KEY_HERE. Official docs: ${api.docs_url}`;
+      const lines = [];
+      lines.push(`Set up ${api.name} for me so you can use it.`);
+      lines.push("");
+      lines.push("HOW TO CALL IT");
+      lines.push(normalizeExample(api.example));
+      lines.push("");
+      if (noKey) {
+        lines.push("AUTH: none needed \u2014 no signup, no key.");
+      } else {
+        lines.push("AUTH: free API key. Mine: PASTE_KEY_HERE.");
+        lines.push(AUTH_HOW[api.name] || "Put it where the example above shows (usually an Authorization header or a key in the URL).");
+        if (api.auth === "Free tier (card may be required)") lines.push("Heads up: signup may ask for a card.");
+        if (api.auth === "Free trial") lines.push("Heads up: this is a free trial \u2014 check how long it lasts.");
+      }
+      lines.push("");
+      lines.push(`FREE LIMIT: ${api.rate_limit}`);
+      lines.push("");
+      lines.push(`TEST: once it's set up, ${testFor(api)}.`);
+      lines.push(`If you can't make web requests yourself, give me the exact curl command with my key filled in so I can run it.`);
+      lines.push("");
+      lines.push(`Docs if you get stuck: ${api.docs_url}`);
+      return lines.join("\n");
     }
     async function copyText(text, btn) {
       try {
@@ -828,7 +914,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
       three.append(el("span", "setup-number", "3"));
       const threeCopy = el("div");
       threeCopy.append(el("h4", "", "Tell your agent"));
-      threeCopy.append(el("p", "", "Copy this message, paste it into your agent, and replace the placeholder if a key is needed."));
+      threeCopy.append(el("p", "", "Copy the message, paste it into ChatGPT, Claude, Grok, or a similar agent \u2014 no code needed. Replace PASTE_KEY_HERE with your key first. Your agent will either set it up directly or hand you the exact command to run."));
       const messageText = agentPrompt(api);
       const message = el("div", "agent-message", messageText);
       const copy = el("button", "copy-btn", "Copy"); copy.type = "button";
@@ -850,9 +936,6 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
       links.append(safeLink(api.docs_url, "Official docs ↗"));
       if (api.signup_url && api.signup_url !== api.docs_url) links.append(safeLink(api.signup_url, "Signup page ↗"));
       advancedBody.append(links);
-      advancedBody.append(el("h4", "", "Example request"));
-      const pre = el("pre", "", api.example || "See the official documentation for an example request.");
-      advancedBody.append(pre);
       advanced.append(advancedBody); body.append(advanced);
 
       detail.append(head, body);
@@ -885,6 +968,9 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
     });
     document.getElementById("stackFilter").addEventListener("click", () => {
       stackOnly = !stackOnly; visibleCount = PAGE_SIZE; renderCatalog();
+    });
+    document.getElementById("stackExport").addEventListener("click", (e) => {
+      copyText(stackPrompt(), e.currentTarget);
     });
 
     const counts = APIS.reduce((acc, api) => { const label = effortLabel(api.auth); acc[label] = (acc[label] || 0) + 1; return acc; }, {});
