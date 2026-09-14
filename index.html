@@ -310,6 +310,11 @@
 
     footer { background: #e9ede6; border-top: 1px solid #d2d9d2; }
     .footer-inner { width: min(1120px, calc(100% - 40px)); margin: 0 auto; padding: 30px 0; color: #4c5951; font-size: 14px; }
+    .footer-credit { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #d2d9d2; font-size: 13px; }
+    .footer-sep { color: #9aa79f; }
+    .footer-credit a { display: inline-flex; align-items: center; gap: 6px; color: var(--ink); font-weight: 700; text-decoration: none; }
+    .footer-credit a:hover { text-decoration: underline; }
+    .footer-credit svg { width: 14px; height: 14px; fill: currentColor; }
     .footer-inner strong { color: var(--ink); }
 
     .overlay {
@@ -506,7 +511,9 @@
     </main>
 
     <footer>
-      <div class="footer-inner"><strong>421 APIs, checked against official documentation on September 13, 2026.</strong> Free plans can change, so double-check the official docs before building something you rely on.</div>
+      <div class="footer-inner"><strong>421 APIs, checked against official documentation on September 13, 2026.</strong> Free plans can change, so double-check the official docs before building something you rely on.
+        <div class="footer-credit"><span>&copy; 2026 hiddeninwest</span><span class="footer-sep" aria-hidden="true">&middot;</span><a href="https://x.com/hiddeninwest" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg>@hiddeninwest</a></div>
+      </div>
     </footer>
   </div>
 
