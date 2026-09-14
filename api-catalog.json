@@ -1303,7 +1303,7 @@
    "developer"
   ],
   "category": "Nutrition & Food",
-  "description": "Nutritionix is a commercial nutrition database that lets you look up food nutrition by typing plain English like '2 slices of pepperoni pizza' or scanning a barcode. It covers restaurant menus, grocery products, and common foods, and it can parse full sentences into itemized nutrition. Its free option is a business trial plan aimed at testing, so it is best for small pilots rather than big apps.",
+  "description": "Nutritionix is a commercial nutrition database that lets you look up food nutrition by typing everyday language like '2 slices of pepperoni pizza' or scanning a barcode. It covers restaurant menus, grocery products, and common foods, and it can parse full sentences into itemized nutrition. Its free option is a business trial plan aimed at testing, so it is best for small pilots rather than big apps.",
   "docs_url": "https://developer.nutritionix.com/docs/v2",
   "example": "curl -H 'x-app-id: YOUR_ID' -H 'x-app-key: YOUR_KEY' 'https://trackapi.nutritionix.com/v2/search/instant?query=apple'",
   "name": "Nutritionix",
