@@ -238,6 +238,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
     .quick-btn:hover { border-color: var(--ink); }
     .quick-btn[aria-pressed="true"] { background: transparent; border-color: var(--yellow); color: var(--yellow); }
     .detail-actions { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+    .quick-btn svg { flex: none; }
 
     .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
     .api-card {
@@ -897,7 +898,8 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
         renderCatalog();
       });
       const actions = el("div", "detail-actions");
-      const shareBtn = el("button", "quick-btn", "Share");
+      const shareBtn = el("button", "quick-btn");
+      shareBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M5 12v8h14v-8"/></svg><span>Share</span>';
       shareBtn.type = "button";
       shareBtn.setAttribute("aria-label", `Share ${api.name}`);
       shareBtn.addEventListener("click", () => shareApi(api, shareBtn));
