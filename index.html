@@ -229,6 +229,17 @@
     }
     .effort:hover { border-color: var(--ink); }
     .effort[aria-pressed="true"] { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    .stack-filter { margin-left: 4px; }
+    .quick-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .quick-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 12px; background: var(--white);
+      border: 1.5px solid var(--line); border-radius: 10px;
+      cursor: pointer; font-size: 13px; font-weight: 700;
+      color: var(--ink); text-decoration: none; font-family: inherit;
+    }
+    .quick-btn:hover { border-color: var(--ink); }
+    .quick-btn[aria-pressed="true"] { background: var(--yellow); border-color: var(--ink); }
 
     .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
     .api-card {
@@ -480,6 +491,7 @@
             <span>Setup effort</span>
             <div class="effort-filters" id="effortFilters" aria-label="Filter by setup effort"></div>
           </div>
+          <button class="effort stack-filter" id="stackFilter" type="button" aria-pressed="false">My Stack (0)</button>
         </div>
         <div class="grid" id="grid"></div>
         <div class="empty" id="empty">
@@ -526,6 +538,17 @@
     let activeGoal = "Everything";
     let activeEffort = "All";
     let visibleCount = PAGE_SIZE;
+    const STACK_KEY = "plugmyagent_stack_v1";
+    let stack = new Set();
+    try { stack = new Set(JSON.parse(localStorage.getItem(STACK_KEY) || "[]")); } catch (_) { stack = new Set(); }
+    let stackOnly = false;
+    function saveStack() { try { localStorage.setItem(STACK_KEY, JSON.stringify(Array.from(stack))); } catch (_) {} }
+    function updateStackUI() {
+      const btn = document.getElementById("stackFilter");
+      if (!btn) return;
+      btn.textContent = `My Stack (${stack.size})`;
+      btn.setAttribute("aria-pressed", String(stackOnly));
+    }
     let lastFocused = null;
 
     const search = document.getElementById("search");
@@ -598,7 +621,8 @@
         const effortMatch = activeEffort === "All" || effortLabel(api.auth) === activeEffort;
         const haystack = [api.name, api.category, api.tagline, api.description, ...(api.use_cases || []), ...(api.best_for || [])].join(" ").toLowerCase();
         const searchMatch = !terms.length || terms.every(term => haystack.includes(term));
-        return goalMatch && effortMatch && searchMatch;
+        const stackMatch = !stackOnly || stack.has(api.name);
+        return goalMatch && effortMatch && searchMatch && stackMatch;
       });
     }
 
@@ -612,6 +636,34 @@
       card.append(el("h3", "", api.name));
       card.append(el("p", "tagline", api.tagline));
       card.append(el("p", "description", api.description));
+      const quick = el("div", "quick-row");
+      const keyUrl = api.signup_url || api.docs_url;
+      if (keyUrl) {
+        const keyLink = safeLink(keyUrl, api.auth === "No key" ? "Open guide \u2197" : "Get key \u2197", "quick-btn");
+        keyLink.setAttribute("aria-label", api.auth === "No key" ? `Open ${api.name} guide` : `Get a free ${api.name} API key`);
+        quick.append(keyLink);
+      }
+      const promptBtn = el("button", "quick-btn", "Copy prompt");
+      promptBtn.type = "button";
+      promptBtn.setAttribute("aria-label", `Copy agent setup prompt for ${api.name}`);
+      promptBtn.addEventListener("click", () => copyText(agentPrompt(api), promptBtn));
+      quick.append(promptBtn);
+      const stackBtn = el("button", "quick-btn", "+ Stack");
+      stackBtn.type = "button";
+      const paintStackBtn = () => {
+        const inStack = stack.has(api.name);
+        stackBtn.textContent = inStack ? "\u2713 In stack" : "+ Stack";
+        stackBtn.setAttribute("aria-pressed", String(inStack));
+      };
+      paintStackBtn();
+      stackBtn.setAttribute("aria-label", `Save ${api.name} to My Stack`);
+      stackBtn.addEventListener("click", () => {
+        if (stack.has(api.name)) stack.delete(api.name); else stack.add(api.name);
+        saveStack(); paintStackBtn(); updateStackUI();
+        if (stackOnly) renderCatalog();
+      });
+      quick.append(stackBtn);
+      card.append(quick);
       const action = el("button", "card-action");
       action.type = "button";
       action.setAttribute("aria-label", `Set up ${api.name}`);
@@ -625,11 +677,22 @@
     function renderCatalog() {
       const matches = filteredApis();
       const showing = Math.min(visibleCount, matches.length);
-      const qualifier = activeGoal !== "Everything" || activeEffort !== "All" || search.value.trim() ? " matching" : "";
+      const qualifier = activeGoal !== "Everything" || activeEffort !== "All" || stackOnly || search.value.trim() ? " matching" : "";
       resultCount.innerHTML = `${matches.length} <span>API${matches.length === 1 ? "" : "s"}${qualifier}</span>`;
       grid.textContent = "";
       matches.slice(0, visibleCount).forEach((api, index) => grid.appendChild(makeCard(api, index)));
+      if (!matches.length) {
+        const h3 = empty.querySelector("h3"); const p = empty.querySelector("p");
+        if (stackOnly && stack.size === 0) {
+          h3.textContent = "Your stack is empty";
+          p.textContent = 'Tap "+ Stack" on any API card to save it here.';
+        } else {
+          h3.textContent = "No matches yet";
+          p.textContent = "Try a broader word or clear your filters.";
+        }
+      }
       empty.style.display = matches.length ? "none" : "block";
+      updateStackUI();
       grid.style.display = matches.length ? "grid" : "none";
       loadMore.hidden = showing >= matches.length;
       if (!loadMore.hidden) loadMore.textContent = `Show ${Math.min(PAGE_SIZE, matches.length - showing)} more`;
@@ -641,6 +704,24 @@
       link.target = "_blank";
       link.rel = "noopener noreferrer";
       return link;
+    }
+    function agentPrompt(api) {
+      const noKey = api.auth === "No key";
+      return noKey
+        ? `Hey, set this API up for me: ${api.name}. It doesn't need an API key. Official docs: ${api.docs_url}`
+        : `Hey, set this API up for me: ${api.name}. Here's my API key: PASTE_YOUR_KEY_HERE. Official docs: ${api.docs_url}`;
+    }
+    async function copyText(text, btn) {
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (_) {
+        const area = document.createElement("textarea");
+        area.value = text; document.body.append(area); area.select();
+        document.execCommand("copy"); area.remove();
+      }
+      const original = btn.textContent;
+      btn.textContent = "Copied";
+      setTimeout(() => { btn.textContent = original; }, 1800);
     }
 
     function openDetail(api, trigger) {
@@ -700,20 +781,10 @@
       const threeCopy = el("div");
       threeCopy.append(el("h4", "", "Tell your agent"));
       threeCopy.append(el("p", "", "Copy this message, paste it into your agent, and replace the placeholder if a key is needed."));
-      const messageText = noKey
-        ? `Hey, set this API up for me: ${api.name}. It doesn't need an API key. Official docs: ${api.docs_url}`
-        : `Hey, set this API up for me: ${api.name}. Here's my API key: PASTE_YOUR_KEY_HERE. Official docs: ${api.docs_url}`;
+      const messageText = agentPrompt(api);
       const message = el("div", "agent-message", messageText);
       const copy = el("button", "copy-btn", "Copy"); copy.type = "button";
-      copy.addEventListener("click", async () => {
-        try {
-          await navigator.clipboard.writeText(messageText);
-          copy.textContent = "Copied";
-        } catch (_) {
-          const area = document.createElement("textarea"); area.value = messageText; document.body.append(area); area.select(); document.execCommand("copy"); area.remove(); copy.textContent = "Copied";
-        }
-        setTimeout(() => copy.textContent = "Copy", 1800);
-      });
+      copy.addEventListener("click", () => copyText(messageText, copy));
       message.append(copy); threeCopy.append(message);
       if (!noKey) threeCopy.append(el("p", "key-note", "Keep API keys private. Only share yours with tools and people you trust."));
       three.append(threeCopy); setup.append(three);
@@ -760,8 +831,11 @@
     overlay.addEventListener("click", event => { if (event.target === overlay) closeDetail(); });
     loadMore.addEventListener("click", () => { visibleCount += PAGE_SIZE; renderCatalog(); });
     document.getElementById("clearFilters").addEventListener("click", () => {
-      activeGoal = "Everything"; activeEffort = "All"; search.value = ""; visibleCount = PAGE_SIZE;
+      activeGoal = "Everything"; activeEffort = "All"; stackOnly = false; search.value = ""; visibleCount = PAGE_SIZE;
       renderGoals(); renderEfforts(); renderCatalog(); search.focus();
+    });
+    document.getElementById("stackFilter").addEventListener("click", () => {
+      stackOnly = !stackOnly; visibleCount = PAGE_SIZE; renderCatalog();
     });
 
     const counts = APIS.reduce((acc, api) => { const label = effortLabel(api.auth); acc[label] = (acc[label] || 0) + 1; return acc; }, {});
