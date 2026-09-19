@@ -1,0 +1,1 @@
+{"redirects":[{"destination":"/catalog/?api=:slug","has":[{"key":"api","type":"query","value":"(?<slug>.+)"}],"permanent":false,"source":"/"}]}

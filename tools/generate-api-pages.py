@@ -20,7 +20,7 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BASE = "https://plugmyagent.com"
+BASE = "https://www.plugmyagent.com"
 OG_IMAGE = BASE + "/og-card.png"
 TODAY = date.today().isoformat()
 
@@ -65,26 +65,23 @@ def meta_desc(api):
 
 CSS = """
 :root{
-  --ink:#101414; --muted:#5c6b6b; --paper:#ffffff; --white:#ffffff; --card:#f7f9f9;
-  --line:#e3e9e9; --teal:#2dd4bf; --teal-ink:#052e2a; --teal-soft:#e6faf7;
-}
-@media (prefers-color-scheme: dark){
-  :root{
-    --ink:#f2f5f5; --muted:#9aa8a8; --paper:#141617; --white:#1e2223; --card:#1e2223;
-    --line:rgba(255,255,255,.12); --teal-soft:rgba(45,212,191,.14);
-  }
+  color-scheme:dark;
+  --ink:#f5f7f5; --muted:#9aa39e; --paper:#0b0d0d; --white:#101314; --card:#101314;
+  --line:rgba(255,255,255,.09); --teal:#ff6b1a; --teal-ink:#201000; --teal-soft:rgba(255,107,26,.14);
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);
+  background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:48px 48px;
   font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   font-size:16px;line-height:1.55}
 .wrap{max-width:760px;margin:0 auto;padding:0 20px}
 .site-header{position:sticky;top:0;z-index:40;background:var(--white);border-bottom:1px solid var(--line)}
 .site-header-inner{width:min(1120px,100%);margin:0 auto;padding:11px clamp(16px,4vw,32px);
   display:flex;align-items:center;min-height:56px}
-.brandmark{position:absolute;left:-46px;top:50%;transform:translateY(-50%);display:inline-flex}
+.brandmark{display:inline-flex;align-items:center}
 .brandmark img{display:block;height:30px;width:auto}
-@media (max-width:560px){.brandmark img{height:24px}.brandmark{left:-37px}}
+@media (max-width:560px){.brandmark img{height:24px}}
 .crumb{font-size:13px;color:var(--muted);margin:26px 0 6px}
 .crumb a{color:var(--muted)}
 h1{font-size:clamp(34px,6vw,52px);line-height:1.02;letter-spacing:-.04em;margin:6px 0 10px;font-weight:800}
@@ -112,8 +109,7 @@ ol.steps li::before{content:counter(st);position:absolute;left:14px;top:14px;wid
 .fact b{display:block;font:600 11px "Azeret Mono",ui-monospace,monospace;color:var(--muted);
   text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
 pre{margin:0;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;padding:16px;border-radius:12px;
-  background:#101414;color:#e9f2eb;font:500 12.5px/1.55 "Azeret Mono",ui-monospace,monospace}
-@media (prefers-color-scheme: dark){ pre{background:#242a2b} }
+  background:#050707;color:#f5f7f5;font:500 12.5px/1.55 "Azeret Mono",ui-monospace,monospace}
 .verified{font-size:13px;color:var(--muted);margin:26px 0 0}
 footer{border-top:1px solid var(--line);margin-top:44px;padding:22px 0 40px;font-size:13px;color:var(--muted)}
 footer a{color:var(--muted)}
@@ -127,7 +123,7 @@ def render_page(api, slug):
     tagline = esc(api.get("tagline"))
     desc = esc(api.get("description"))
     page_url = f"{BASE}/api/{slug}/"
-    app_url = f"{BASE}/?api={slug}"
+    app_url = f"{BASE}/catalog/?api={slug}"
     docs = clean_url(api.get("docs_url"))
     signup = clean_url(api.get("signup_url"))
     title = f"{api.get('name')} | Free API on PlugMyAgent"
@@ -194,9 +190,9 @@ def render_page(api, slug):
 <script type="application/ld+json">{ld_json}</script>
 </head>
 <body>
-<div class="site-header"><div class="site-header-inner"><a class="brandmark" href="/" aria-label="PlugMyAgent home"><picture><source media="(prefers-color-scheme: dark)" srcset="/plug-lockup.png"><img src="/plug-lockup-black.png" alt=""></picture></a></div></div>
+<div class="site-header"><div class="site-header-inner"><a class="brandmark" href="/" aria-label="PlugMyAgent home"><img src="/plug-lockup-v2.png" alt="PlugMyAgent"></a></div></div>
 <main class="wrap">
-<p class="crumb"><a href="/">Catalog</a> / {category} / {name}</p>
+<p class="crumb"><a href="/">Home</a> / <a href="/catalog/">Catalog</a> / {category} / {name}</p>
 <span class="pill">{category}</span>
 <h1>{name}</h1>
 <p class="tagline">{tagline}</p>
@@ -248,7 +244,7 @@ def main():
         page.write_text(render_page(api, slug), encoding="utf-8")
         count += 1
 
-    urls = [BASE + "/"] + [f"{BASE}/api/{s}/" for s in slugs]
+    urls = [BASE + "/", BASE + "/catalog/"] + [f"{BASE}/api/{s}/" for s in slugs]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
