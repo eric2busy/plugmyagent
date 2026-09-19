@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OpenAlex | Free API on PlugMyAgent</title>
-<meta name="description" content="No key, no signup, no rate-limit games for basic use: just ask and get structured research data back, verified live with 3.4M AI papers indexed.">
+<meta name="description" content="Free scholarly database: 250M+ works, no key needed">
 <link rel="canonical" href="https://www.plugmyagent.com/api/openalex/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="PlugMyAgent">
 <meta property="og:title" content="OpenAlex - free API">
-<meta property="og:description" content="No key, no signup, no rate-limit games for basic use: just ask and get structured research data back, verified live with 3.4M AI papers indexed.">
+<meta property="og:description" content="Free scholarly database: 250M+ works, no key needed">
 <meta property="og:url" content="https://www.plugmyagent.com/api/openalex/">
 <meta property="og:image" content="https://www.plugmyagent.com/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="OpenAlex - free API">
-<meta name="twitter:description" content="No key, no signup, no rate-limit games for basic use: just ask and get structured research data back, verified live with 3.4M AI papers indexed.">
+<meta name="twitter:description" content="Free scholarly database: 250M+ works, no key needed">
 <meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png">
 <style>
 :root{
@@ -70,7 +70,7 @@ footer{border-top:1px solid var(--line);margin-top:44px;padding:22px 0 40px;font
 footer a{color:var(--muted)}
 @media (max-width:620px){ .facts{grid-template-columns:1fr} }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebAPI", "name": "OpenAlex", "description": "No key, no signup, no rate-limit games for basic use: just ask and get structured research data back, verified live with 3.4M AI papers indexed.", "url": "https://www.plugmyagent.com/api/openalex/", "documentationUrl": "https://docs.openalex.org/", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebAPI", "name": "OpenAlex", "description": "Free scholarly database: 250M+ works, no key needed", "url": "https://www.plugmyagent.com/api/openalex/", "documentationUrl": "https://docs.openalex.org/", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -80,21 +80,21 @@ footer a{color:var(--muted)}
 <p class="crumb"><a href="/">Catalog</a> / Scholarly / OpenAlex</p>
 <span class="pill">Scholarly</span>
 <h1>OpenAlex</h1>
-<p class="tagline">No key, no signup, no rate-limit games for basic use: just ask and get structured research data back, verified live with 3.4M AI papers indexed.</p>
+<p class="tagline">Free scholarly database: 250M+ works, no key needed</p>
 <div class="cta-row">
 <a class="btn primary" href="https://www.plugmyagent.com/?api=openalex">Open in PlugMyAgent</a><a class="btn" href="https://docs.openalex.org/" rel="noopener">Official docs</a>
 </div>
 <h2>What it does</h2>
-<div class="card"><p>OpenAlex is a free catalog of 250M+ scholarly works, authors, and institutions, giving research agents real papers and citations to work with.</p></div>
+<div class="card"><p>OpenAlex indexes over 250 million scholarly works with authors, citations, funders, and topics, completely free with no key or signup required. Adding your email to requests unlocks the faster polite pool. A natural fit for research agents.</p></div>
 <h2>What you can do with it</h2>
-<div class="card"><ul class="tight"></ul></div>
+<div class="card"><ul class="tight"><li>Research agents</li><li>Citation graphs</li><li>Academic search</li></ul></div>
 <h2>Set it up</h2>
-<ol class="steps"></ol>
-
+<ol class="steps"><li>1. No signup: just call https://api.openalex.org/works with your query.</li><li>2. Add ?mailto=you@example.com for the faster polite pool.</li><li>3. Page through results with the cursor parameter for large sets.</li></ol>
+<h2>Example request</h2><div class="card"><pre>GET https://api.openalex.org/works?search=artificial+intelligence</pre></div>
 <h2>The fine print</h2>
 <div class="facts">
 <div class="fact"><b>Access</b>No key</div>
-<div class="fact"><b>Rate limit</b>Completely free with no key or signup required. Adding an email to requests unlocks the faster polite pool.</div>
+<div class="fact"><b>Rate limit</b>Free with fair-use limits; polite pool with an email parameter.</div>
 <div class="fact"><b>Best for</b>developer</div>
 <div class="fact"><b>Category</b>Scholarly</div>
 </div>
