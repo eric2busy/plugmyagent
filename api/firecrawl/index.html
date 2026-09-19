@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Firecrawl | Free API on PlugMyAgent</title>
-<meta name="description" content="Purpose-built for AI agents with an official MCP server, so Claude and Cursor can scrape the web directly.">
+<meta name="description" content="Web scraping built for AI agents, with an MCP server">
 <link rel="canonical" href="https://www.plugmyagent.com/api/firecrawl/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="PlugMyAgent">
 <meta property="og:title" content="Firecrawl - free API">
-<meta property="og:description" content="Purpose-built for AI agents with an official MCP server, so Claude and Cursor can scrape the web directly.">
+<meta property="og:description" content="Web scraping built for AI agents, with an MCP server">
 <meta property="og:url" content="https://www.plugmyagent.com/api/firecrawl/">
 <meta property="og:image" content="https://www.plugmyagent.com/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Firecrawl - free API">
-<meta name="twitter:description" content="Purpose-built for AI agents with an official MCP server, so Claude and Cursor can scrape the web directly.">
+<meta name="twitter:description" content="Web scraping built for AI agents, with an MCP server">
 <meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png">
 <style>
 :root{
@@ -70,7 +70,7 @@ footer{border-top:1px solid var(--line);margin-top:44px;padding:22px 0 40px;font
 footer a{color:var(--muted)}
 @media (max-width:620px){ .facts{grid-template-columns:1fr} }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebAPI", "name": "Firecrawl", "description": "Purpose-built for AI agents with an official MCP server, so Claude and Cursor can scrape the web directly.", "url": "https://www.plugmyagent.com/api/firecrawl/", "documentationUrl": "https://docs.firecrawl.dev/", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebAPI", "name": "Firecrawl", "description": "Web scraping built for AI agents, with an MCP server", "url": "https://www.plugmyagent.com/api/firecrawl/", "documentationUrl": "https://docs.firecrawl.dev/", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -80,21 +80,21 @@ footer a{color:var(--muted)}
 <p class="crumb"><a href="/">Catalog</a> / Web Search / Firecrawl</p>
 <span class="pill">Web Search</span>
 <h1>Firecrawl</h1>
-<p class="tagline">Purpose-built for AI agents with an official MCP server, so Claude and Cursor can scrape the web directly.</p>
+<p class="tagline">Web scraping built for AI agents, with an MCP server</p>
 <div class="cta-row">
-<a class="btn primary" href="https://www.plugmyagent.com/?api=firecrawl">Open in PlugMyAgent</a><a class="btn" href="https://docs.firecrawl.dev/" rel="noopener">Official docs</a>
+<a class="btn primary" href="https://www.plugmyagent.com/?api=firecrawl">Open in PlugMyAgent</a><a class="btn" href="https://docs.firecrawl.dev/" rel="noopener">Official docs</a><a class="btn" href="https://www.firecrawl.dev/" rel="noopener">Get free access</a>
 </div>
 <h2>What it does</h2>
-<div class="card"><p>Firecrawl scrapes any website into clean markdown or structured data for your agent, handling JavaScript rendering, logins, and anti-bot walls for you.</p></div>
+<div class="card"><p>Firecrawl scrapes pages, crawls sites, and returns structured markdown or JSON tuned for LLM pipelines, with an official MCP server so Claude and Cursor can use it directly. The free plan includes 1,000 credits a month with no card required, plus a keyless rate-limited tier with no signup.</p></div>
 <h2>What you can do with it</h2>
-<div class="card"><ul class="tight"></ul></div>
+<div class="card"><ul class="tight"><li>Web scraping for agents</li><li>Site crawling</li><li>Structured page extraction</li></ul></div>
 <h2>Set it up</h2>
-<ol class="steps"></ol>
-
+<ol class="steps"><li>1. Sign up at firecrawl.dev and copy your API key.</li><li>2. POST a URL to /v1/scrape for markdown, or /v1/crawl for whole sites.</li><li>3. Pipe the structured output straight into your agent pipeline.</li></ol>
+<h2>Example request</h2><div class="card"><pre>POST https://api.firecrawl.dev/v1/scrape --header &quot;Authorization: Bearer YOUR_API_KEY&quot;</pre></div>
 <h2>The fine print</h2>
 <div class="facts">
 <div class="fact"><b>Access</b>Free key (no card)</div>
-<div class="fact"><b>Rate limit</b>Free plan: 1,000 credits/month, no card required, plus a keyless rate-limited tier with no signup at all. Core engine is open source (MIT).</div>
+<div class="fact"><b>Rate limit</b>1,000 credits/month free; keyless tier available.</div>
 <div class="fact"><b>Best for</b>developer</div>
 <div class="fact"><b>Category</b>Web Search</div>
 </div>
