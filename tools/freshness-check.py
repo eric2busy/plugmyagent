@@ -27,6 +27,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 TODAY = date.today().isoformat()
 UA = {"User-Agent": "PlugMyAgent-linkcheck/1.0 (+https://www.plugmyagent.com)"}
+# Second-chance UA: some sites serve 404 to unknown bots but 200 to browsers.
+# A URL is only "dead" after failing with a real browser user agent too.
+BROWSER_UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"}
 
 
 def check(url):
@@ -52,6 +55,14 @@ def check(url):
             return ("ok", detail2)
         state, detail = state2, detail2
     if state == "http" and detail in (404, 410):
+        # second chance with a browser UA before declaring dead
+        try:
+            req2 = urllib.request.Request(url, headers=BROWSER_UA)
+            resp2 = urllib.request.urlopen(req2, timeout=15)
+            resp2.read(2048)
+            return ("ok", resp2.status)
+        except Exception:
+            pass
         return ("dead", detail)
     return ("blocked", detail)
 
