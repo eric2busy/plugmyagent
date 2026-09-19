@@ -11886,5 +11886,451 @@
       "Track public spending data"
     ],
     "verified": "2026-09-13"
+  },
+  {
+    "name": "Mem0",
+    "tagline": "Long-term memory for AI agents and chatbots",
+    "description": "Mem0 gives your agent a memory that persists between sessions, so it remembers user preferences, facts, and context instead of starting blank every chat. The hosted Hobby plan is free with 10,000 memory adds per month and unlimited end users, no credit card required, and the core is open source if you would rather self-host.",
+    "category": "AI & ML",
+    "docs_url": "https://docs.mem0.ai/",
+    "signup_url": "https://app.mem0.ai/",
+    "auth": "Free key (no card)",
+    "rate_limit": "10,000 memory adds/month on the free Hobby plan.",
+    "example": "POST https://api.mem0.ai/v1/memories/ --header \"Authorization: Token YOUR_API_KEY\"",
+    "setup_steps": [
+      "1. Sign up at app.mem0.ai and copy your API key from the dashboard.",
+      "2. Install the SDK with pip install mem0ai, or call the REST API directly.",
+      "3. Add memories tagged with a user_id, then search them inside your agent loop."
+    ],
+    "best_for": [
+      "developer"
+    ],
+    "use_cases": [
+      "Agent long-term memory",
+      "Personalized chatbots",
+      "Remembering user preferences"
+    ],
+    "link_check": {
+      "date": "2026-09-18",
+      "docs": "ok:200",
+      "signup": "ok:200",
+      "ok": true,
+      "unverified": []
+    },
+    "verified": "2026-09-18"
+  },
+  {
+    "name": "Langfuse",
+    "tagline": "Open-source observability for LLM apps",
+    "description": "Langfuse traces every prompt, completion, and tool call your agent makes, with cost, latency, and quality scores in one dashboard. The Cloud Hobby tier is free for 50,000 events a month with no card required, and the whole stack is MIT licensed so you can self-host it free.",
+    "category": "AI & ML",
+    "docs_url": "https://langfuse.com/docs",
+    "signup_url": "https://cloud.langfuse.com/",
+    "auth": "Free key (no card)",
+    "rate_limit": "50,000 events/month on the free Cloud Hobby tier.",
+    "example": "POST https://cloud.langfuse.com/api/public/ingestion --header \"Authorization: Basic YOUR_KEYS\"",
+    "setup_steps": [
+      "1. Create a free account at cloud.langfuse.com and start a project.",
+      "2. Copy the public and secret keys from project settings.",
+      "3. Install the Python or JS SDK and wrap your LLM calls; traces show up in seconds."
+    ],
+    "best_for": [
+      "developer"
+    ],
+    "use_cases": [
+      "LLM tracing and debugging",
+      "Prompt cost tracking",
+      "Agent quality scoring"
+    ],
+    "link_check": {
+      "date": "2026-09-18",
+      "docs": "ok:200",
+      "signup": "ok:200",
+      "ok": true,
+      "unverified": []
+    },
+    "verified": "2026-09-18"
+  },
+  {
+    "name": "E2B",
+    "tagline": "Secure cloud sandboxes for running AI-generated code",
+    "description": "E2B spins up isolated Firecracker microVM sandboxes in about 150 milliseconds so your agent can run untrusted code safely. The free Hobby tier includes a $100 one-time compute credit, 1-hour sessions, and 20 concurrent sandboxes, no credit card required.",
+    "category": "Dev Utilities",
+    "docs_url": "https://e2b.dev/docs",
+    "signup_url": "https://e2b.dev/",
+    "auth": "Free key (no card)",
+    "rate_limit": "$100 one-time free credit; 20 concurrent sandboxes on Hobby.",
+    "example": "POST https://api.e2b.dev/v1/sandboxes --header \"X-API-Key: YOUR_API_KEY\"",
+    "setup_steps": [
+      "1. Sign up at e2b.dev and copy your API key.",
+      "2. Install the SDK: pip install e2b-code-interpreter.",
+      "3. Create a sandbox, run code inside it, and close it when done."
+    ],
+    "best_for": [
+      "developer"
+    ],
+    "use_cases": [
+      "Running agent-generated code",
+      "Data analysis sandboxes",
+      "Safe code execution"
+    ],
+    "link_check": {
+      "date": "2026-09-18",
+      "docs": "ok:200",
+      "signup": "ok:200",
+      "ok": true,
+      "unverified": []
+    },
+    "verified": "2026-09-18"
+  },
+  {
+    "name": "Composio",
+    "tagline": "200+ app integrations your agent can call as tools",
+    "description": "Composio turns Gmail, Slack, GitHub, CRMs, and 200+ other apps into tool calls your agent can use, with OAuth handled for you. The free tier includes 20,000 tool calls a month with no credit card required, plus Python and TypeScript SDKs and a managed MCP server.",
+    "category": "AI & ML",
+    "docs_url": "https://docs.composio.dev/docs",
+    "signup_url": "https://app.composio.dev/",
+    "auth": "Free key (no card)",
+    "rate_limit": "20,000 tool calls/month on the free tier.",
+    "example": "POST https://backend.composio.dev/api/v3/connected_accounts --header \"x-api-key: YOUR_API_KEY\"",
+    "setup_steps": [
+      "1. Sign up at app.composio.dev and get your API key.",
+      "2. Connect the apps your agent needs with one click each.",
+      "3. Call the tools from the Python or TypeScript SDK, or through MCP."
+    ],
+    "best_for": [
+      "developer"
+    ],
+    "use_cases": [
+      "Agent tool use",
+      "Gmail and Slack automation",
+      "CRM updates from chat"
+    ],
+    "link_check": {
+      "date": "2026-09-18",
+      "docs": "ok:200",
+      "signup": "ok:200",
+      "ok": true,
+      "unverified": []
+    },
+    "verified": "2026-09-18"
+  },
+  {
+    "name": "Helicone",
+    "tagline": "LLM observability plus a gateway to 100+ models",
+    "description": "Helicone logs every LLM request your agent makes with cost, latency, and caching through a one-line proxy change, and its AI gateway routes to 100+ models. The Hobby plan is free for 10,000 requests a month with 1 GB of storage, no card required, and the platform is open source.",
+    "category": "AI & ML",
+    "docs_url": "https://docs.helicone.ai/",
+    "signup_url": "https://www.helicone.ai/",
+    "auth": "Free key (no card)",
+    "rate_limit": "10,000 requests/month on the free Hobby plan.",
+    "example": "POST https://oai.helicone.ai/v1/chat/completions --header \"Helicone-Auth: Bearer YOUR_API_KEY\"",
+    "setup_steps": [
+      "1. Sign up at helicone.ai and copy your API key.",
+      "2. Point your OpenAI base URL at oai.helicone.ai and add the Helicone-Auth header.",
+      "3. Every request is now logged with cost and latency in your dashboard."
+    ],
+    "best_for": [
+      "developer"
+    ],
+    "use_cases": [
+      "LLM cost tracking",
+      "Prompt debugging",
+      "Multi-model routing"
+    ],
+    "link_check": {
+      "date": "2026-09-18",
+      "docs": "ok:200",
+      "signup": "ok:200",
+      "ok": true,
+      "unverified": []
+    },
+    "verified": "2026-09-18"
+  },
+  {
+    "name": "Inngest",
+    "tagline": "Durable background jobs and workflows for apps",
+    "description": "Inngest runs multi-step background jobs that survive crashes: a failed step retries and resumes instead of restarting the whole workflow. The Hobby plan is free forever with 50,000 executions a month and no card required, with SDKs for TypeScript, Python, and Go.",
+    "category": "Dev Utilities",
+    "docs_url": "https://www.inngest.com/docs",
+    "signup_url": "https://app.inngest.com/",
+    "auth": "Free key (no card)",
+    "rate_limit": "50,000 step executions/month on the free Hobby plan.",
+    "example": "POST https://api.inngest.com/v1/events --header \"Authorization: Bearer YOUR_SIGNING_KEY\"",
+    "setup_steps": [
+      "1. Sign up at inngest.com and create an app to get your keys.",
+      "2. Install the SDK for your language and define a function with steps.",
+      "3. Send events to trigger it; retries and waits are handled for you."
+    ],
+    "best_for": [
+      "developer"
+    ],
+    "use_cases": [
+      "Background jobs",
+      "Scheduled workflows",
+      "Reliable multi-step agents"
+    ],
+    "link_check": {
+      "date": "2026-09-18",
+      "docs": "ok:200",
+      "signup": "ok:200",
+      "ok": true,
+      "unverified": []
+    },
+    "verified": "2026-09-18"
+  },
+  {
+    "name": "Jina AI Reader",
+    "tagline": "Turn any web page into clean text for your agent",
+    "description": "Jina AI Reader fetches any URL and returns clean, LLM-ready text, including JavaScript-heavy pages that defeat simple scrapers. It is free with no API key at all at 20 requests a minute; a free key raises the limits and adds 10M free tokens.",
+    "category": "Web Search",
+    "docs_url": "https://jina.ai/reader/",
+    "signup_url": "https://jina.ai/",
+    "auth": "No key",
+    "rate_limit": "20 requests/minute with no key; higher with a free key.",
+    "example": "GET https://r.jina.ai/https://www.example.com/article",
+    "setup_steps": [
+      "1. No signup needed: prepend https://r.jina.ai/ to any URL.",
+      "2. For higher limits, grab a free API key at jina.ai.",
+      "3. Send the key as a Bearer token to raise your rate limit."
+    ],
+    "best_for": [
+      "developer"
+    ],
+    "use_cases": [
+      "Agent web research",
+      "Article extraction",
+      "Reading JS-heavy pages"
+    ],
+    "link_check": {
+      "date": "2026-09-18",
+      "docs": "ok:200",
+      "signup": "ok:200",
+      "ok": true,
+      "unverified": []
+    },
+    "verified": "2026-09-18"
+  },
+  {
+    "name": "Firecrawl",
+    "tagline": "Web scraping built for AI agents, with an MCP server",
+    "description": "Firecrawl scrapes pages, crawls sites, and returns structured markdown or JSON tuned for LLM pipelines, with an official MCP server so Claude and Cursor can use it directly. The free plan includes 1,000 credits a month with no card required, plus a keyless rate-limited tier with no signup.",
+    "category": "Web Search",
+    "docs_url": "https://docs.firecrawl.dev/",
+    "signup_url": "https://www.firecrawl.dev/",
+    "auth": "Free key (no card)",
+    "rate_limit": "1,000 credits/month free; keyless tier available.",
+    "example": "POST https://api.firecrawl.dev/v1/scrape --header \"Authorization: Bearer YOUR_API_KEY\"",
+    "setup_steps": [
+      "1. Sign up at firecrawl.dev and copy your API key.",
+      "2. POST a URL to /v1/scrape for markdown, or /v1/crawl for whole sites.",
+      "3. Pipe the structured output straight into your agent pipeline."
+    ],
+    "best_for": [
+      "developer"
+    ],
+    "use_cases": [
+      "Web scraping for agents",
+      "Site crawling",
+      "Structured page extraction"
+    ],
+    "link_check": {
+      "date": "2026-09-18",
+      "docs": "ok:200",
+      "signup": "ok:200",
+      "ok": true,
+      "unverified": []
+    },
+    "verified": "2026-09-18"
+  },
+  {
+    "name": "Daytona",
+    "tagline": "Instant dev environments and agent desktops in the cloud",
+    "description": "Daytona gives your agent a full cloud sandbox in about 90 milliseconds: code workspaces plus full Linux, Windows, and macOS desktops an agent can click around like a human. Signup includes $200 in free compute credits with no card required, billed per second after that.",
+    "category": "Dev Utilities",
+    "docs_url": "https://www.daytona.io/docs",
+    "signup_url": "https://www.daytona.io/",
+    "auth": "Free key (no card)",
+    "rate_limit": "$200 in free credits at signup; per-second billing after.",
+    "example": "POST https://app.daytona.io/api/sandboxes --header \"Authorization: Bearer YOUR_API_KEY\"",
+    "setup_steps": [
+      "1. Sign up at daytona.io and copy your API key.",
+      "2. Create a sandbox from the dashboard or API with your chosen image.",
+      "3. Run code or drive the desktop; you are billed per second."
+    ],
+    "best_for": [
+      "developer"
+    ],
+    "use_cases": [
+      "Cloud dev environments",
+      "Agent computer use",
+      "Ephemeral test boxes"
+    ],
+    "link_check": {
+      "date": "2026-09-18",
+      "docs": "ok:200",
+      "signup": "ok:200",
+      "ok": true,
+      "unverified": []
+    },
+    "verified": "2026-09-18"
+  },
+  {
+    "name": "Modal",
+    "tagline": "Serverless compute with $30 in free credits every month",
+    "description": "Modal runs your Python functions on serverless GPUs and CPUs with no infrastructure to manage. The Starter plan is $0 and includes $30 in compute credits every month with no card required, making it one of the cheapest ways to run GPU jobs for a side project.",
+    "category": "Hosting & Cloud",
+    "docs_url": "https://modal.com/docs",
+    "signup_url": "https://modal.com/",
+    "auth": "Free key (no card)",
+    "rate_limit": "$30 in free compute credits every month on Starter.",
+    "example": "pip install modal; modal setup  # then: modal run your_script.py",
+    "setup_steps": [
+      "1. Sign up at modal.com and run modal setup to link your account.",
+      "2. Write a normal Python function and decorate it with @app.function().",
+      "3. Deploy with modal deploy; it scales to zero when idle."
+    ],
+    "best_for": [
+      "developer"
+    ],
+    "use_cases": [
+      "GPU jobs on a budget",
+      "Serverless Python",
+      "Batch processing"
+    ],
+    "link_check": {
+      "date": "2026-09-18",
+      "docs": "ok:200",
+      "signup": "ok:200",
+      "ok": true,
+      "unverified": []
+    },
+    "verified": "2026-09-18"
+  },
+  {
+    "name": "Fish Audio",
+    "tagline": "High-quality text-to-speech with a real free tier",
+    "description": "Fish Audio offers top-ranked voice quality on independent leaderboards at a fraction of ElevenLabs pricing. The free tier includes monthly generation credits, roughly 200 minutes of standard speech, and the API is pay-as-you-go after that.",
+    "category": "Voice & Video",
+    "docs_url": "https://docs.fish.audio/",
+    "signup_url": "https://fish.audio/",
+    "auth": "Free key (no card)",
+    "rate_limit": "Monthly free credits, about 200 min of standard speech.",
+    "example": "POST https://api.fish.audio/v1/tts --header \"Authorization: Bearer YOUR_API_KEY\"",
+    "setup_steps": [
+      "1. Sign up at fish.audio and copy your API key.",
+      "2. Pick a stock voice or clone your own from a short sample.",
+      "3. POST text to /v1/tts and play back the returned audio."
+    ],
+    "best_for": [
+      "developer"
+    ],
+    "use_cases": [
+      "Voice agents",
+      "Narration",
+      "Audio content"
+    ],
+    "link_check": {
+      "date": "2026-09-18",
+      "docs": "ok:200",
+      "signup": "ok:200",
+      "ok": true,
+      "unverified": []
+    },
+    "verified": "2026-09-18"
+  },
+  {
+    "name": "Hugging Face Inference",
+    "tagline": "Free serverless inference on thousands of open models",
+    "description": "One free Hugging Face key unlocks serverless inference across thousands of open-source models for text, image, audio, and more, with no GPU bills and no deployment. Free accounts get rate-limited inference with no card required, plus a small monthly credit for inference providers.",
+    "category": "AI & ML",
+    "docs_url": "https://huggingface.co/docs/inference-providers",
+    "signup_url": "https://huggingface.co/join",
+    "auth": "Free key (no card)",
+    "rate_limit": "Free rate-limited inference per model with a free account.",
+    "example": "POST https://api-inference.huggingface.co/models/gpt2 --header \"Authorization: Bearer YOUR_HF_TOKEN\"",
+    "setup_steps": [
+      "1. Create a free account at huggingface.co and open Access Tokens in settings.",
+      "2. Create a fine-grained token with inference permission.",
+      "3. POST prompts to the inference endpoint of any supported model."
+    ],
+    "best_for": [
+      "developer"
+    ],
+    "use_cases": [
+      "Trying open models free",
+      "Text and image generation",
+      "Embeddings on a budget"
+    ],
+    "link_check": {
+      "date": "2026-09-18",
+      "docs": "ok:200",
+      "signup": "ok:200",
+      "ok": true,
+      "unverified": []
+    },
+    "verified": "2026-09-18"
+  },
+  {
+    "name": "OpenAlex",
+    "tagline": "Free scholarly database: 250M+ works, no key needed",
+    "description": "OpenAlex indexes over 250 million scholarly works with authors, citations, funders, and topics, completely free with no key or signup required. Adding your email to requests unlocks the faster polite pool. A natural fit for research agents.",
+    "category": "Scholarly",
+    "docs_url": "https://docs.openalex.org/",
+    "auth": "No key",
+    "rate_limit": "Free with fair-use limits; polite pool with an email parameter.",
+    "example": "GET https://api.openalex.org/works?search=artificial+intelligence",
+    "setup_steps": [
+      "1. No signup: just call https://api.openalex.org/works with your query.",
+      "2. Add ?mailto=you@example.com for the faster polite pool.",
+      "3. Page through results with the cursor parameter for large sets."
+    ],
+    "best_for": [
+      "developer"
+    ],
+    "use_cases": [
+      "Research agents",
+      "Citation graphs",
+      "Academic search"
+    ],
+    "link_check": {
+      "date": "2026-09-18",
+      "docs": "ok:200",
+      "ok": true,
+      "unverified": []
+    },
+    "verified": "2026-09-18"
+  },
+  {
+    "name": "Qdrant",
+    "tagline": "Rust-fast vector search, free cloud cluster forever",
+    "description": "Qdrant is an Apache-2.0 vector database written in Rust, built for agent memory and semantic search at speed. The free cloud tier gives you a 1 GB cluster free forever with no card required, and you can self-host the whole thing free.",
+    "category": "Databases",
+    "docs_url": "https://qdrant.tech/documentation/",
+    "signup_url": "https://cloud.qdrant.io/",
+    "auth": "Free key (no card)",
+    "rate_limit": "1 free cloud cluster (1 GB RAM) free forever.",
+    "example": "PUT https://YOUR-CLUSTER.cloud.qdrant.io:6333/collections/my_collection --header \"api-key: YOUR_API_KEY\"",
+    "setup_steps": [
+      "1. Sign up at cloud.qdrant.io and create a free cluster.",
+      "2. Copy the cluster URL and API key from the dashboard.",
+      "3. Create a collection, upsert vectors, and search by similarity."
+    ],
+    "best_for": [
+      "developer"
+    ],
+    "use_cases": [
+      "Agent memory",
+      "Semantic search",
+      "RAG pipelines"
+    ],
+    "link_check": {
+      "date": "2026-09-18",
+      "docs": "ok:200",
+      "signup": "ok:200",
+      "ok": true,
+      "unverified": []
+    },
+    "verified": "2026-09-18"
   }
 ]
