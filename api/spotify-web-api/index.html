@@ -5,25 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spotify Web API | Free API on PlugMyAgent</title>
 <meta name="description" content="Official access to Spotify&#x27;s music catalog: search, artist and album details, playlists, and playback control.">
-<link rel="canonical" href="https://www.plugmyagent.com/api/spotify-web-api/">
+<link rel="canonical" href="https://plugmyagent.com/api/spotify-web-api/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="PlugMyAgent">
 <meta property="og:title" content="Spotify Web API - free API">
 <meta property="og:description" content="Official access to Spotify&#x27;s music catalog: search, artist and album details, playlists, and playback control.">
-<meta property="og:url" content="https://www.plugmyagent.com/api/spotify-web-api/">
-<meta property="og:image" content="https://www.plugmyagent.com/og-card.png">
+<meta property="og:url" content="https://plugmyagent.com/api/spotify-web-api/">
+<meta property="og:image" content="https://plugmyagent.com/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Spotify Web API - free API">
 <meta name="twitter:description" content="Official access to Spotify&#x27;s music catalog: search, artist and album details, playlists, and playback control.">
-<meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png">
+<meta name="twitter:image" content="https://plugmyagent.com/og-card.png">
 <style>
 :root{
-  --ink:#101414; --muted:#5c6b6b; --paper:#ffffff; --card:#f7f9f9;
+  --ink:#101414; --muted:#5c6b6b; --paper:#ffffff; --white:#ffffff; --card:#f7f9f9;
   --line:#e3e9e9; --teal:#2dd4bf; --teal-ink:#052e2a; --teal-soft:#e6faf7;
 }
 @media (prefers-color-scheme: dark){
   :root{
-    --ink:#f2f5f5; --muted:#9aa8a8; --paper:#141617; --card:#1e2223;
+    --ink:#f2f5f5; --muted:#9aa8a8; --paper:#141617; --white:#1e2223; --card:#1e2223;
     --line:rgba(255,255,255,.12); --teal-soft:rgba(45,212,191,.14);
   }
 }
@@ -32,11 +32,12 @@ body{margin:0;background:var(--paper);color:var(--ink);
   font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   font-size:16px;line-height:1.55}
 .wrap{max-width:760px;margin:0 auto;padding:0 20px}
-.top{border-bottom:1px solid var(--line);padding:16px 0}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.brand{font-weight:800;font-size:19px;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
-.brand b{color:var(--teal)}
-.top span{font-size:13px;color:var(--muted)}
+.site-header{position:sticky;top:0;z-index:40;background:var(--white);border-bottom:1px solid var(--line)}
+.site-header-inner{width:min(1120px,100%);margin:0 auto;padding:11px clamp(16px,4vw,32px);
+  display:flex;align-items:center;min-height:56px}
+.brandmark{position:absolute;left:-46px;top:50%;transform:translateY(-50%);display:inline-flex}
+.brandmark img{display:block;height:30px;width:auto}
+@media (max-width:560px){.brandmark img{height:24px}.brandmark{left:-37px}}
 .crumb{font-size:13px;color:var(--muted);margin:26px 0 6px}
 .crumb a{color:var(--muted)}
 h1{font-size:clamp(34px,6vw,52px);line-height:1.02;letter-spacing:-.04em;margin:6px 0 10px;font-weight:800}
@@ -46,6 +47,7 @@ h1{font-size:clamp(34px,6vw,52px);line-height:1.02;letter-spacing:-.04em;margin:
 .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 34px}
 .btn{display:inline-block;padding:13px 20px;border-radius:12px;font-weight:700;font-size:15px;
   text-decoration:none;border:1px solid var(--line);color:var(--ink);background:var(--card)}
+button.btn{font:inherit;cursor:pointer}
 .btn.primary{background:var(--teal);border-color:var(--teal);color:var(--teal-ink)}
 h2{font-size:22px;letter-spacing:-.02em;margin:34px 0 12px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 14px}
@@ -70,19 +72,17 @@ footer{border-top:1px solid var(--line);margin-top:44px;padding:22px 0 40px;font
 footer a{color:var(--muted)}
 @media (max-width:620px){ .facts{grid-template-columns:1fr} }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebAPI", "name": "Spotify Web API", "description": "Official access to Spotify's music catalog: search, artist and album details, playlists, and playback control.", "url": "https://www.plugmyagent.com/api/spotify-web-api/", "documentationUrl": "https://developer.spotify.com/documentation/web-api", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebAPI", "name": "Spotify Web API", "description": "Official access to Spotify's music catalog: search, artist and album details, playlists, and playback control.", "url": "https://plugmyagent.com/api/spotify-web-api/", "documentationUrl": "https://developer.spotify.com/documentation/web-api", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 </head>
 <body>
-<header class="top"><div class="wrap">
-<a class="brand" href="/">Plug<b>My</b>Agent</a><span>421 free APIs for your AI agent</span>
-</div></header>
+<div class="site-header"><div class="site-header-inner"><a class="brandmark" href="/" aria-label="PlugMyAgent home"><picture><source media="(prefers-color-scheme: dark)" srcset="/plug-lockup.png"><img src="/plug-lockup-black.png" alt=""></picture></a></div></div>
 <main class="wrap">
 <p class="crumb"><a href="/">Catalog</a> / Music / Spotify Web API</p>
 <span class="pill">Music</span>
 <h1>Spotify Web API</h1>
 <p class="tagline">Official access to Spotify&#x27;s music catalog: search, artist and album details, playlists, and playback control.</p>
 <div class="cta-row">
-<a class="btn primary" href="https://www.plugmyagent.com/?api=spotify-web-api">Open in PlugMyAgent</a><a class="btn" href="https://developer.spotify.com/documentation/web-api" rel="noopener">Official docs</a>
+<a class="btn primary" href="https://plugmyagent.com/?api=spotify-web-api">Open in PlugMyAgent</a><button class="btn" id="copyLink" type="button">Copy link</button><a class="btn" href="https://developer.spotify.com/documentation/web-api" rel="noopener">Official docs</a>
 </div>
 <h2>What it does</h2>
 <div class="card"><p>The Spotify Web API lets apps tap into Spotify&#x27;s giant music catalog. You can search for any song, artist, or album, pull track details and audio features (like tempo and danceability), manage playlists, and even control playback on a user&#x27;s device. It&#x27;s the real thing, straight from Spotify, and the basic tier is free.</p></div>
@@ -98,10 +98,20 @@ footer a{color:var(--muted)}
 <div class="fact"><b>Best for</b>personal, business, developer, fun</div>
 <div class="fact"><b>Category</b>Music</div>
 </div>
-<p class="verified">Last verified 2026-09-13 by the PlugMyAgent team.</p><p class="verified">Links last checked 2026-09-18 (working).</p>
+<p class="verified">Last verified 2026-09-13 by the PlugMyAgent team.</p>
 </main>
 <footer><div class="wrap">
 <a href="/">PlugMyAgent</a> - every API free to start. &copy; 2026 hiddeninwest
 </div></footer>
+<script>
+(function(){var b=document.getElementById('copyLink');if(!b)return;
+b.addEventListener('click',function(){
+var u=document.querySelector('link[rel="canonical"]').href;
+function done(){var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o;},1600);}
+function fallback(){var t=document.createElement('textarea');t.value=u;document.body.appendChild(t);
+t.select();try{document.execCommand('copy');}catch(e){}t.remove();done();}
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(done,function(){fallback();});}
+else{fallback();}});})();
+</script>
 </body>
 </html>

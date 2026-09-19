@@ -655,7 +655,7 @@ h1, h2, h3 { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "
       apiToSlug.set(api, slug);
     });
     function apiUrl(api) {
-      return location.origin + "/api/" + apiToSlug.get(api) + "/";
+      return "https://plugmyagent.com/api/" + apiToSlug.get(api) + "/";
     }
     async function shareApi(api, btn) {
       const url = apiUrl(api);
