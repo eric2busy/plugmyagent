@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ColourLovers | Free API on PlugMyAgent</title>
+<meta name="description" content="Millions of community-made color palettes, searchable by mood.">
+<link rel="canonical" href="https://www.plugmyagent.com/api/colourlovers/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PlugMyAgent">
+<meta property="og:title" content="ColourLovers - free API">
+<meta property="og:description" content="Millions of community-made color palettes, searchable by mood.">
+<meta property="og:url" content="https://www.plugmyagent.com/api/colourlovers/">
+<meta property="og:image" content="https://www.plugmyagent.com/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ColourLovers - free API">
+<meta name="twitter:description" content="Millions of community-made color palettes, searchable by mood.">
+<meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png">
+<style>
+:root{
+  --ink:#101414; --muted:#5c6b6b; --paper:#ffffff; --card:#f7f9f9;
+  --line:#e3e9e9; --teal:#2dd4bf; --teal-ink:#052e2a; --teal-soft:#e6faf7;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ink:#f2f5f5; --muted:#9aa8a8; --paper:#141617; --card:#1e2223;
+    --line:rgba(255,255,255,.12); --teal-soft:rgba(45,212,191,.14);
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:16px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.top{border-bottom:1px solid var(--line);padding:16px 0}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:800;font-size:19px;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
+.brand b{color:var(--teal)}
+.top span{font-size:13px;color:var(--muted)}
+.crumb{font-size:13px;color:var(--muted);margin:26px 0 6px}
+.crumb a{color:var(--muted)}
+h1{font-size:clamp(34px,6vw,52px);line-height:1.02;letter-spacing:-.04em;margin:6px 0 10px;font-weight:800}
+.pill{display:inline-block;font:600 12px "Azeret Mono",ui-monospace,monospace;
+  background:var(--teal);color:var(--teal-ink);border-radius:999px;padding:5px 12px;margin-bottom:14px}
+.tagline{font-size:19px;color:var(--muted);max-width:620px;margin:0 0 26px}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 34px}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;font-weight:700;font-size:15px;
+  text-decoration:none;border:1px solid var(--line);color:var(--ink);background:var(--card)}
+.btn.primary{background:var(--teal);border-color:var(--teal);color:var(--teal-ink)}
+h2{font-size:22px;letter-spacing:-.02em;margin:34px 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 14px}
+.card p{margin:0}
+ul.tight{margin:0;padding-left:20px}
+ul.tight li{margin:7px 0}
+ol.steps{margin:0;padding:0;list-style:none;counter-reset:st}
+ol.steps li{counter-increment:st;position:relative;padding:14px 14px 14px 58px;
+  background:var(--card);border:1px solid var(--line);border-radius:12px;margin:0 0 10px}
+ol.steps li::before{content:counter(st);position:absolute;left:14px;top:14px;width:30px;height:30px;
+  border-radius:50%;background:var(--teal);color:var(--teal-ink);
+  font:700 13px "Azeret Mono",ui-monospace,monospace;display:grid;place-items:center}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px}
+.fact b{display:block;font:600 11px "Azeret Mono",ui-monospace,monospace;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+pre{margin:0;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;padding:16px;border-radius:12px;
+  background:#101414;color:#e9f2eb;font:500 12.5px/1.55 "Azeret Mono",ui-monospace,monospace}
+@media (prefers-color-scheme: dark){ pre{background:#242a2b} }
+.verified{font-size:13px;color:var(--muted);margin:26px 0 0}
+footer{border-top:1px solid var(--line);margin-top:44px;padding:22px 0 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:620px){ .facts{grid-template-columns:1fr} }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebAPI", "name": "ColourLovers", "description": "Millions of community-made color palettes, searchable by mood.", "url": "https://www.plugmyagent.com/api/colourlovers/", "documentationUrl": "http://www.colourlovers.com/api", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="/">Plug<b>My</b>Agent</a><span>421 free APIs for your AI agent</span>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">Catalog</a> / Fun &amp; Random / ColourLovers</p>
+<span class="pill">Fun &amp; Random</span>
+<h1>ColourLovers</h1>
+<p class="tagline">Millions of community-made color palettes, searchable by mood.</p>
+<div class="cta-row">
+<a class="btn primary" href="https://www.plugmyagent.com/?api=colourlovers">Open in PlugMyAgent</a><a class="btn" href="http://www.colourlovers.com/api" rel="noopener">Official docs</a>
+</div>
+<h2>What it does</h2>
+<div class="card"><p>COLOURlovers is a huge community library of colors, palettes, and patterns. Its free API lets you search palettes by keyword or color, pull the top-rated or newest ones, and get full hex and RGB values for every color. Great for design inspiration. No key needed.</p></div>
+<h2>What you can do with it</h2>
+<div class="card"><ul class="tight"><li>Finding color schemes for a website redesign</li><li>A &#x27;palette of the day&#x27; design widget</li><li>Theming slides, posters, or app screens</li></ul></div>
+<h2>Set it up</h2>
+<ol class="steps"><li>Skim the docs at http://www.colourlovers.com/api.</li><li>Get new palettes: http://www.colourlovers.com/api/palettes/new?format=json.</li><li>Try top or random: http://www.colourlovers.com/api/palettes/top?format=json.</li><li>Search by keyword: http://www.colourlovers.com/api/palettes?keywords=ocean&amp;format=json.</li><li>Look up a single color: http://www.colourlovers.com/api/color/FF5733?format=json.</li></ol>
+<h2>Example request</h2><div class="card"><pre>http://www.colourlovers.com/api/palettes/new?format=json</pre></div>
+<h2>The fine print</h2>
+<div class="facts">
+<div class="fact"><b>Access</b>No key</div>
+<div class="fact"><b>Rate limit</b>No key; fair use.</div>
+<div class="fact"><b>Best for</b>colors, design, palettes</div>
+<div class="fact"><b>Category</b>Fun &amp; Random</div>
+</div>
+<p class="verified">Last verified 2026-09-13 by the PlugMyAgent team.</p>
+</main>
+<footer><div class="wrap">
+<a href="/">PlugMyAgent</a> - every API free to start. &copy; 2026 hiddeninwest
+</div></footer>
+</body>
+</html>

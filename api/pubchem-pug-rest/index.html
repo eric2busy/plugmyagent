@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PubChem PUG REST | Free API on PlugMyAgent</title>
+<meta name="description" content="Everything about any chemical: structure, safety, and properties, free.">
+<link rel="canonical" href="https://www.plugmyagent.com/api/pubchem-pug-rest/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PlugMyAgent">
+<meta property="og:title" content="PubChem PUG REST - free API">
+<meta property="og:description" content="Everything about any chemical: structure, safety, and properties, free.">
+<meta property="og:url" content="https://www.plugmyagent.com/api/pubchem-pug-rest/">
+<meta property="og:image" content="https://www.plugmyagent.com/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PubChem PUG REST - free API">
+<meta name="twitter:description" content="Everything about any chemical: structure, safety, and properties, free.">
+<meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png">
+<style>
+:root{
+  --ink:#101414; --muted:#5c6b6b; --paper:#ffffff; --card:#f7f9f9;
+  --line:#e3e9e9; --teal:#2dd4bf; --teal-ink:#052e2a; --teal-soft:#e6faf7;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ink:#f2f5f5; --muted:#9aa8a8; --paper:#141617; --card:#1e2223;
+    --line:rgba(255,255,255,.12); --teal-soft:rgba(45,212,191,.14);
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:16px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.top{border-bottom:1px solid var(--line);padding:16px 0}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:800;font-size:19px;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
+.brand b{color:var(--teal)}
+.top span{font-size:13px;color:var(--muted)}
+.crumb{font-size:13px;color:var(--muted);margin:26px 0 6px}
+.crumb a{color:var(--muted)}
+h1{font-size:clamp(34px,6vw,52px);line-height:1.02;letter-spacing:-.04em;margin:6px 0 10px;font-weight:800}
+.pill{display:inline-block;font:600 12px "Azeret Mono",ui-monospace,monospace;
+  background:var(--teal);color:var(--teal-ink);border-radius:999px;padding:5px 12px;margin-bottom:14px}
+.tagline{font-size:19px;color:var(--muted);max-width:620px;margin:0 0 26px}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 34px}
+.btn{display:inline-block;padding:13px 20px;border-radius:12px;font-weight:700;font-size:15px;
+  text-decoration:none;border:1px solid var(--line);color:var(--ink);background:var(--card)}
+.btn.primary{background:var(--teal);border-color:var(--teal);color:var(--teal-ink)}
+h2{font-size:22px;letter-spacing:-.02em;margin:34px 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 14px}
+.card p{margin:0}
+ul.tight{margin:0;padding-left:20px}
+ul.tight li{margin:7px 0}
+ol.steps{margin:0;padding:0;list-style:none;counter-reset:st}
+ol.steps li{counter-increment:st;position:relative;padding:14px 14px 14px 58px;
+  background:var(--card);border:1px solid var(--line);border-radius:12px;margin:0 0 10px}
+ol.steps li::before{content:counter(st);position:absolute;left:14px;top:14px;width:30px;height:30px;
+  border-radius:50%;background:var(--teal);color:var(--teal-ink);
+  font:700 13px "Azeret Mono",ui-monospace,monospace;display:grid;place-items:center}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px}
+.fact b{display:block;font:600 11px "Azeret Mono",ui-monospace,monospace;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+pre{margin:0;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;padding:16px;border-radius:12px;
+  background:#101414;color:#e9f2eb;font:500 12.5px/1.55 "Azeret Mono",ui-monospace,monospace}
+@media (prefers-color-scheme: dark){ pre{background:#242a2b} }
+.verified{font-size:13px;color:var(--muted);margin:26px 0 0}
+footer{border-top:1px solid var(--line);margin-top:44px;padding:22px 0 40px;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted)}
+@media (max-width:620px){ .facts{grid-template-columns:1fr} }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebAPI", "name": "PubChem PUG REST", "description": "Everything about any chemical: structure, safety, and properties, free.", "url": "https://www.plugmyagent.com/api/pubchem-pug-rest/", "documentationUrl": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="/">Plug<b>My</b>Agent</a><span>421 free APIs for your AI agent</span>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="/">Catalog</a> / Science Data / PubChem PUG REST</p>
+<span class="pill">Science Data</span>
+<h1>PubChem PUG REST</h1>
+<p class="tagline">Everything about any chemical: structure, safety, and properties, free.</p>
+<div class="cta-row">
+<a class="btn primary" href="https://www.plugmyagent.com/?api=pubchem-pug-rest">Open in PlugMyAgent</a><a class="btn" href="https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest" rel="noopener">Official docs</a>
+</div>
+<h2>What it does</h2>
+<div class="card"><p>PubChem is the U.S. National Institutes of Health&#x27;s huge chemical database, and its PUG REST API lets you query it with simple URLs. Look up any compound by name and get its structure, molecular formula, safety data, drug information, and test results. It is free, needs no key, and covers over 100 million chemical records.</p></div>
+<h2>What you can do with it</h2>
+<div class="card"><ul class="tight"><li>Look up the structure, formula, and safety info for any chemical by name</li><li>Build a chemistry study tool with real molecular data and images</li><li>Convert between chemical identifiers like names, InChI keys, and formulas</li></ul></div>
+<h2>Set it up</h2>
+<ol class="steps"><li>Paste the example URL into your browser to get aspirin&#x27;s data instantly, no signup needed.</li><li>Swap in any chemical name or identifier in the URL.</li><li>Add /PNG at the end of some endpoints to get structure images instead of JSON.</li><li>Keep requests under 5 per second to stay within the published limits.</li></ol>
+<h2>Example request</h2><div class="card"><pre>https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/aspirin/JSON</pre></div>
+<h2>The fine print</h2>
+<div class="facts">
+<div class="fact"><b>Access</b>No key</div>
+<div class="fact"><b>Rate limit</b>5 requests per second and 400 requests per minute per IP address.</div>
+<div class="fact"><b>Best for</b>personal, developer, fun</div>
+<div class="fact"><b>Category</b>Science Data</div>
+</div>
+<p class="verified">Last verified 2026-09-13 by the PlugMyAgent team.</p>
+</main>
+<footer><div class="wrap">
+<a href="/">PlugMyAgent</a> - every API free to start. &copy; 2026 hiddeninwest
+</div></footer>
+</body>
+</html>
