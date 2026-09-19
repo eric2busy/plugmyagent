@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Qdrant | Free API on PlugMyAgent</title>
-<meta name="description" content="Rust-fast, Apache-2.0 open source, and the free cloud tier never expires, a rare combo for agent memory infrastructure.">
+<meta name="description" content="Rust-fast vector search, free cloud cluster forever">
 <link rel="canonical" href="https://www.plugmyagent.com/api/qdrant/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="PlugMyAgent">
 <meta property="og:title" content="Qdrant - free API">
-<meta property="og:description" content="Rust-fast, Apache-2.0 open source, and the free cloud tier never expires, a rare combo for agent memory infrastructure.">
+<meta property="og:description" content="Rust-fast vector search, free cloud cluster forever">
 <meta property="og:url" content="https://www.plugmyagent.com/api/qdrant/">
 <meta property="og:image" content="https://www.plugmyagent.com/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Qdrant - free API">
-<meta name="twitter:description" content="Rust-fast, Apache-2.0 open source, and the free cloud tier never expires, a rare combo for agent memory infrastructure.">
+<meta name="twitter:description" content="Rust-fast vector search, free cloud cluster forever">
 <meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png">
 <style>
 :root{
@@ -70,7 +70,7 @@ footer{border-top:1px solid var(--line);margin-top:44px;padding:22px 0 40px;font
 footer a{color:var(--muted)}
 @media (max-width:620px){ .facts{grid-template-columns:1fr} }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebAPI", "name": "Qdrant", "description": "Rust-fast, Apache-2.0 open source, and the free cloud tier never expires, a rare combo for agent memory infrastructure.", "url": "https://www.plugmyagent.com/api/qdrant/", "documentationUrl": "https://qdrant.tech/documentation/", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebAPI", "name": "Qdrant", "description": "Rust-fast vector search, free cloud cluster forever", "url": "https://www.plugmyagent.com/api/qdrant/", "documentationUrl": "https://qdrant.tech/documentation/", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -80,21 +80,21 @@ footer a{color:var(--muted)}
 <p class="crumb"><a href="/">Catalog</a> / Databases / Qdrant</p>
 <span class="pill">Databases</span>
 <h1>Qdrant</h1>
-<p class="tagline">Rust-fast, Apache-2.0 open source, and the free cloud tier never expires, a rare combo for agent memory infrastructure.</p>
+<p class="tagline">Rust-fast vector search, free cloud cluster forever</p>
 <div class="cta-row">
-<a class="btn primary" href="https://www.plugmyagent.com/?api=qdrant">Open in PlugMyAgent</a><a class="btn" href="https://qdrant.tech/documentation/" rel="noopener">Official docs</a>
+<a class="btn primary" href="https://www.plugmyagent.com/?api=qdrant">Open in PlugMyAgent</a><a class="btn" href="https://qdrant.tech/documentation/" rel="noopener">Official docs</a><a class="btn" href="https://cloud.qdrant.io/" rel="noopener">Get free access</a>
 </div>
 <h2>What it does</h2>
-<div class="card"><p>Qdrant is a fast vector database for storing embeddings, so your agent can do semantic search and RAG with rich metadata filtering.</p></div>
+<div class="card"><p>Qdrant is an Apache-2.0 vector database written in Rust, built for agent memory and semantic search at speed. The free cloud tier gives you a 1 GB cluster free forever with no card required, and you can self-host the whole thing free.</p></div>
 <h2>What you can do with it</h2>
-<div class="card"><ul class="tight"></ul></div>
+<div class="card"><ul class="tight"><li>Agent memory</li><li>Semantic search</li><li>RAG pipelines</li></ul></div>
 <h2>Set it up</h2>
-<ol class="steps"></ol>
-
+<ol class="steps"><li>1. Sign up at cloud.qdrant.io and create a free cluster.</li><li>2. Copy the cluster URL and API key from the dashboard.</li><li>3. Create a collection, upsert vectors, and search by similarity.</li></ol>
+<h2>Example request</h2><div class="card"><pre>PUT https://YOUR-CLUSTER.cloud.qdrant.io:6333/collections/my_collection --header &quot;api-key: YOUR_API_KEY&quot;</pre></div>
 <h2>The fine print</h2>
 <div class="facts">
 <div class="fact"><b>Access</b>Free key (no card)</div>
-<div class="fact"><b>Rate limit</b>Free cloud cluster (1GB RAM, 4GB disk) free forever, no card required. Fully self-hostable free under Apache-2.0.</div>
+<div class="fact"><b>Rate limit</b>1 free cloud cluster (1 GB RAM) free forever.</div>
 <div class="fact"><b>Best for</b>developer</div>
 <div class="fact"><b>Category</b>Databases</div>
 </div>
