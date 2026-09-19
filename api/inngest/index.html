@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Inngest | Free API on PlugMyAgent</title>
-<meta name="description" content="Durable execution is the unsexy superpower agents need: a crashed step resumes instead of restarting the whole job.">
+<meta name="description" content="Durable background jobs and workflows for apps">
 <link rel="canonical" href="https://www.plugmyagent.com/api/inngest/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="PlugMyAgent">
 <meta property="og:title" content="Inngest - free API">
-<meta property="og:description" content="Durable execution is the unsexy superpower agents need: a crashed step resumes instead of restarting the whole job.">
+<meta property="og:description" content="Durable background jobs and workflows for apps">
 <meta property="og:url" content="https://www.plugmyagent.com/api/inngest/">
 <meta property="og:image" content="https://www.plugmyagent.com/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Inngest - free API">
-<meta name="twitter:description" content="Durable execution is the unsexy superpower agents need: a crashed step resumes instead of restarting the whole job.">
+<meta name="twitter:description" content="Durable background jobs and workflows for apps">
 <meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png">
 <style>
 :root{
@@ -70,7 +70,7 @@ footer{border-top:1px solid var(--line);margin-top:44px;padding:22px 0 40px;font
 footer a{color:var(--muted)}
 @media (max-width:620px){ .facts{grid-template-columns:1fr} }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebAPI", "name": "Inngest", "description": "Durable execution is the unsexy superpower agents need: a crashed step resumes instead of restarting the whole job.", "url": "https://www.plugmyagent.com/api/inngest/", "documentationUrl": "https://www.inngest.com/docs", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebAPI", "name": "Inngest", "description": "Durable background jobs and workflows for apps", "url": "https://www.plugmyagent.com/api/inngest/", "documentationUrl": "https://www.inngest.com/docs", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -80,21 +80,21 @@ footer a{color:var(--muted)}
 <p class="crumb"><a href="/">Catalog</a> / Dev Utilities / Inngest</p>
 <span class="pill">Dev Utilities</span>
 <h1>Inngest</h1>
-<p class="tagline">Durable execution is the unsexy superpower agents need: a crashed step resumes instead of restarting the whole job.</p>
+<p class="tagline">Durable background jobs and workflows for apps</p>
 <div class="cta-row">
-<a class="btn primary" href="https://www.plugmyagent.com/?api=inngest">Open in PlugMyAgent</a><a class="btn" href="https://www.inngest.com/docs" rel="noopener">Official docs</a>
+<a class="btn primary" href="https://www.plugmyagent.com/?api=inngest">Open in PlugMyAgent</a><a class="btn" href="https://www.inngest.com/docs" rel="noopener">Official docs</a><a class="btn" href="https://app.inngest.com/" rel="noopener">Get free access</a>
 </div>
 <h2>What it does</h2>
-<div class="card"><p>Inngest runs your agent&#x27;s multi-step workflows reliably in the background, automatically retrying failed steps and picking up exactly where it left off.</p></div>
+<div class="card"><p>Inngest runs multi-step background jobs that survive crashes: a failed step retries and resumes instead of restarting the whole workflow. The Hobby plan is free forever with 50,000 executions a month and no card required, with SDKs for TypeScript, Python, and Go.</p></div>
 <h2>What you can do with it</h2>
-<div class="card"><ul class="tight"></ul></div>
+<div class="card"><ul class="tight"><li>Background jobs</li><li>Scheduled workflows</li><li>Reliable multi-step agents</li></ul></div>
 <h2>Set it up</h2>
-<ol class="steps"></ol>
-
+<ol class="steps"><li>1. Sign up at inngest.com and create an app to get your keys.</li><li>2. Install the SDK for your language and define a function with steps.</li><li>3. Send events to trigger it; retries and waits are handled for you.</li></ol>
+<h2>Example request</h2><div class="card"><pre>POST https://api.inngest.com/v1/events --header &quot;Authorization: Bearer YOUR_SIGNING_KEY&quot;</pre></div>
 <h2>The fine print</h2>
 <div class="facts">
 <div class="fact"><b>Access</b>Free key (no card)</div>
-<div class="fact"><b>Rate limit</b>Hobby plan free forever: 50,000 executions/month, no card required. SDKs for TypeScript, Python, and Go.</div>
+<div class="fact"><b>Rate limit</b>50,000 step executions/month on the free Hobby plan.</div>
 <div class="fact"><b>Best for</b>developer</div>
 <div class="fact"><b>Category</b>Dev Utilities</div>
 </div>
