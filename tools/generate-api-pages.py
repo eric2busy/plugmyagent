@@ -146,6 +146,16 @@ def render_page(api, slug):
 
     verified = esc(api.get("verified"))
     verified_line = f'<p class="verified">Last verified {verified} by the PlugMyAgent team.</p>' if verified else ""
+    lc = api.get("link_check") or {}
+    if lc.get("date"):
+        if not lc.get("ok", True):
+            status_word = "needs review"
+        elif lc.get("unverified"):
+            status_word = "couldn't verify automatically"
+        else:
+            status_word = "working"
+        verified_line += (f'<p class="verified">Links last checked {esc(lc.get("date"))} '
+                          f'({status_word}).</p>')
 
     ld = {
         "@context": "https://schema.org",
