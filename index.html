@@ -94,6 +94,11 @@ header.site{
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:52px}
 .brand{display:flex;align-items:center;text-decoration:none}
 .brand img{height:32px;width:auto;display:block}
+.cart-link{position:relative;display:inline-flex;align-items:center;color:var(--ink);text-decoration:none;padding:8px;border-radius:10px}
+.cart-link:hover{color:var(--neon)}
+.cart-link svg{width:22px;height:22px;display:block}
+.cart-count{position:absolute;top:1px;right:-2px;min-width:18px;height:18px;border-radius:999px;background:var(--neon);color:#38160a;font:700 11px/18px "Azeret Mono",ui-monospace,monospace;text-align:center;padding:0 4px}
+
 nav.main{display:flex;gap:26px;align-items:center}
 nav.main a{
   font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
@@ -111,6 +116,7 @@ nav.main a:hover{color:var(--neon)}
 @media (max-width:760px){
   nav.main{display:none}
   .burger{display:block}
+  .cart-link{margin-left:auto}
   header.site .wrap{position:relative}
   .mnav{
     display:block;position:absolute;top:calc(100% + 8px);right:16px;min-width:230px;z-index:60;
@@ -294,16 +300,17 @@ footer .base{width:100%;margin-top:36px;padding-top:20px;border-top:1px solid va
     <a class="brand" href="/"><img src="/plug-lockup-v2.png" alt="PlugMyAgent"></a>
     <nav class="main">
       <a href="/catalog/">Catalog</a>
-      <a href="#pillars">MCP</a>
+      <a href="/mcp/">MCP</a>
       <a href="#pillars">Guides</a>
       <a href="#pillars">Tools</a>
       <a class="btn btn-neon btn-sm" href="/catalog/">Browse APIs</a>
     </nav>
-    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
+    <a class="cart-link" href="/stack/" aria-label="My stack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M2.5 3.5h2.6l2.5 12.2a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.2L20.5 7H6"/></svg><span class="cart-count" data-cart-count style="display:none">0</span></a><button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
     <nav class="mnav" id="mnav" aria-label="Mobile">
+      <a href="/stack/">My Stack</a>
       <a class="cta" href="/catalog/">Browse APIs</a>
       <a href="/catalog/">Catalog</a>
-      <a href="#pillars">MCP</a>
+      <a href="/mcp/">MCP</a>
       <a href="#pillars">Guides</a>
       <a href="#pillars">Tools</a>
     </nav>
@@ -336,7 +343,7 @@ footer .base{width:100%;margin-top:36px;padding-top:20px;border-top:1px solid va
     <div class="wrap">
       <div class="sector"><span class="tag">02</span> The pillars // four sectors, one grid</div>
       <h2>An agent without tools<br><span class="neon">is just a chatbot.</span></h2>
-      <p class="sub">The catalog is live now with 400+ free APIs. The MCP directory, setup guides, and agent tools wire into the same grid as they ship.</p>
+      <p class="sub">The catalog and MCP directory are live now. Setup guides and agent tools wire into the same grid as they ship.</p>
       <div class="pillars">
         <div class="card live">
           <span class="rail"></span>
@@ -347,13 +354,13 @@ footer .base{width:100%;margin-top:36px;padding-top:20px;border-top:1px solid va
             <a class="btn btn-neon btn-sm" href="/catalog/">Find your API</a>
           </div>
         </div>
-        <div class="card soon">
+        <div class="card live">
           <span class="rail"></span>
-          <div class="idx"><span>PILLAR / 02</span><span class="pill soon">Coming soon</span></div>
+          <div class="idx"><span>PILLAR / 02</span><span class="pill live"><span class="dot"></span>Live</span></div>
           <h3>MCP Server Directory</h3>
-          <p>One standard plug for files, apps, and services. A curated, ranked index of MCP servers so your agent reaches everything through a single connection.</p>
+          <p>One standard plug for files, apps, and services. A curated index of free MCP servers so your agent reaches everything through a single connection.</p>
           <div class="actions">
-            <button class="btn btn-sm btn-disabled" disabled>Coming soon</button>
+            <a class="btn btn-neon btn-sm" href="/mcp/">Browse servers</a>
           </div>
         </div>
         <div class="card soon">
@@ -451,6 +458,17 @@ footer .base{width:100%;margin-top:36px;padding-top:20px;border-top:1px solid va
   b.addEventListener('click',function(e){e.stopPropagation();set(!m.classList.contains('open'))});
   document.addEventListener('click',function(e){if(m.classList.contains('open')&&!m.contains(e.target))set(false)});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+})();
+</script>
+<script>
+(function(){
+  var KEY = "plugmyagent_stack_v1";
+  function read(){ try { var v = JSON.parse(localStorage.getItem(KEY) || "[]"); return Array.isArray(v) ? v : []; } catch (_) { return []; } }
+  function paint(){ var n = read().length;
+    document.querySelectorAll("[data-cart-count]").forEach(function(b){ b.textContent = n; b.style.display = n > 0 ? "" : "none"; }); }
+  window.addEventListener("storage", function(e){ if (e.key === KEY) paint(); });
+  document.addEventListener("pma:stack", paint);
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", paint); else paint();
 })();
 </script>
 </body>

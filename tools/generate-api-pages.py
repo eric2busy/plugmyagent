@@ -85,6 +85,10 @@ body{margin:0;background:var(--paper);color:var(--ink);
   display:flex;align-items:center;min-height:56px}
 .brandmark{display:inline-flex;align-items:center}
 .brandmark img{display:block;height:32px;width:auto}
+.cart-link{position:relative;display:inline-flex;align-items:center;color:var(--ink);text-decoration:none;padding:8px;border-radius:10px;margin-left:auto}
+.cart-link:hover{color:var(--teal)}
+.cart-link svg{width:22px;height:22px;display:block}
+.cart-count{position:absolute;top:1px;right:-2px;min-width:18px;height:18px;border-radius:999px;background:var(--teal);color:var(--teal-ink);font:700 11px/18px "Azeret Mono",ui-monospace,monospace;text-align:center;padding:0 4px}
 .crumb{font-size:13px;color:var(--muted);margin:26px 0 6px}
 .crumb a{color:var(--muted)}
 h1{font-size:clamp(34px,6vw,52px);line-height:1.02;letter-spacing:-.04em;margin:6px 0 10px;font-weight:800}
@@ -122,6 +126,7 @@ footer a{color:var(--muted)}
 
 def render_page(api, slug):
     name = esc(api.get("name"))
+    name_js = json.dumps(api.get("name"), ensure_ascii=False)
     category = esc(api.get("category"))
     tagline = esc(api.get("tagline"))
     desc = esc(api.get("description"))
@@ -194,14 +199,14 @@ def render_page(api, slug):
 <script type="application/ld+json">{ld_json}</script>
 </head>
 <body>
-<div class="site-header"><div class="site-header-inner"><a class="brandmark" href="/" aria-label="PlugMyAgent home"><img src="/plug-lockup-v2.png" alt="PlugMyAgent"></a></div></div>
+<div class="site-header"><div class="site-header-inner"><a class="brandmark" href="/" aria-label="PlugMyAgent home"><img src="/plug-lockup-v2.png" alt="PlugMyAgent"></a><a class="cart-link" href="/stack/" aria-label="My stack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M2.5 3.5h2.6l2.5 12.2a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.2L20.5 7H6"/></svg><span class="cart-count" data-cart-count style="display:none">0</span></a></div></div>
 <main class="wrap">
 <p class="crumb"><a href="/">Home</a> / <a href="/catalog/">Catalog</a> / {category} / {name}</p>
 <span class="pill">{category}</span>
 <h1>{name}</h1>
 <p class="tagline">{tagline}</p>
 <div class="cta-row">
-<a class="btn primary" href="{app_url}">Open in PlugMyAgent</a><button class="btn" id="copyLink" type="button">Copy link</button>{docs_btn}{signup_btn}
+<a class="btn primary" href="{app_url}">Open in PlugMyAgent</a><button class="btn" id="copyLink" type="button">Copy link</button><button class="btn" id="stackBtn" type="button">Add to stack</button>{docs_btn}{signup_btn}
 </div>
 <h2>What it does</h2>
 <div class="card"><p>{desc}</p></div>
@@ -231,6 +236,16 @@ function fallback(){{var t=document.createElement('textarea');t.value=u;document
 t.select();try{{document.execCommand('copy');}}catch(e){{}}t.remove();done();}}
 if(navigator.clipboard&&navigator.clipboard.writeText){{navigator.clipboard.writeText(u).then(done,function(){{fallback();}});}}
 else{{fallback();}}}});}})();
+(function(){{var KEY='plugmyagent_stack_v1',NAME={name_js};
+function read(){{try{{var v=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(v)?v:[];}}catch(e){{return [];}}}}
+function write(a){{try{{localStorage.setItem(KEY,JSON.stringify(a));}}catch(e){{}}document.dispatchEvent(new CustomEvent('pma:stack'));}}
+function paint(){{var n=read().length;var els=document.querySelectorAll('[data-cart-count]');for(var i=0;i<els.length;i++){{var b=els[i];b.textContent=n;b.style.display=n>0?'':'none';}}}}
+function paintBtn(){{var b=document.getElementById('stackBtn');if(!b)return;var has=read().indexOf(NAME)>=0;b.textContent=has?'In your stack \u2713':'Add to stack';b.setAttribute('aria-pressed',String(has));}}
+var sb=document.getElementById('stackBtn');
+if(sb){{sb.addEventListener('click',function(){{var s=read();var i=s.indexOf(NAME);if(i>=0){{s.splice(i,1);}}else{{s.push(NAME);}}write(s);paintBtn();}});}}
+document.addEventListener('pma:stack',function(){{paint();paintBtn();}});
+window.addEventListener('storage',function(e){{if(e.key===KEY){{paint();paintBtn();}}}});
+paint();paintBtn();}})();
 </script>
 </body>
 </html>

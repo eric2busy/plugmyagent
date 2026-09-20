@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.plugmyagent.com/</loc><lastmod>2026-09-19</lastmod></url>
   <url><loc>https://www.plugmyagent.com/catalog/</loc><lastmod>2026-09-19</lastmod></url>
+  <url><loc>https://www.plugmyagent.com/stack/</loc><lastmod>2026-09-19</lastmod></url>
   <url><loc>https://www.plugmyagent.com/api/telegram-bot-api/</loc><lastmod>2026-09-19</lastmod></url>
   <url><loc>https://www.plugmyagent.com/api/discord-webhooks/</loc><lastmod>2026-09-19</lastmod></url>
   <url><loc>https://www.plugmyagent.com/api/slack-incoming-webhooks/</loc><lastmod>2026-09-19</lastmod></url>
