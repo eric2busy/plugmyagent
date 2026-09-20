@@ -24,6 +24,10 @@ BASE = "https://www.plugmyagent.com"
 OG_IMAGE = BASE + "/og-card.png"
 TODAY = date.today().isoformat()
 
+# Categories that are tools, not APIs: page copy says "free tool" instead of "free API".
+NON_API_CATS = {"MCP Servers", "Agent Templates", "Eval & Testing", "Guardrails",
+                "Agent Skills", "Memory", "Frameworks"}
+
 
 def slugify(name):
     s = (name or "api").lower()
@@ -126,7 +130,8 @@ def render_page(api, slug):
     app_url = f"{BASE}/catalog/?api={slug}"
     docs = clean_url(api.get("docs_url"))
     signup = clean_url(api.get("signup_url"))
-    title = f"{api.get('name')} | Free API on PlugMyAgent"
+    kind = "tool" if api.get("category") in NON_API_CATS else "API"
+    title = f"{api.get('name')} | Free {kind} on PlugMyAgent"
     description = meta_desc(api)
 
     use_cases = "".join(f"<li>{esc(u)}</li>" for u in (api.get("use_cases") or []))
@@ -157,7 +162,7 @@ def render_page(api, slug):
 
     ld = {
         "@context": "https://schema.org",
-        "@type": "WebAPI",
+        "@type": "SoftwareApplication" if kind == "tool" else "WebAPI",
         "name": api.get("name"),
         "description": description,
         "url": page_url,
@@ -178,12 +183,12 @@ def render_page(api, slug):
 <link rel="canonical" href="{page_url}">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="PlugMyAgent">
-<meta property="og:title" content="{name} - free API">
+<meta property="og:title" content="{name} - free {kind}">
 <meta property="og:description" content="{esc(description)}">
 <meta property="og:url" content="{page_url}">
 <meta property="og:image" content="{OG_IMAGE}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{name} - free API">
+<meta name="twitter:title" content="{name} - free {kind}">
 <meta name="twitter:description" content="{esc(description)}">
 <meta name="twitter:image" content="{OG_IMAGE}">
 <style>{CSS}</style>
@@ -216,7 +221,7 @@ def render_page(api, slug):
 {verified_line}
 </main>
 <footer><div class="wrap">
-<a href="/">PlugMyAgent</a> - every API free to start. &copy; 2026 hiddeninwest
+<a href="/">PlugMyAgent</a> - every listing free to start. &copy; 2026 hiddeninwest
 </div></footer>
 <script>
 (function(){{var b=document.getElementById('copyLink');if(!b)return;
