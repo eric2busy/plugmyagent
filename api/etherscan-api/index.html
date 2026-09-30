@@ -4,121 +4,116 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Etherscan API | Free API on PlugMyAgent</title>
-<meta name="description" content="Ethereum blockchain data with a free API key">
+<meta name="description" content="Etherscan&#x27;s API lets you query the Ethereum blockchain and supported networks for wallet balances, transaction histories, token transfers, gas prices, and...">
 <link rel="canonical" href="https://www.plugmyagent.com/api/etherscan-api/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="PlugMyAgent">
 <meta property="og:title" content="Etherscan API - free API">
-<meta property="og:description" content="Ethereum blockchain data with a free API key">
+<meta property="og:description" content="Etherscan&#x27;s API lets you query the Ethereum blockchain and supported networks for wallet balances, transaction histories, token transfers, gas prices, and...">
 <meta property="og:url" content="https://www.plugmyagent.com/api/etherscan-api/">
 <meta property="og:image" content="https://www.plugmyagent.com/og-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Etherscan API - free API">
-<meta name="twitter:description" content="Ethereum blockchain data with a free API key">
+<meta name="twitter:description" content="Etherscan&#x27;s API lets you query the Ethereum blockchain and supported networks for wallet balances, transaction histories, token transfers, gas prices, and...">
 <meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png">
-<style>
-:root{
-  color-scheme:dark;
-  --ink:#f5f7f5; --muted:#9aa39e; --paper:#0b0d0d; --white:#101314; --card:#101314;
-  --line:rgba(255,255,255,.09); --teal:#ff6b1a; --teal-ink:#201000; --teal-soft:rgba(255,107,26,.14);
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);
-  background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
-  background-size:48px 48px;
-  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-  font-size:16px;line-height:1.55}
-.wrap{max-width:760px;margin:0 auto;padding:0 20px}
-.site-header{position:sticky;top:0;z-index:40;background:var(--white);border-bottom:1px solid var(--line)}
-.site-header-inner{width:min(1120px,100%);margin:0 auto;padding:11px clamp(16px,4vw,32px);
-  display:flex;align-items:center;min-height:56px}
-.brandmark{display:inline-flex;align-items:center}
-.brandmark img{display:block;height:32px;width:auto}.cart-link{position:relative;display:inline-flex;align-items:center;color:var(--ink);text-decoration:none;padding:8px;border-radius:10px;margin-left:auto}.cart-link:hover{color:var(--teal)}.cart-link svg{width:22px;height:22px;display:block}.cart-count{position:absolute;top:1px;right:-2px;min-width:18px;height:18px;border-radius:999px;background:var(--teal);color:var(--teal-ink);font:700 11px/18px "Azeret Mono",ui-monospace,monospace;text-align:center;padding:0 4px}
-.crumb{font-size:13px;color:var(--muted);margin:26px 0 6px}
-.crumb a{color:var(--muted)}
-h1{font-size:clamp(34px,6vw,52px);line-height:1.02;letter-spacing:-.04em;margin:6px 0 10px;font-weight:800}
-.pill{display:inline-block;font:600 12px "Azeret Mono",ui-monospace,monospace;
-  background:var(--teal);color:var(--teal-ink);border-radius:999px;padding:5px 12px;margin-bottom:14px}
-.tagline{font-size:19px;color:var(--muted);max-width:620px;margin:0 0 26px}
-.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 34px}
-.btn{display:inline-block;padding:13px 20px;border-radius:12px;font-weight:700;font-size:15px;
-  text-decoration:none;border:1px solid var(--line);color:var(--ink);background:var(--card)}
-button.btn{font:inherit;cursor:pointer}
-.btn.primary{background:var(--teal);border-color:var(--teal);color:var(--teal-ink)}
-h2{font-size:22px;letter-spacing:-.02em;margin:34px 0 12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 14px}
-.card p{margin:0}
-ul.tight{margin:0;padding-left:20px}
-ul.tight li{margin:7px 0}
-ol.steps{margin:0;padding:0;list-style:none;counter-reset:st}
-ol.steps li{counter-increment:st;position:relative;padding:14px 14px 14px 58px;
-  background:var(--card);border:1px solid var(--line);border-radius:12px;margin:0 0 10px}
-ol.steps li::before{content:counter(st);position:absolute;left:14px;top:14px;width:30px;height:30px;
-  border-radius:50%;background:var(--teal);color:var(--teal-ink);
-  font:700 13px "Azeret Mono",ui-monospace,monospace;display:grid;place-items:center}
-.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}
-.fact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px}
-.fact b{display:block;font:600 11px "Azeret Mono",ui-monospace,monospace;color:var(--muted);
-  text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
-pre{margin:0;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;padding:16px;border-radius:12px;
-  background:#050707;color:#f5f7f5;font:500 12.5px/1.55 "Azeret Mono",ui-monospace,monospace}
-.verified{font-size:13px;color:var(--muted);margin:26px 0 0}
-footer{border-top:1px solid var(--line);margin-top:44px;padding:22px 0 40px;font-size:13px;color:var(--muted)}
-footer a{color:var(--muted)}
-@media (max-width:620px){ .facts{grid-template-columns:1fr} }
-</style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebAPI", "name": "Etherscan API", "description": "Ethereum blockchain data with a free API key", "url": "https://www.plugmyagent.com/api/etherscan-api/", "documentationUrl": "https://docs.etherscan.io/", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<link rel="stylesheet" href="/api-pages.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebAPI", "name": "Etherscan API", "description": "Etherscan's API lets you query the Ethereum blockchain and supported networks for wallet balances, transaction histories, token transfers, gas prices, and...", "url": "https://www.plugmyagent.com/api/etherscan-api/", "documentationUrl": "https://docs.etherscan.io/", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 </head>
 <body>
-<div class="site-header"><div class="site-header-inner"><a class="brandmark" href="/" aria-label="PlugMyAgent home"><img src="/plug-lockup-v2.png" alt="PlugMyAgent"></a><a class="cart-link" href="/stack/" aria-label="My stack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M2.5 3.5h2.6l2.5 12.2a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.2L20.5 7H6"/></svg><span class="cart-count" data-cart-count style="display:none">0</span></a></div></div>
-<main class="wrap">
+<div class="site-header"><div class="site-header-inner"><a class="brandmark" href="/" aria-label="PlugMyAgent home"><img src="/plug-lockup-v2.png" alt="PlugMyAgent"></a><nav class="cnav" aria-label="Primary"><a href="/catalog/">Catalog</a><a href="/mcp/">MCP</a><a href="/components/">Components</a><a href="/guides/">Guides</a></nav><a class="cart-link" href="/stack/" aria-label="My stack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M2.5 3.5h2.6l2.5 12.2a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.2L20.5 7H6"/></svg><span class="cart-count" data-cart-count style="display:none">0</span></a></div></div>
+<div class="d-hero">
+<div class="wrap">
 <p class="crumb"><a href="/">Home</a> / <a href="/catalog/">Catalog</a> / Blockchain / Etherscan API</p>
-<span class="pill">Blockchain</span>
+<div class="d-meta"><span class="d-category">Blockchain</span><span class="badge free-account">Free account</span></div>
 <h1>Etherscan API</h1>
-<p class="tagline">Ethereum blockchain data with a free API key</p>
-<div class="cta-row">
-<a class="btn primary" href="https://www.plugmyagent.com/catalog/?api=etherscan-api">Open in PlugMyAgent</a><button class="btn" id="copyLink" type="button">Copy link</button><button class="btn" id="stackBtn" type="button">Add to stack</button><a class="btn" href="https://docs.etherscan.io/" rel="noopener">Official docs</a><a class="btn" href="https://etherscan.io/myapikey" rel="noopener">Get free access</a>
+<p class="d-tagline">Ethereum blockchain data with a free API key</p>
+<div class="d-actions">
+<button class="quick-btn" id="stackBtn" type="button" aria-pressed="false">+ Stack</button>
+<button class="quick-btn" id="shareBtn" type="button" aria-label="Share Etherscan API"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M5 12v8h14v-8"/></svg><span>Share</span></button>
 </div>
+</div>
+</div>
+<main class="wrap d-body">
+<section>
 <h2>What it does</h2>
-<div class="card"><p>Etherscan&#x27;s API lets you query the Ethereum blockchain and supported networks for wallet balances, transaction histories, token transfers, gas prices, and contract details. You can use it to build a wallet balance checker, to track token transfers into an address, or to look up the current gas price before sending a transaction. The free tier requires a key but is generous enough for personal explorers and bots.</p></div>
+<p class="d-desc">Etherscan&#x27;s API lets you query the Ethereum blockchain and supported networks for wallet balances, transaction histories, token transfers, gas prices, and contract details. You can use it to build a wallet balance checker, to track token transfers into an address, or to look up the current gas price before sending a transaction. The free tier requires a key but is generous enough for personal explorers and bots.</p>
+</section>
+<section>
 <h2>What you can do with it</h2>
-<div class="card"><ul class="tight"><li>Wallet balance and transaction history checker</li><li>Track token transfers into a specific address</li><li>Look up live gas prices before transacting</li></ul></div>
+<ul class="use-list"><li>Wallet balance and transaction history checker</li><li>Track token transfers into a specific address</li><li>Look up live gas prices before transacting</li></ul>
+</section>
+<section>
 <h2>Set it up</h2>
-<ol class="steps"><li>Create a free Etherscan account and go to https://etherscan.io/myapikey.</li><li>Generate an API key token and copy it.</li><li>Open the API docs to find the module you need (account, transaction, contract, gas).</li><li>Try the example balance URL in your browser with your key.</li><li>Pace your calls at 3 per second or slower so nothing gets throttled.</li></ol>
-<h2>Example request</h2><div class="card"><pre>https://api.etherscan.io/v2/api?chainid=1&amp;module=account&amp;action=balance&amp;address=0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae&amp;tag=latest&amp;apikey=YOUR_KEY</pre></div>
-<h2>The fine print</h2>
-<div class="facts">
-<div class="fact"><b>Access</b>Free key (no card)</div>
-<div class="fact"><b>Rate limit</b>Free tier: about 3 calls per second and 100,000 calls per day; some endpoints have separate caps</div>
-<div class="fact"><b>Best for</b>developer, personal, fun</div>
-<div class="fact"><b>Category</b>Blockchain</div>
+<div class="d-setup">
+<div class="d-step"><span class="d-num">1</span><div>
+<h3>Get free access</h3><p>Open the provider's signup page and make a free account.</p><a class="primary-link" href="https://etherscan.io/myapikey" rel="noopener">Sign up for Etherscan API ↗</a>
+</div></div>
+<div class="d-step"><span class="d-num">2</span><div>
+<h3>Copy your API key</h3><p>After signing up, look in the dashboard or settings for your API key, then copy it. The provider-specific steps are below.</p><ol class="provider-steps"><li>Create a free Etherscan account and go to https://etherscan.io/myapikey.</li><li>Generate an API key token and copy it.</li><li>Open the API docs to find the module you need (account, transaction, contract, gas).</li><li>Try the example balance URL in your browser with your key.</li><li>Pace your calls at 3 per second or slower so nothing gets throttled.</li></ol>
+</div></div>
+<div class="d-step"><span class="d-num">3</span><div>
+<h3>Tell your agent</h3><p>Copy the message, paste it into ChatGPT, Claude, Grok, or a similar agent. No code needed. Replace PASTE_KEY_HERE with your key first. Your agent will either set it up directly or hand you the exact command to run.</p>
+<div class="agent-message"><span id="agentMsg">Set up Etherscan API for me so you can use it.
+
+HOW TO CALL IT
+https://api.etherscan.io/v2/api?chainid=1&amp;module=account&amp;action=balance&amp;address=0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae&amp;tag=latest&amp;apikey=PASTE_KEY_HERE
+
+AUTH: free API key. Mine: PASTE_KEY_HERE.
+Put it where the example above shows (usually an Authorization header or a key in the URL).
+
+FREE LIMIT: Free tier: about 3 calls per second and 100,000 calls per day; some endpoints have separate caps
+
+TEST: once it&#x27;s set up, ask it: “what&#x27;s the price of Bitcoin in USD?”.
+If you can&#x27;t make web requests yourself, give me the exact curl command with my key filled in so I can run it.
+
+Docs if you get stuck: https://docs.etherscan.io/</span><button class="copy-btn" id="copyMsg" type="button">Copy</button></div>
+<p class="key-note">Keep API keys private. Only share yours with tools and people you trust.</p>
+</div></div>
 </div>
+</section>
+<section class="d-example"><h2>Example request</h2><pre>https://api.etherscan.io/v2/api?chainid=1&amp;module=account&amp;action=balance&amp;address=0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae&amp;tag=latest&amp;apikey=PASTE_KEY_HERE</pre></section>
+<section>
+<h2>The fine print</h2>
+<div class="d-fine"><div class="d-fact"><b>Access</b><span>Free key (no card)</span></div><div class="d-fact"><b>Rate limit</b><span>Free tier: about 3 calls per second and 100,000 calls per day; some endpoints have separate caps</span></div><div class="d-fact"><b>Best for</b><span>developer, personal, fun</span></div><div class="d-fact"><b>Category</b><span>Blockchain</span></div></div>
+</section>
+<details><summary>For advanced users</summary><div class="d-adv"><a class="primary-link" href="https://docs.etherscan.io/" rel="noopener">Official docs ↗</a><a class="primary-link" href="https://etherscan.io/myapikey" rel="noopener">Signup page ↗</a></div></details>
 <p class="verified">Last verified 2026-09-13 by the PlugMyAgent team.</p>
 </main>
 <footer><div class="wrap">
 <a href="/">PlugMyAgent</a> - every listing free to start. &copy; 2026 hiddeninwest
 </div></footer>
 <script>
-(function(){var b=document.getElementById('copyLink');if(!b)return;
+(function(){
+var b=document.getElementById('shareBtn');if(!b)return;
+function fallback(u,btn){var t=document.createElement('textarea');t.value=u;document.body.appendChild(t);
+t.select();try{document.execCommand('copy');}catch(e){}t.remove();
+var o=btn.querySelector('span').textContent;btn.querySelector('span').textContent='Copied';
+setTimeout(function(){btn.querySelector('span').textContent=o;},1600);}
 b.addEventListener('click',function(){
 var u=document.querySelector('link[rel="canonical"]').href;
-function done(){var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o;},1600);}
-function fallback(){var t=document.createElement('textarea');t.value=u;document.body.appendChild(t);
-t.select();try{document.execCommand('copy');}catch(e){}t.remove();done();}
-if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(done,function(){fallback();});}
-else{fallback();}});})();
-</script>
-<script>
-(function(){var KEY='plugmyagent_stack_v1',NAME="Etherscan API";
+if(navigator.share){navigator.share({title:document.title,url:u}).then(function(){},function(err){
+if(err&&err.name==='AbortError')return;fallback(u,b);});return;}
+fallback(u,b);});})();
+(function(){
+var KEY='plugmyagent_stack_v1',NAME="Etherscan API";
 function read(){try{var v=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(v)?v:[];}catch(e){return [];}}
 function write(a){try{localStorage.setItem(KEY,JSON.stringify(a));}catch(e){}document.dispatchEvent(new CustomEvent('pma:stack'));}
 function paint(){var n=read().length;var els=document.querySelectorAll('[data-cart-count]');for(var i=0;i<els.length;i++){var b=els[i];b.textContent=n;b.style.display=n>0?'':'none';}}
-function paintBtn(){var b=document.getElementById('stackBtn');if(!b)return;var has=read().indexOf(NAME)>=0;b.textContent=has?'In your stack \u2713':'Add to stack';b.setAttribute('aria-pressed',String(has));}
+function paintBtn(){var b=document.getElementById('stackBtn');if(!b)return;var has=read().indexOf(NAME)>=0;b.textContent=has?'✓ In stack':'+ Stack';b.setAttribute('aria-pressed',String(has));}
 var sb=document.getElementById('stackBtn');
 if(sb){sb.addEventListener('click',function(){var s=read();var i=s.indexOf(NAME);if(i>=0){s.splice(i,1);}else{s.push(NAME);}write(s);paintBtn();});}
 document.addEventListener('pma:stack',function(){paint();paintBtn();});
 window.addEventListener('storage',function(e){if(e.key===KEY){paint();paintBtn();}});
 paint();paintBtn();})();
+(function(){
+var c=document.getElementById('copyMsg');if(!c)return;
+c.addEventListener('click',function(){
+var t=document.getElementById('agentMsg').textContent;
+function done(){var o=c.textContent;c.textContent='Copied';setTimeout(function(){c.textContent=o;},1800);}
+function fallback(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);
+ta.select();try{document.execCommand('copy');}catch(e){}ta.remove();done();}
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback();});}
+else{fallback();}});})();
 </script>
 </body>
 </html>
