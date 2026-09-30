@@ -138,6 +138,14 @@ GOALS_JS = """    const GOALS = [
 """
 
 
+def api_count_copy():
+    """Public count copy per the standing threshold rule: floor(n/50)*50 with '+'.
+    485 -> '450+', 500 -> '500+', 550 -> '550+'. Never an exact number."""
+    with open(os.path.join(BUILD, "api-catalog.json"), encoding="utf-8") as f:
+        n = len(json.load(f))
+    return f"{(n // 50) * 50}+"
+
+
 def esc_js(s):
     return s.replace("\\", "\\\\").replace("`", "\\`").replace("$", "\\$")
 
@@ -214,7 +222,7 @@ def main():
     .site-header { position: sticky; top: 0; z-index: 40; background: rgba(11,13,13,.85); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
     .site-header-inner { width: min(1120px, 100%); margin: 0 auto; padding: 11px clamp(16px, 4vw, 32px); display: flex; align-items: center; justify-content: space-between; min-height: 56px; position: relative; }
     .brandmark { display: inline-flex; align-items: center; }
-    .brandmark img { display: block; height: 32px; width: auto; }
+    .brandmark img { display: block; height: 26px; width: auto; }
     .header-right { display: flex; align-items: center; }
     .cnav { display: flex; gap: 26px; align-items: center; }
     .cnav a { font-family: "Azeret Mono", ui-monospace, monospace; font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .18s; }
@@ -248,8 +256,8 @@ def main():
     .wrap { width: min(1120px, 100%); margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px); position: relative; }
     .page-head { padding: 52px 0 8px; }
     .kicker { font-family: "Azeret Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--yellow); margin: 0 0 10px; }
-    .page-head h1 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -.03em; margin: 0 0 8px; font-weight: 800; }
-    .page-head p { color: var(--muted); margin: 0; max-width: 560px; font-size: 17px; }
+    .page-head h1 { font-size: clamp(30px, 4.4vw, 44px); letter-spacing: -.03em; margin: 0 0 8px; font-weight: 800; }
+    .page-head p { color: var(--muted); margin: 0; max-width: 560px; font-size: 16px; }
 
     .stack-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 28px; padding: 32px 0 80px; align-items: start; }
     @media (max-width: 900px) { .stack-layout { grid-template-columns: 1fr; } .summary { position: static; } }
@@ -322,12 +330,12 @@ def main():
     <a class="brandmark" href="/" aria-label="PlugMyAgent home"><img src="/plug-lockup-v2.png" alt="PlugMyAgent"></a>
     <div class="header-right">
       <nav class="cnav" aria-label="Primary">
-        <a href="/catalog/">Catalog</a><a href="/#pillars">MCP</a><a href="/#pillars">Guides</a><a href="/#pillars">Tools</a>
+        <a href="/catalog/">Catalog</a><a href="/mcp/">MCP</a><a href="/components/">Components</a><a href="/guides/">Guides</a><a href="/#pillars">Tools</a>
       </nav>
       <a class="cart-link" href="/stack/" aria-label="My stack" aria-current="page">""" + CART_SVG + """<span class="cart-count" data-cart-count style="display:none">0</span></a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
       <nav class="mnav" id="mnav" aria-label="Mobile">
-        <a href="/catalog/">Catalog</a><a href="/#pillars">MCP</a><a href="/#pillars">Guides</a><a href="/#pillars">Tools</a><a href="/stack/">My Stack</a>
+        <a href="/catalog/">API Catalog</a><a href="/mcp/">MCP</a><a href="/components/">Components</a><a href="/guides/">Guides</a><a href="/#pillars">Tools</a><a href="/stack/">My Stack</a>
       </nav>
     </div>
   </div></div>
@@ -342,9 +350,9 @@ def main():
   </main>
 
   <footer>
-    <div class="footer-inner"><strong>450 listings, checked against official documentation on September 19, 2026.</strong> Free plans can change, so double-check the official docs before building something you rely on.
+    <div class="footer-inner"><strong>450+ listings, checked against official documentation on September 19, 2026.</strong> Free plans can change, so double-check the official docs before building something you rely on.
       <p class="footer-trust">Your API keys never touch our servers. They go straight from you to your agent.</p>
-      <div class="footer-credit"><span>&copy; 2026 hiddeninwest</span><span class="footer-sep" aria-hidden="true">&middot;</span><a href="https://x.com/hiddeninwest" target="_blank" rel="noopener" aria-label="hiddeninwest on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg></a></div>
+      <div class="footer-credit"><span>&copy; 2026 hiddeninwest</span><span class="footer-sep" aria-hidden="true">&middot;</span><a href="mailto:contact@plugmyagent.com">contact@plugmyagent.com</a><span class="footer-sep" aria-hidden="true">&middot;</span><a href="https://x.com/hiddeninwest" target="_blank" rel="noopener" aria-label="hiddeninwest on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg></a></div>
     </div>
   </footer>
 </div>
@@ -507,7 +515,7 @@ def main():
 """
 
     cart_svg_js = json.dumps(CART_SVG)
-    page = head.replace("%%APIS_JSON%%", apis_json).replace("%%CART_SVG_JS%%", cart_svg_js)
+    page = head.replace("%%APIS_JSON%%", apis_json).replace("%%CART_SVG_JS%%", cart_svg_js).replace("400+ free APIs", api_count_copy() + " free APIs")
 
     os.makedirs(OUT_DIR, exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:

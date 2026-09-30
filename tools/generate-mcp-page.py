@@ -44,6 +44,14 @@ CART_JS = """
 """
 
 
+def api_count_copy():
+    """Public count copy per the standing threshold rule: floor(n/50)*50 with '+'.
+    485 -> '450+', 500 -> '500+', 550 -> '550+'. Never an exact number."""
+    with open(os.path.join(BUILD, "api-catalog.json"), encoding="utf-8") as f:
+        n = len(json.load(f))
+    return f"{(n // 50) * 50}+"
+
+
 def main():
     with open(DATA, encoding="utf-8") as f:
         servers = json.load(f)
@@ -111,7 +119,7 @@ def main():
     .site-header { position: sticky; top: 0; z-index: 40; background: rgba(11,13,13,.85); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
     .site-header-inner { width: min(1120px, 100%); margin: 0 auto; padding: 11px clamp(16px, 4vw, 32px); display: flex; align-items: center; justify-content: space-between; min-height: 56px; position: relative; }
     .brandmark { display: inline-flex; align-items: center; }
-    .brandmark img { display: block; height: 32px; width: auto; }
+    .brandmark img { display: block; height: 26px; width: auto; }
     .header-right { display: flex; align-items: center; }
     .cnav { display: flex; gap: 26px; align-items: center; }
     .cnav a { font-family: "Azeret Mono", ui-monospace, monospace; font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .18s; }
@@ -147,13 +155,11 @@ def main():
     .wrap { width: min(1120px, 100%); margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px); position: relative; }
     .page-head { padding: 52px 0 8px; }
     .kicker { font-family: "Azeret Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--yellow); margin: 0 0 10px; }
-    .page-head h1 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -.03em; margin: 0 0 8px; font-weight: 800; }
-    .page-head p { color: var(--muted); margin: 0; max-width: 620px; font-size: 17px; }
+    .page-head h1 { font-size: clamp(30px, 4.4vw, 44px); letter-spacing: -.03em; margin: 0 0 8px; font-weight: 800; }
+    .page-head p { color: var(--muted); margin: 0; max-width: 620px; font-size: 16px; }
 
     .how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 28px 0 8px; }
     @media (max-width: 760px) { .how { grid-template-columns: 1fr; }
-      .cmd { white-space: normal; word-break: break-all; overflow-x: visible; padding-right: 14px; }
-      .cmd .copy-btn { position: static; display: inline-block; margin: 8px 0 0; }
       .cfg-body pre { white-space: pre-wrap; word-break: break-all; overflow-x: visible; } }
     .how-step { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 18px; }
     .how-step .n { font-family: "Azeret Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .16em; color: var(--yellow); text-transform: uppercase; }
@@ -184,10 +190,10 @@ def main():
       border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; color: var(--muted); }
     .tag.key { color: var(--green); border-color: rgba(74,222,128,.35); }
     .tag.nokey { color: var(--blue); border-color: rgba(127,181,236,.35); }
-    .cmd { position: relative; background: #0b0d0d; border: 1px solid var(--line); border-radius: var(--radius-sm);
-      padding: 12px 44px 12px 14px; font-family: "Azeret Mono", ui-monospace, monospace; font-size: 12.5px; color: var(--ink);
-      overflow-x: auto; white-space: nowrap; }
-    .copy-btn { position: absolute; top: 8px; right: 8px; background: rgba(255,255,255,.06); border: 1px solid var(--line);
+    .cmd { display: flex; align-items: center; gap: 10px; background: #0b0d0d; border: 1px solid var(--line); border-radius: var(--radius-sm);
+      padding: 10px 10px 10px 14px; font-family: "Azeret Mono", ui-monospace, monospace; font-size: 12.5px; color: var(--ink); }
+    .cmd code { flex: 1 1 auto; min-width: 0; overflow-x: auto; white-space: nowrap; padding: 2px 0; scrollbar-width: thin; }
+    .copy-btn { flex: none; background: rgba(255,255,255,.06); border: 1px solid var(--line);
       border-radius: 8px; color: var(--muted); font-size: 12px; padding: 4px 10px; cursor: pointer; }
     .copy-btn:hover { color: var(--ink); border-color: rgba(255,255,255,.25); }
     details.cfg { border: 1px solid var(--line); border-radius: var(--radius-sm); background: #0b0d0d; }
@@ -197,7 +203,7 @@ def main():
     details.cfg summary::before { content: "+ "; color: var(--yellow); }
     details.cfg[open] summary::before { content: "- "; }
     .cfg-body { position: relative; border-top: 1px solid var(--line); }
-    .cfg-body pre { margin: 0; padding: 14px; font-family: "Azeret Mono", ui-monospace, monospace; font-size: 12px;
+    .cfg-body pre { margin: 0; padding: 14px 78px 14px 14px; font-family: "Azeret Mono", ui-monospace, monospace; font-size: 12px;
       line-height: 1.6; overflow-x: auto; color: var(--ink); }
     .server-foot { display: flex; gap: 12px; margin-top: auto; padding-top: 4px; }
     .mini-link { font-size: 13px; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; }
@@ -220,12 +226,12 @@ def main():
     <a class="brandmark" href="/" aria-label="PlugMyAgent home"><img src="/plug-lockup-v2.png" alt="PlugMyAgent"></a>
     <div class="header-right">
       <nav class="cnav" aria-label="Primary">
-        <a href="/catalog/">Catalog</a><a href="/mcp/" aria-current="page">MCP</a><a href="/#pillars">Guides</a><a href="/#pillars">Tools</a>
+        <a href="/catalog/">Catalog</a><a href="/mcp/" aria-current="page">MCP</a><a href="/components/">Components</a><a href="/guides/">Guides</a><a href="/#pillars">Tools</a>
       </nav>
       <a class="cart-link" href="/stack/" aria-label="My stack">""" + CART_SVG + """<span class="cart-count" data-cart-count style="display:none">0</span></a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
       <nav class="mnav" id="mnav" aria-label="Mobile">
-        <a href="/catalog/">Catalog</a><a href="/mcp/" aria-current="page">MCP</a><a href="/#pillars">Guides</a><a href="/#pillars">Tools</a><a href="/stack/">My Stack</a>
+        <a href="/catalog/">API Catalog</a><a href="/mcp/" aria-current="page">MCP</a><a href="/components/">Components</a><a href="/guides/">Guides</a><a href="/#pillars">Tools</a><a href="/stack/">My Stack</a>
       </nav>
     </div>
   </div></div>
@@ -254,7 +260,7 @@ def main():
   <footer>
     <div class="footer-inner"><strong>%%N%% servers, verified against official repos on September 19, 2026.</strong> Install commands and configs come from the official documentation. If a command fails, check the source link for the latest version.
       <p class="footer-trust">Every server here is free to run. Anything that needs a key only needs a free one.</p>
-      <div class="footer-credit"><span>&copy; 2026 hiddeninwest</span><span class="footer-sep" aria-hidden="true">&middot;</span><a href="https://x.com/hiddeninwest" target="_blank" rel="noopener" aria-label="hiddeninwest on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg></a></div>
+      <div class="footer-credit"><span>&copy; 2026 hiddeninwest</span><span class="footer-sep" aria-hidden="true">&middot;</span><a href="mailto:contact@plugmyagent.com">contact@plugmyagent.com</a><span class="footer-sep" aria-hidden="true">&middot;</span><a href="https://x.com/hiddeninwest" target="_blank" rel="noopener" aria-label="hiddeninwest on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg></a></div>
     </div>
   </footer>
 </div>
@@ -360,7 +366,7 @@ def main():
 </html>
 """
 
-    page = head.replace("%%SERVERS_JSON%%", servers_json).replace("%%N%%", str(len(servers)))
+    page = head.replace("%%SERVERS_JSON%%", servers_json).replace("%%N%%", str(len(servers))).replace("400+ free APIs", api_count_copy() + " free APIs")
 
     os.makedirs(OUT_DIR, exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:
