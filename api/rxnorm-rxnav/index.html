@@ -1,118 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RxNorm (RxNav) | Free API on PlugMyAgent</title>
-<meta name="description" content="RxNorm is the National Library of Medicine&#x27;s service that turns messy drug names into standard, official identifiers. Type something like &#x27;Tylenol&#x27; and it...">
-<link rel="canonical" href="https://www.plugmyagent.com/api/rxnorm-rxnav/">
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="PlugMyAgent">
-<meta property="og:title" content="RxNorm (RxNav) - free API">
-<meta property="og:description" content="RxNorm is the National Library of Medicine&#x27;s service that turns messy drug names into standard, official identifiers. Type something like &#x27;Tylenol&#x27; and it...">
-<meta property="og:url" content="https://www.plugmyagent.com/api/rxnorm-rxnav/">
-<meta property="og:image" content="https://www.plugmyagent.com/og-card.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="RxNorm (RxNav) - free API">
-<meta name="twitter:description" content="RxNorm is the National Library of Medicine&#x27;s service that turns messy drug names into standard, official identifiers. Type something like &#x27;Tylenol&#x27; and it...">
-<meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png">
-<link rel="stylesheet" href="/api-pages.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebAPI", "name": "RxNorm (RxNav)", "description": "RxNorm is the National Library of Medicine's service that turns messy drug names into standard, official identifiers. Type something like 'Tylenol' and it...", "url": "https://www.plugmyagent.com/api/rxnorm-rxnav/", "documentationUrl": "https://lhncbc.nlm.nih.gov/RxNav/APIs/RxNormAPIs.html", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<title>RxNorm (RxNav): Free API for AI Agents</title>
+<meta name="description" content="Standardize messy drug names into official clinical drug codes, free." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="RxNorm (RxNav): Free API for AI Agents" />
+<meta property="og:description" content="Standardize messy drug names into official clinical drug codes, free." />
+<meta property="og:image" content="https://www.plugmyagent.com/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="RxNorm (RxNav): Free API for AI Agents" />
+<meta name="twitter:description" content="Standardize messy drug names into official clinical drug codes, free." />
+<meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="../../logo-ink.svg" media="(prefers-color-scheme: light)" />
+<link rel="icon" type="image/svg+xml" href="../../logo-cream.svg" media="(prefers-color-scheme: dark)" />
+<link rel="stylesheet" href="../../topanga.css" />
+<script>try{var t=localStorage.getItem('topanga-theme');document.documentElement.setAttribute('data-theme',(t==='light'||t==='dark')?t:'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}</script>
 </head>
 <body>
-<div class="site-header"><div class="site-header-inner"><a class="brandmark" href="/" aria-label="PlugMyAgent home"><img src="/plug-lockup-v2.png" alt="PlugMyAgent"></a><nav class="cnav" aria-label="Primary"><a href="/catalog/">Catalog</a><a href="/mcp/">MCP</a><a href="/components/">Components</a><a href="/guides/">Guides</a></nav><a class="cart-link" href="/stack/" aria-label="My stack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M2.5 3.5h2.6l2.5 12.2a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.2L20.5 7H6"/></svg><span class="cart-count" data-cart-count style="display:none">0</span></a></div></div>
-<div class="d-hero">
-<div class="wrap">
-<p class="crumb"><a href="/">Home</a> / <a href="/catalog/">Catalog</a> / Medical &amp; Drug Info / RxNorm (RxNav)</p>
-<div class="d-meta"><span class="d-category">Medical &amp; Drug Info</span><span class="badge no-signup">No signup</span></div>
-<h1>RxNorm (RxNav)</h1>
-<p class="d-tagline">Standardize messy drug names into official clinical drug codes, free.</p>
-<div class="d-actions">
-<button class="quick-btn" id="stackBtn" type="button" aria-pressed="false">+ Stack</button>
-<button class="quick-btn" id="shareBtn" type="button" aria-label="Share RxNorm (RxNav)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M5 12v8h14v-8"/></svg><span>Share</span></button>
-</div>
-</div>
-</div>
-<main class="wrap d-body">
-<section>
-<h2>What it does</h2>
-<p class="d-desc">RxNorm is the National Library of Medicine&#x27;s service that turns messy drug names into standard, official identifiers. Type something like &#x27;Tylenol&#x27; and it finds the exact clinical drug, its strength, dose form, and related products. It is free with no key and is the backbone of most U.S. medication systems.</p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="wordmark" href="../../"><img class="wm-logo wm-ink" src="../../logo-ink.svg" alt="" aria-hidden="true" /><img class="wm-logo wm-cream" src="../../logo-cream.svg" alt="" aria-hidden="true" />plugmyagent</a>
+    <nav class="topnav" aria-label="Primary"><a href="../../catalog/" aria-current="page">API Catalog <span class="nav-count">500+</span></a><a href="../../mcp/">MCP <span class="nav-count">34</span></a><a href="../../components/">Components <span class="nav-count">32</span></a><a href="../../guides/">Guides <span class="nav-count">8</span></a><a href="../../tools/">Tools</a><a href="../../skills/">Skills <span class="nav-count">20</span></a></nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark theme"><svg class="icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg><svg class="icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></button>
+    <a class="stack-icon-btn" href="../../stack/" aria-label="My Stack"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 12 12 17 22 12"></polyline><polyline points="2 17 12 22 22 17"></polyline></svg><span class="stack-count" data-stack-count></span></a>
+    <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Mobile"><div class="mnav-inner"><a href="../../catalog/" aria-current="page"><span>API Catalog <span class="nav-count">500+</span></span></a><a href="../../mcp/"><span>MCP <span class="nav-count">34</span></span></a><a href="../../components/"><span>Components <span class="nav-count">32</span></span></a><a href="../../guides/"><span>Guides <span class="nav-count">8</span></span></a><a href="../../tools/"><span>Tools</span></a><a href="../../skills/"><span>Skills <span class="nav-count">20</span></span></a></div></nav>
+</header>
+<main id="main" class="layout">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li aria-current="page">Home</li><li><a href="../../catalog/">API Catalog</a></li><li aria-current="page">RxNorm (RxNav)</li></ol></nav>
+<div class="detail-head"><img class="logo-tile logo-tile-lg logo-tile-img" src="../../favicons/api-rxnorm-rxnav.png" alt="" aria-hidden="true" loading="lazy"><div><h1>RxNorm (RxNav)</h1>
+<p><span class="badge badge-accent">Medical &amp; Drug Info</span> <span class="badge">No key</span></p></div></div>
+<div class="detail-cards">
+<section class="card" aria-label="About">
+  <h3>About</h3>
+  <p>RxNorm is the National Library of Medicine&#x27;s service that turns messy drug names into standard, official identifiers. Type something like &#x27;Tylenol&#x27; and it finds the exact clinical drug, its strength, dose form, and related products. It is free with no key and is the backbone of most U.S. medication systems.</p>
 </section>
-<section>
-<h2>What you can do with it</h2>
-<ul class="use-list"><li>Match user-typed drug names like &#x27;advil&#x27; to the exact official product</li><li>Link prescriptions to standardized drug codes in a health app</li><li>Find related brand and generic versions of a medication</li></ul>
+<section class="card" aria-label="Details">
+  <h3>Details</h3>
+  <p class="spec-explainer">No key needed. You can call it right away.</p>
+  <p><strong>Auth:</strong> No key</p>
+  <p><strong>Rate limit:</strong> 20 requests per second per IP address.</p>
+  <p><strong>Verified:</strong> 2026-09-13</p>
+  <p><strong>Best for:</strong> <span class="badge">personal</span> <span class="badge">developer</span> <span class="badge">business</span> </p>
+  <div class="card-actions"><a class="btn btn-primary" href="https://lhncbc.nlm.nih.gov/RxNav/APIs/RxNormAPIs.html">Read the docs</a> <button class="btn btn-secondary" type="button" data-add-stack="rxnorm-rxnav">Add to stack</button> <a class="btn btn-secondary" href="../../catalog/">Back to catalog</a></div>
 </section>
-<section>
-<h2>Set it up</h2>
-<div class="d-setup">
-<div class="d-step"><span class="d-num">1</span><div>
-<h3>Open the official guide</h3><p>This API works without an account or key. Open the guide to see what it offers.</p><a class="primary-link" href="https://lhncbc.nlm.nih.gov/RxNav/APIs/RxNormAPIs.html" rel="noopener">Open RxNorm (RxNav) docs ↗</a>
-</div></div>
-<div class="d-step"><span class="d-num">2</span><div>
-<h3>Follow the quick-start steps</h3><p>Use the provider's instructions below. There's no secret key to manage.</p><ol class="provider-steps"><li>Paste the example URL into your browser to see it resolve a drug name instantly, no signup needed.</li><li>Replace Tylenol with any drug name, brand, or ingredient in your requests.</li><li>Read the docs page to pick endpoints for dose forms, related drugs, and history.</li><li>Keep calls under 20 per second per IP address.</li></ol>
-</div></div>
-<div class="d-step"><span class="d-num">3</span><div>
-<h3>Tell your agent</h3><p>Copy the message, paste it into ChatGPT, Claude, Grok, or a similar agent. No code needed. Replace PASTE_KEY_HERE with your key first. Your agent will either set it up directly or hand you the exact command to run.</p>
-<div class="agent-message"><span id="agentMsg">Set up RxNorm (RxNav) for me so you can use it.
-
-HOW TO CALL IT
-https://rxnav.nlm.nih.gov/REST/approximateTerm.json?term=Tylenol
-
-AUTH: none needed. No signup, no key.
-
-FREE LIMIT: 20 requests per second per IP address.
-
-TEST: once it&#x27;s set up, ask it to look up one item you know.
-If you can&#x27;t make web requests yourself, give me the exact curl command with my key filled in so I can run it.
-
-Docs if you get stuck: https://lhncbc.nlm.nih.gov/RxNav/APIs/RxNormAPIs.html</span><button class="copy-btn" id="copyMsg" type="button">Copy</button></div>
-
-</div></div>
 </div>
-</section>
-<section class="d-example"><h2>Example request</h2><pre>https://rxnav.nlm.nih.gov/REST/approximateTerm.json?term=Tylenol</pre></section>
-<section>
-<h2>The fine print</h2>
-<div class="d-fine"><div class="d-fact"><b>Access</b><span>No key</span></div><div class="d-fact"><b>Rate limit</b><span>20 requests per second per IP address.</span></div><div class="d-fact"><b>Best for</b><span>personal, developer, business</span></div><div class="d-fact"><b>Category</b><span>Medical &amp; Drug Info</span></div></div>
-</section>
-<details><summary>For advanced users</summary><div class="d-adv"><a class="primary-link" href="https://lhncbc.nlm.nih.gov/RxNav/APIs/RxNormAPIs.html" rel="noopener">Official docs ↗</a></div></details>
-<p class="verified">Last verified 2026-09-13 by the PlugMyAgent team.</p>
+<div class="tablist" role="tablist" aria-label="API details">
+  <button class="tab-btn active" role="tab" id="tab-setup" aria-selected="true" aria-controls="panel-setup" tabindex="0">Setup</button>
+  <button class="tab-btn" role="tab" id="tab-example" aria-selected="false" aria-controls="panel-example" tabindex="-1">Example</button>
+  <button class="tab-btn" role="tab" id="tab-use" aria-selected="false" aria-controls="panel-use" tabindex="-1">Use cases</button>
+</div>
+<div class="tab-panel" role="tabpanel" id="panel-setup" aria-labelledby="tab-setup">
+  <h3>Setup</h3>
+  <ol><li>Paste the example URL into your browser to see it resolve a drug name instantly, no signup needed.</li><li>Replace Tylenol with any drug name, brand, or ingredient in your requests.</li><li>Read the docs page to pick endpoints for dose forms, related drugs, and history.</li><li>Keep calls under 20 per second per IP address.</li></ol>
+  <div class="card-actions"><a class="btn btn-secondary" href="https://lhncbc.nlm.nih.gov/RxNav/APIs/RxNormAPIs.html">Sign up</a></div>
+</div>
+<div class="tab-panel" role="tabpanel" id="panel-example" aria-labelledby="tab-example" hidden>
+  <div class="browser-frame"><div class="browser-chrome"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-title">Example</span><button class="copy-btn" type="button" data-copy="#exampleCode">Copy</button></div>
+  <pre><code id="exampleCode">https://rxnav.nlm.nih.gov/REST/approximateTerm.json?term=Tylenol</code></pre></div>
+</div>
+<div class="tab-panel" role="tabpanel" id="panel-use" aria-labelledby="tab-use" hidden>
+  <h3>Use cases</h3>
+  <ul><li>Match user-typed drug names like &#x27;advil&#x27; to the exact official product</li><li>Link prescriptions to standardized drug codes in a health app</li><li>Find related brand and generic versions of a medication</li></ul>
+</div>
+
 </main>
-<footer><div class="wrap">
-<a href="/">PlugMyAgent</a> - every listing free to start. &copy; 2026 hiddeninwest
-</div></footer>
-<script>
-(function(){
-var b=document.getElementById('shareBtn');if(!b)return;
-function fallback(u,btn){var t=document.createElement('textarea');t.value=u;document.body.appendChild(t);
-t.select();try{document.execCommand('copy');}catch(e){}t.remove();
-var o=btn.querySelector('span').textContent;btn.querySelector('span').textContent='Copied';
-setTimeout(function(){btn.querySelector('span').textContent=o;},1600);}
-b.addEventListener('click',function(){
-var u=document.querySelector('link[rel="canonical"]').href;
-if(navigator.share){navigator.share({title:document.title,url:u}).then(function(){},function(err){
-if(err&&err.name==='AbortError')return;fallback(u,b);});return;}
-fallback(u,b);});})();
-(function(){
-var KEY='plugmyagent_stack_v1',NAME="RxNorm (RxNav)";
-function read(){try{var v=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(v)?v:[];}catch(e){return [];}}
-function write(a){try{localStorage.setItem(KEY,JSON.stringify(a));}catch(e){}document.dispatchEvent(new CustomEvent('pma:stack'));}
-function paint(){var n=read().length;var els=document.querySelectorAll('[data-cart-count]');for(var i=0;i<els.length;i++){var b=els[i];b.textContent=n;b.style.display=n>0?'':'none';}}
-function paintBtn(){var b=document.getElementById('stackBtn');if(!b)return;var has=read().indexOf(NAME)>=0;b.textContent=has?'✓ In stack':'+ Stack';b.setAttribute('aria-pressed',String(has));}
-var sb=document.getElementById('stackBtn');
-if(sb){sb.addEventListener('click',function(){var s=read();var i=s.indexOf(NAME);if(i>=0){s.splice(i,1);}else{s.push(NAME);}write(s);paintBtn();});}
-document.addEventListener('pma:stack',function(){paint();paintBtn();});
-window.addEventListener('storage',function(e){if(e.key===KEY){paint();paintBtn();}});
-paint();paintBtn();})();
-(function(){
-var c=document.getElementById('copyMsg');if(!c)return;
-c.addEventListener('click',function(){
-var t=document.getElementById('agentMsg').textContent;
-function done(){var o=c.textContent;c.textContent='Copied';setTimeout(function(){c.textContent=o;},1800);}
-function fallback(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);
-ta.select();try{document.execCommand('copy');}catch(e){}ta.remove();done();}
-if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback();});}
-else{fallback();}});})();
-</script>
+<footer class="site-footer">
+  <p class="foot-nav"><a href="../../catalog/">Catalog</a> &middot; <a href="../../mcp/">MCP</a> &middot; <a href="../../components/">Components</a> &middot; <a href="../../guides/">Guides</a> &middot; <a href="../../stack/">My Stack</a></p>
+  <div class="foot-div" aria-hidden="true"></div>
+  <p>&copy; 2026 plugmyagent &middot; Made by <a href="https://x.com/hiddeninwest" rel="noopener">@hiddeninwest</a></p>
+  <p>An independent, hand-maintained catalog of free APIs for AI agents. No ads, no sponsored placements, just tools worth your time.</p>
+  <p><a href="https://hiddeninwest.com" rel="noopener">hiddeninwest.com</a> &middot; <a href="../../privacy/">Privacy Policy</a></p>
+</footer>
+<script src="../../topanga.js"></script>
 </body>
 </html>

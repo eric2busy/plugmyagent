@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<title>How to use MCP servers | PlugMyAgent</title>
+<meta name="description" content="Three moves to give your agent a new tool with MCP: run the install command, paste the config, restart and ask." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="How to use MCP servers | PlugMyAgent" />
+<meta property="og:description" content="Three moves to give your agent a new tool with MCP: run the install command, paste the config, restart and ask." />
+<meta property="og:image" content="https://www.plugmyagent.com/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to use MCP servers | PlugMyAgent" />
+<meta name="twitter:description" content="Three moves to give your agent a new tool with MCP: run the install command, paste the config, restart and ask." />
+<meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="../../logo-ink.svg" media="(prefers-color-scheme: light)" />
+<link rel="icon" type="image/svg+xml" href="../../logo-cream.svg" media="(prefers-color-scheme: dark)" />
+<link rel="stylesheet" href="../../topanga.css" />
+<script>try{var t=localStorage.getItem('topanga-theme');document.documentElement.setAttribute('data-theme',(t==='light'||t==='dark')?t:'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="wordmark" href="../../"><img class="wm-logo wm-ink" src="../../logo-ink.svg" alt="" aria-hidden="true" /><img class="wm-logo wm-cream" src="../../logo-cream.svg" alt="" aria-hidden="true" />plugmyagent</a>
+    <nav class="topnav" aria-label="Primary"><a href="../../catalog/">API Catalog <span class="nav-count">500+</span></a><a href="../../mcp/">MCP <span class="nav-count">34</span></a><a href="../../components/">Components <span class="nav-count">32</span></a><a href="../../guides/" aria-current="page">Guides <span class="nav-count">8</span></a><a href="../../tools/">Tools</a><a href="../../skills/">Skills <span class="nav-count">20</span></a></nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark theme"><svg class="icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg><svg class="icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></button>
+    <a class="stack-icon-btn" href="../../stack/" aria-label="My Stack"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 12 12 17 22 12"></polyline><polyline points="2 17 12 22 22 17"></polyline></svg><span class="stack-count" data-stack-count></span></a>
+    <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Mobile"><div class="mnav-inner"><a href="../../catalog/"><span>API Catalog <span class="nav-count">500+</span></span></a><a href="../../mcp/"><span>MCP <span class="nav-count">34</span></span></a><a href="../../components/"><span>Components <span class="nav-count">32</span></span></a><a href="../../guides/" aria-current="page"><span>Guides <span class="nav-count">8</span></span></a><a href="../../tools/"><span>Tools</span></a><a href="../../skills/"><span>Skills <span class="nav-count">20</span></span></a></div></nav>
+</header>
+<main id="main" class="layout">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li aria-current="page">Home</li><li><a href="../../guides/">Guides</a></li><li aria-current="page">How to Use MCP Servers</li></ol></nav>
+
+<article class="article">
+    <h1>How to use MCP servers</h1>
+    <p class="lede">MCP is one standard way for your agent to reach files, apps, and services. Three moves and your agent has a new tool.</p>
+
+    <h2><span class="secnum">01</span> Run the install command</h2>
+    <p>Most servers install with one command. No accounts, no dashboards, no waiting. Copy the install command from the server's listing on the <a href="/mcp/">MCP directory</a> and run it in your terminal.</p>
+
+    <h2><span class="secnum">02</span> Paste the config</h2>
+    <p>Copy the config block into your MCP client (Claude Desktop, Cursor, or your agent setup). Swap in your own paths or keys where marked. Each server listing has a <strong>Client config</strong> section with the exact block to paste.</p>
+
+    <h2><span class="secnum">03</span> Restart and ask</h2>
+    <p>Restart the client and ask your agent to use the new tool. If it can see it, it is working. Try asking it to list its available tools, or give it a small task that uses the new server.</p>
+
+    <div class="site-alert alert-info">
+      <span class="kicker">Stuck?</span>
+      <p>Check the <strong>Source</strong> link on the server's listing for the latest official docs. Install commands change; the source repo always has the current version.</p>
+    </div>
+
+    <p><a href="/mcp/" style="color: var(--ink);">Back to the MCP directory &rarr;</a></p>
+  </article>
+
+</main>
+<footer class="site-footer">
+  <p class="foot-nav"><a href="../../catalog/">Catalog</a> &middot; <a href="../../mcp/">MCP</a> &middot; <a href="../../components/">Components</a> &middot; <a href="../../guides/">Guides</a> &middot; <a href="../../stack/">My Stack</a></p>
+  <div class="foot-div" aria-hidden="true"></div>
+  <p>&copy; 2026 plugmyagent &middot; Made by <a href="https://x.com/hiddeninwest" rel="noopener">@hiddeninwest</a></p>
+  <p>An independent, hand-maintained catalog of free APIs for AI agents. No ads, no sponsored placements, just tools worth your time.</p>
+  <p><a href="https://hiddeninwest.com" rel="noopener">hiddeninwest.com</a> &middot; <a href="../../privacy/">Privacy Policy</a></p>
+</footer>
+<script src="../../topanga.js"></script>
+</body>
+</html>

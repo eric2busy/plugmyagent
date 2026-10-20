@@ -1,124 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Helicone | Free API on PlugMyAgent</title>
-<meta name="description" content="LLM observability plus a gateway to 100+ models">
-<link rel="canonical" href="https://www.plugmyagent.com/api/helicone/">
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="PlugMyAgent">
-<meta property="og:title" content="Helicone - free API">
-<meta property="og:description" content="LLM observability plus a gateway to 100+ models">
-<meta property="og:url" content="https://www.plugmyagent.com/api/helicone/">
-<meta property="og:image" content="https://www.plugmyagent.com/og-card.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Helicone - free API">
-<meta name="twitter:description" content="LLM observability plus a gateway to 100+ models">
-<meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png">
-<style>
-:root{
-  color-scheme:dark;
-  --ink:#f5f7f5; --muted:#9aa39e; --paper:#0b0d0d; --white:#101314; --card:#101314;
-  --line:rgba(255,255,255,.09); --teal:#ff6b1a; --teal-ink:#201000; --teal-soft:rgba(255,107,26,.14);
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);
-  background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
-  background-size:48px 48px;
-  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-  font-size:16px;line-height:1.55}
-.wrap{max-width:760px;margin:0 auto;padding:0 20px}
-.site-header{position:sticky;top:0;z-index:40;background:var(--white);border-bottom:1px solid var(--line)}
-.site-header-inner{width:min(1120px,100%);margin:0 auto;padding:11px clamp(16px,4vw,32px);
-  display:flex;align-items:center;min-height:56px}
-.brandmark{display:inline-flex;align-items:center}
-.brandmark img{display:block;height:32px;width:auto}.cart-link{position:relative;display:inline-flex;align-items:center;color:var(--ink);text-decoration:none;padding:8px;border-radius:10px;margin-left:auto}.cart-link:hover{color:var(--teal)}.cart-link svg{width:22px;height:22px;display:block}.cart-count{position:absolute;top:1px;right:-2px;min-width:18px;height:18px;border-radius:999px;background:var(--teal);color:var(--teal-ink);font:700 11px/18px "Azeret Mono",ui-monospace,monospace;text-align:center;padding:0 4px}
-.crumb{font-size:13px;color:var(--muted);margin:26px 0 6px}
-.crumb a{color:var(--muted)}
-h1{font-size:clamp(34px,6vw,52px);line-height:1.02;letter-spacing:-.04em;margin:6px 0 10px;font-weight:800}
-.pill{display:inline-block;font:600 12px "Azeret Mono",ui-monospace,monospace;
-  background:var(--teal);color:var(--teal-ink);border-radius:999px;padding:5px 12px;margin-bottom:14px}
-.tagline{font-size:19px;color:var(--muted);max-width:620px;margin:0 0 26px}
-.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 34px}
-.btn{display:inline-block;padding:13px 20px;border-radius:12px;font-weight:700;font-size:15px;
-  text-decoration:none;border:1px solid var(--line);color:var(--ink);background:var(--card)}
-button.btn{font:inherit;cursor:pointer}
-.btn.primary{background:var(--teal);border-color:var(--teal);color:var(--teal-ink)}
-h2{font-size:22px;letter-spacing:-.02em;margin:34px 0 12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 14px}
-.card p{margin:0}
-ul.tight{margin:0;padding-left:20px}
-ul.tight li{margin:7px 0}
-ol.steps{margin:0;padding:0;list-style:none;counter-reset:st}
-ol.steps li{counter-increment:st;position:relative;padding:14px 14px 14px 58px;
-  background:var(--card);border:1px solid var(--line);border-radius:12px;margin:0 0 10px}
-ol.steps li::before{content:counter(st);position:absolute;left:14px;top:14px;width:30px;height:30px;
-  border-radius:50%;background:var(--teal);color:var(--teal-ink);
-  font:700 13px "Azeret Mono",ui-monospace,monospace;display:grid;place-items:center}
-.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}
-.fact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px}
-.fact b{display:block;font:600 11px "Azeret Mono",ui-monospace,monospace;color:var(--muted);
-  text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
-pre{margin:0;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;padding:16px;border-radius:12px;
-  background:#050707;color:#f5f7f5;font:500 12.5px/1.55 "Azeret Mono",ui-monospace,monospace}
-.verified{font-size:13px;color:var(--muted);margin:26px 0 0}
-footer{border-top:1px solid var(--line);margin-top:44px;padding:22px 0 40px;font-size:13px;color:var(--muted)}
-footer a{color:var(--muted)}
-@media (max-width:620px){ .facts{grid-template-columns:1fr} }
-</style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebAPI", "name": "Helicone", "description": "LLM observability plus a gateway to 100+ models", "url": "https://www.plugmyagent.com/api/helicone/", "documentationUrl": "https://docs.helicone.ai/", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<title>Helicone: Free API for AI Agents</title>
+<meta name="description" content="LLM observability plus a gateway to 100+ models" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Helicone: Free API for AI Agents" />
+<meta property="og:description" content="LLM observability plus a gateway to 100+ models" />
+<meta property="og:image" content="https://www.plugmyagent.com/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Helicone: Free API for AI Agents" />
+<meta name="twitter:description" content="LLM observability plus a gateway to 100+ models" />
+<meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="../../logo-ink.svg" media="(prefers-color-scheme: light)" />
+<link rel="icon" type="image/svg+xml" href="../../logo-cream.svg" media="(prefers-color-scheme: dark)" />
+<link rel="stylesheet" href="../../topanga.css" />
+<script>try{var t=localStorage.getItem('topanga-theme');document.documentElement.setAttribute('data-theme',(t==='light'||t==='dark')?t:'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}</script>
 </head>
 <body>
-<div class="site-header"><div class="site-header-inner"><a class="brandmark" href="/" aria-label="PlugMyAgent home"><img src="/plug-lockup-v2.png" alt="PlugMyAgent"></a><a class="cart-link" href="/stack/" aria-label="My stack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M2.5 3.5h2.6l2.5 12.2a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.2L20.5 7H6"/></svg><span class="cart-count" data-cart-count style="display:none">0</span></a></div></div>
-<main class="wrap">
-<p class="crumb"><a href="/">Home</a> / <a href="/catalog/">Catalog</a> / AI &amp; ML / Helicone</p>
-<span class="pill">AI &amp; ML</span>
-<h1>Helicone</h1>
-<p class="tagline">LLM observability plus a gateway to 100+ models</p>
-<div class="cta-row">
-<a class="btn primary" href="https://www.plugmyagent.com/catalog/?api=helicone">Open in PlugMyAgent</a><button class="btn" id="copyLink" type="button">Copy link</button><button class="btn" id="stackBtn" type="button">Add to stack</button><a class="btn" href="https://docs.helicone.ai/" rel="noopener">Official docs</a><a class="btn" href="https://www.helicone.ai/" rel="noopener">Get free access</a>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="wordmark" href="../../"><img class="wm-logo wm-ink" src="../../logo-ink.svg" alt="" aria-hidden="true" /><img class="wm-logo wm-cream" src="../../logo-cream.svg" alt="" aria-hidden="true" />plugmyagent</a>
+    <nav class="topnav" aria-label="Primary"><a href="../../catalog/" aria-current="page">API Catalog <span class="nav-count">500+</span></a><a href="../../mcp/">MCP <span class="nav-count">34</span></a><a href="../../components/">Components <span class="nav-count">32</span></a><a href="../../guides/">Guides <span class="nav-count">8</span></a><a href="../../tools/">Tools</a><a href="../../skills/">Skills <span class="nav-count">20</span></a></nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark theme"><svg class="icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg><svg class="icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></button>
+    <a class="stack-icon-btn" href="../../stack/" aria-label="My Stack"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 12 12 17 22 12"></polyline><polyline points="2 17 12 22 22 17"></polyline></svg><span class="stack-count" data-stack-count></span></a>
+    <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Mobile"><div class="mnav-inner"><a href="../../catalog/" aria-current="page"><span>API Catalog <span class="nav-count">500+</span></span></a><a href="../../mcp/"><span>MCP <span class="nav-count">34</span></span></a><a href="../../components/"><span>Components <span class="nav-count">32</span></span></a><a href="../../guides/"><span>Guides <span class="nav-count">8</span></span></a><a href="../../tools/"><span>Tools</span></a><a href="../../skills/"><span>Skills <span class="nav-count">20</span></span></a></div></nav>
+</header>
+<main id="main" class="layout">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li aria-current="page">Home</li><li><a href="../../catalog/">API Catalog</a></li><li aria-current="page">Helicone</li></ol></nav>
+<div class="detail-head"><img class="logo-tile logo-tile-lg logo-tile-img" src="../../favicons/api-helicone.png" alt="" aria-hidden="true" loading="lazy"><div><h1>Helicone</h1>
+<p><span class="badge badge-accent">AI &amp; ML</span> <span class="badge">Free key (no card)</span></p></div></div>
+<div class="detail-cards">
+<section class="card" aria-label="About">
+  <h3>About</h3>
+  <p>Helicone logs every LLM request your agent makes with cost, latency, and caching through a one-line proxy change, and its AI gateway routes to 100+ models. The Hobby plan is free for 10,000 requests a month with 1 GB of storage, no card required, and the platform is open source.</p>
+</section>
+<section class="card" aria-label="Details">
+  <h3>Details</h3>
+  <p class="spec-explainer">Free to start. You may need a free key, but no credit card.</p>
+  <p><strong>Auth:</strong> Free key (no card)</p>
+  <p><strong>Rate limit:</strong> 10,000 requests/month on the free Hobby plan.</p>
+  <p><strong>Verified:</strong> 2026-09-18</p>
+  <p><strong>Best for:</strong> <span class="badge">developer</span> </p>
+  <div class="card-actions"><a class="btn btn-primary" href="https://docs.helicone.ai/">Read the docs</a> <button class="btn btn-secondary" type="button" data-add-stack="helicone">Add to stack</button> <a class="btn btn-secondary" href="../../catalog/">Back to catalog</a></div>
+</section>
 </div>
-<h2>What it does</h2>
-<div class="card"><p>Helicone logs every LLM request your agent makes with cost, latency, and caching through a one-line proxy change, and its AI gateway routes to 100+ models. The Hobby plan is free for 10,000 requests a month with 1 GB of storage, no card required, and the platform is open source.</p></div>
-<h2>What you can do with it</h2>
-<div class="card"><ul class="tight"><li>LLM cost tracking</li><li>Prompt debugging</li><li>Multi-model routing</li></ul></div>
-<h2>Set it up</h2>
-<ol class="steps"><li>1. Sign up at helicone.ai and copy your API key.</li><li>2. Point your OpenAI base URL at oai.helicone.ai and add the Helicone-Auth header.</li><li>3. Every request is now logged with cost and latency in your dashboard.</li></ol>
-<h2>Example request</h2><div class="card"><pre>POST https://oai.helicone.ai/v1/chat/completions --header &quot;Helicone-Auth: Bearer YOUR_API_KEY&quot;</pre></div>
-<h2>The fine print</h2>
-<div class="facts">
-<div class="fact"><b>Access</b>Free key (no card)</div>
-<div class="fact"><b>Rate limit</b>10,000 requests/month on the free Hobby plan.</div>
-<div class="fact"><b>Best for</b>developer</div>
-<div class="fact"><b>Category</b>AI &amp; ML</div>
+<div class="tablist" role="tablist" aria-label="API details">
+  <button class="tab-btn active" role="tab" id="tab-setup" aria-selected="true" aria-controls="panel-setup" tabindex="0">Setup</button>
+  <button class="tab-btn" role="tab" id="tab-example" aria-selected="false" aria-controls="panel-example" tabindex="-1">Example</button>
+  <button class="tab-btn" role="tab" id="tab-use" aria-selected="false" aria-controls="panel-use" tabindex="-1">Use cases</button>
 </div>
-<p class="verified">Last verified 2026-09-18 by the PlugMyAgent team.</p><p class="verified">Links last checked 2026-09-18 (working).</p>
+<div class="tab-panel" role="tabpanel" id="panel-setup" aria-labelledby="tab-setup">
+  <h3>Setup</h3>
+  <ol><li>1. Sign up at helicone.ai and copy your API key.</li><li>2. Point your OpenAI base URL at oai.helicone.ai and add the Helicone-Auth header.</li><li>3. Every request is now logged with cost and latency in your dashboard.</li></ol>
+  <div class="card-actions"><a class="btn btn-secondary" href="https://www.helicone.ai/">Sign up</a></div>
+</div>
+<div class="tab-panel" role="tabpanel" id="panel-example" aria-labelledby="tab-example" hidden>
+  <div class="browser-frame"><div class="browser-chrome"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-title">Example</span><button class="copy-btn" type="button" data-copy="#exampleCode">Copy</button></div>
+  <pre><code id="exampleCode">POST https://oai.helicone.ai/v1/chat/completions --header &quot;Helicone-Auth: Bearer YOUR_API_KEY&quot;</code></pre></div>
+</div>
+<div class="tab-panel" role="tabpanel" id="panel-use" aria-labelledby="tab-use" hidden>
+  <h3>Use cases</h3>
+  <ul><li>LLM cost tracking</li><li>Prompt debugging</li><li>Multi-model routing</li></ul>
+</div>
+
 </main>
-<footer><div class="wrap">
-<a href="/">PlugMyAgent</a> - every listing free to start. &copy; 2026 hiddeninwest
-</div></footer>
-<script>
-(function(){var b=document.getElementById('copyLink');if(!b)return;
-b.addEventListener('click',function(){
-var u=document.querySelector('link[rel="canonical"]').href;
-function done(){var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o;},1600);}
-function fallback(){var t=document.createElement('textarea');t.value=u;document.body.appendChild(t);
-t.select();try{document.execCommand('copy');}catch(e){}t.remove();done();}
-if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(done,function(){fallback();});}
-else{fallback();}});})();
-</script>
-<script>
-(function(){var KEY='plugmyagent_stack_v1',NAME="Helicone";
-function read(){try{var v=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(v)?v:[];}catch(e){return [];}}
-function write(a){try{localStorage.setItem(KEY,JSON.stringify(a));}catch(e){}document.dispatchEvent(new CustomEvent('pma:stack'));}
-function paint(){var n=read().length;var els=document.querySelectorAll('[data-cart-count]');for(var i=0;i<els.length;i++){var b=els[i];b.textContent=n;b.style.display=n>0?'':'none';}}
-function paintBtn(){var b=document.getElementById('stackBtn');if(!b)return;var has=read().indexOf(NAME)>=0;b.textContent=has?'In your stack \u2713':'Add to stack';b.setAttribute('aria-pressed',String(has));}
-var sb=document.getElementById('stackBtn');
-if(sb){sb.addEventListener('click',function(){var s=read();var i=s.indexOf(NAME);if(i>=0){s.splice(i,1);}else{s.push(NAME);}write(s);paintBtn();});}
-document.addEventListener('pma:stack',function(){paint();paintBtn();});
-window.addEventListener('storage',function(e){if(e.key===KEY){paint();paintBtn();}});
-paint();paintBtn();})();
-</script>
+<footer class="site-footer">
+  <p class="foot-nav"><a href="../../catalog/">Catalog</a> &middot; <a href="../../mcp/">MCP</a> &middot; <a href="../../components/">Components</a> &middot; <a href="../../guides/">Guides</a> &middot; <a href="../../stack/">My Stack</a></p>
+  <div class="foot-div" aria-hidden="true"></div>
+  <p>&copy; 2026 plugmyagent &middot; Made by <a href="https://x.com/hiddeninwest" rel="noopener">@hiddeninwest</a></p>
+  <p>An independent, hand-maintained catalog of free APIs for AI agents. No ads, no sponsored placements, just tools worth your time.</p>
+  <p><a href="https://hiddeninwest.com" rel="noopener">hiddeninwest.com</a> &middot; <a href="../../privacy/">Privacy Policy</a></p>
+</footer>
+<script src="../../topanga.js"></script>
 </body>
 </html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<title>Connect Your First MCP Server | PlugMyAgent</title>
+<meta name="description" content="Give your agent its first plug-in in five minutes: add the official Fetch MCP server to OpenClaw with one command. No API keys needed." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Connect Your First MCP Server | PlugMyAgent" />
+<meta property="og:description" content="Give your agent its first plug-in in five minutes: add the official Fetch MCP server to OpenClaw with one command. No API keys needed." />
+<meta property="og:image" content="https://www.plugmyagent.com/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Connect Your First MCP Server | PlugMyAgent" />
+<meta name="twitter:description" content="Give your agent its first plug-in in five minutes: add the official Fetch MCP server to OpenClaw with one command. No API keys needed." />
+<meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="../../../logo-ink.svg" media="(prefers-color-scheme: light)" />
+<link rel="icon" type="image/svg+xml" href="../../../logo-cream.svg" media="(prefers-color-scheme: dark)" />
+<link rel="stylesheet" href="../../../topanga.css" />
+<script>try{var t=localStorage.getItem('topanga-theme');document.documentElement.setAttribute('data-theme',(t==='light'||t==='dark')?t:'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="wordmark" href="../../../"><img class="wm-logo wm-ink" src="../../../logo-ink.svg" alt="" aria-hidden="true" /><img class="wm-logo wm-cream" src="../../../logo-cream.svg" alt="" aria-hidden="true" />plugmyagent</a>
+    <nav class="topnav" aria-label="Primary"><a href="../../../catalog/">API Catalog <span class="nav-count">500+</span></a><a href="../../../mcp/">MCP <span class="nav-count">34</span></a><a href="../../../components/">Components <span class="nav-count">32</span></a><a href="../../../guides/" aria-current="page">Guides <span class="nav-count">8</span></a><a href="../../../tools/">Tools</a><a href="../../../skills/">Skills <span class="nav-count">20</span></a></nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark theme"><svg class="icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg><svg class="icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></button>
+    <a class="stack-icon-btn" href="../../../stack/" aria-label="My Stack"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 12 12 17 22 12"></polyline><polyline points="2 17 12 22 22 17"></polyline></svg><span class="stack-count" data-stack-count></span></a>
+    <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Mobile"><div class="mnav-inner"><a href="../../../catalog/"><span>API Catalog <span class="nav-count">500+</span></span></a><a href="../../../mcp/"><span>MCP <span class="nav-count">34</span></span></a><a href="../../../components/"><span>Components <span class="nav-count">32</span></span></a><a href="../../../guides/" aria-current="page"><span>Guides <span class="nav-count">8</span></span></a><a href="../../../tools/"><span>Tools</span></a><a href="../../../skills/"><span>Skills <span class="nav-count">20</span></span></a></div></nav>
+</header>
+<main id="main" class="layout">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li aria-current="page">Home</li><li><a href="../../../guides/">Guides</a></li><li><a href="../../../guides/setup/">Setup</a></li><li aria-current="page">W03</li></ol></nav>
+<div class="hero"><h1>Connect your first<br><span class="neon">MCP server.</span></h1><p class="lede">MCP servers are plug-ins that give your agent new abilities: reading web pages, searching docs, querying databases. This walkthrough adds one server to OpenClaw in under five minutes. No API keys needed.</p></div>
+<article class="article" id="start">
+    <div class="crumbs"><a href="/guides/">Guides</a><span class="sep">/</span><a href="/guides/setup/">Setup</a><span class="sep">/</span><span class="cur">W03</span></div>
+    <p><strong>Goes with guide 002, section 03</strong> (<a href="/guides/intermediate-guide-to-ai-agents/" style="color: var(--ink);">Connect your world</a>). This is that section, hands-on.</p>
+    <p><strong>Prerequisite:</strong> OpenClaw installed and running. Not there yet? Do <a href="/guides/setup/#openclaw" style="color: var(--ink);">walkthrough W02</a> first.</p>
+    <div class="site-alert alert-info">
+      <span class="kicker">What you end up with</span>
+      <p><strong>MCP plug-ins on your OpenClaw agent.</strong> This is Track B, part 2 of 2, and it only applies to the OpenClaw agent from W02. On the phone track? <a href="/guides/connect-your-first-api/" style="color: var(--ink);">Guide 004</a> connects APIs to any agent instead.</p>
+    </div>
+
+    <h2><span class="secnum">01</span>Add the Fetch server with one command</h2>
+    <p>Fetch is maintained by the MCP team and gives your agent one new ability: fetch any web page and read it as clean text. It needs no API key and no settings beyond its name.</p>
+    <div class="codeblock"><button class="copy-btn" type="button">Copy</button><pre>openclaw mcp set fetch '{"command":"npx","args":["-y","@modelcontextprotocol/server-fetch"]}'</pre></div>
+    <p>Reading that command: the server is named <code>fetch</code>, it launches with <code>npx</code>, and the <code>-y</code> flag lets npx download the official package automatically.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>Run <code>openclaw mcp list</code>. You see <code>fetch</code> in the list. It is registered.</p>
+    </div>
+
+    <h2><span class="secnum">02</span>Confirm it loaded</h2>
+    <div class="codeblock"><button class="copy-btn" type="button">Copy</button><pre>openclaw mcp show fetch --json</pre></div>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You see the server's details and its <code>fetch</code> tool. Your agent can now call it.</p>
+    </div>
+
+    <h2><span class="secnum">03</span>Ask your agent to use it</h2>
+    <p>Open your OpenClaw dashboard and send this:</p>
+    <div class="site-alert alert-info"><span class="plabel">Copy, paste, send</span><p>"Fetch https://example.com and tell me what it says."</p></div>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>Your agent returns a summary of the page instead of saying it cannot browse. That is your first MCP-powered answer.</p>
+    </div>
+
+    <h2><span class="secnum">04</span>Understand what you just configured</h2>
+    <p>Every MCP server is one entry under <code>mcp.servers</code> in OpenClaw's config file (<code>~/.openclaw/openclaw.json</code>). Two shapes cover almost everything:</p>
+    <div class="codeblock"><span class="cblabel">Local server: launched on your machine</span><button class="copy-btn" type="button">Copy</button><pre>{
+  "mcp": {
+    "servers": {
+      "fetch": {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-fetch"]
+      }
+    }
+  }
+}</pre></div>
+    <div class="codeblock"><span class="cblabel">Remote server: runs somewhere else, key in headers</span><button class="copy-btn" type="button">Copy</button><pre>{
+  "mcp": {
+    "servers": {
+      "docs": {
+        "url": "https://mcp.example.com",
+        "transport": "streamable-http",
+        "headers": { "Authorization": "Bearer YOUR_KEY_HERE" }
+      }
+    }
+  }
+}</pre></div>
+    <p>The CLI writes this config for you, so you rarely edit the file by hand. One rule from the official docs: never put real secrets inline in the config. Use an environment variable like <code>${MY_API_KEY}</code> and export it before starting the gateway.</p>
+    <div class="site-alert alert-info">
+      <span class="kicker">The pattern</span>
+      <p><strong>Pick a server, run <code>openclaw mcp set</code>, check <code>openclaw mcp list</code>, test it.</strong> That is the whole skill. Every future server works the same way.</p>
+    </div>
+
+    <h2><span class="secnum">05</span>Find your second server</h2>
+    <p>Browse the plugmyagent MCP directory: 34 free servers, every one verified, each with copy-paste config. Pick one that solves a problem you actually have.</p>
+    <a class="card" href="/mcp/">
+      <span class="gnum">MCP</span>
+      <span>
+        <h3>The MCP server directory</h3>
+        <p>34 genuinely free MCP servers with install commands, copy buttons, and category search. Find your next plug-in.</p>
+        <span class="gmeta">Free &middot; Verified &middot; Copy-paste configs</span>
+      </span>
+    </a>
+
+    <div class="trouble">
+      <h3>When something goes wrong</h3>
+      <details>
+        <summary>The first run hangs for a minute</summary>
+        <p>npx is downloading the package the first time. Give it a minute on a decent connection. It is instant on every run after that.</p>
+      </details>
+      <details>
+        <summary>The server is listed but the agent says it cannot use it</summary>
+        <p>Start a fresh session so the agent picks up the new tools. If it persists, run <code>openclaw mcp show fetch --json</code> and read the error it reports.</p>
+      </details>
+      <details>
+        <summary>I want to remove a server</summary>
+        <div class="codeblock"><button class="copy-btn" type="button">Copy</button><pre>openclaw mcp unset fetch</pre></div>
+        <p>Then <code>openclaw mcp list</code> to confirm it is gone.</p>
+      </details>
+    </div>
+  </article>
+
+</main>
+<footer class="site-footer">
+  <p class="foot-nav"><a href="../../../catalog/">Catalog</a> &middot; <a href="../../../mcp/">MCP</a> &middot; <a href="../../../components/">Components</a> &middot; <a href="../../../guides/">Guides</a> &middot; <a href="../../../stack/">My Stack</a></p>
+  <div class="foot-div" aria-hidden="true"></div>
+  <p>&copy; 2026 plugmyagent &middot; Made by <a href="https://x.com/hiddeninwest" rel="noopener">@hiddeninwest</a></p>
+  <p>An independent, hand-maintained catalog of free APIs for AI agents. No ads, no sponsored placements, just tools worth your time.</p>
+  <p><a href="https://hiddeninwest.com" rel="noopener">hiddeninwest.com</a> &middot; <a href="../../../privacy/">Privacy Policy</a></p>
+</footer>
+<script src="../../../topanga.js"></script>
+</body>
+</html>

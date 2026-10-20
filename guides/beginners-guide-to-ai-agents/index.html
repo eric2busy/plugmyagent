@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<title>A Beginner&#x27;s Guide to AI Agents: From Chatbot to Coworker | PlugMyAgent</title>
+<meta name="description" content="New to AI agents? Learn how AI agents turn &#x27;ask me anything&#x27; into &#x27;consider it done&#x27;: what to delegate, how to prompt well, and five starter tasks for week one." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="A Beginner&#x27;s Guide to AI Agents: From Chatbot to Coworker | PlugMyAgent" />
+<meta property="og:description" content="New to AI agents? Learn how AI agents turn &#x27;ask me anything&#x27; into &#x27;consider it done&#x27;: what to delegate, how to prompt well, and five starter tasks for week one." />
+<meta property="og:image" content="https://www.plugmyagent.com/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="A Beginner&#x27;s Guide to AI Agents: From Chatbot to Coworker | PlugMyAgent" />
+<meta name="twitter:description" content="New to AI agents? Learn how AI agents turn &#x27;ask me anything&#x27; into &#x27;consider it done&#x27;: what to delegate, how to prompt well, and five starter tasks for week one." />
+<meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="../../logo-ink.svg" media="(prefers-color-scheme: light)" />
+<link rel="icon" type="image/svg+xml" href="../../logo-cream.svg" media="(prefers-color-scheme: dark)" />
+<link rel="stylesheet" href="../../topanga.css" />
+<script>try{var t=localStorage.getItem('topanga-theme');document.documentElement.setAttribute('data-theme',(t==='light'||t==='dark')?t:'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="wordmark" href="../../"><img class="wm-logo wm-ink" src="../../logo-ink.svg" alt="" aria-hidden="true" /><img class="wm-logo wm-cream" src="../../logo-cream.svg" alt="" aria-hidden="true" />plugmyagent</a>
+    <nav class="topnav" aria-label="Primary"><a href="../../catalog/">API Catalog <span class="nav-count">500+</span></a><a href="../../mcp/">MCP <span class="nav-count">34</span></a><a href="../../components/">Components <span class="nav-count">32</span></a><a href="../../guides/" aria-current="page">Guides <span class="nav-count">8</span></a><a href="../../tools/">Tools</a><a href="../../skills/">Skills <span class="nav-count">20</span></a></nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark theme"><svg class="icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg><svg class="icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></button>
+    <a class="stack-icon-btn" href="../../stack/" aria-label="My Stack"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 12 12 17 22 12"></polyline><polyline points="2 17 12 22 22 17"></polyline></svg><span class="stack-count" data-stack-count></span></a>
+    <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Mobile"><div class="mnav-inner"><a href="../../catalog/"><span>API Catalog <span class="nav-count">500+</span></span></a><a href="../../mcp/"><span>MCP <span class="nav-count">34</span></span></a><a href="../../components/"><span>Components <span class="nav-count">32</span></span></a><a href="../../guides/" aria-current="page"><span>Guides <span class="nav-count">8</span></span></a><a href="../../tools/"><span>Tools</span></a><a href="../../skills/"><span>Skills <span class="nav-count">20</span></span></a></div></nav>
+</header>
+<main id="main" class="layout">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li aria-current="page">Home</li><li><a href="../../guides/">Guides</a></li><li aria-current="page">From Chatbot to Coworker</li></ol></nav>
+<div class="hero"><h1>From chatbot to coworker:<br><span class="neon">a beginner's guide to AI agents.</span></h1><p class="lede">If you have only ever chatted with AI, you are using about ten percent of what it can do. This guide shows how a personal AI agent turns "ask me anything" into "consider it done." No jargon, no setup required to understand it.</p><div class="hero-cta">
+        <a class="btn btn-primary" href="#start">Read the guide</a>
+        <a class="btn btn-secondary" href="./ai-agents-beginners-guide.pdf" download>Download the PDF</a>
+      </div></div>
+<article class="article" id="start">
+    <h2><span class="secnum">01</span>The one idea: a chatbot answers, an agent acts</h2>
+    <p>You already know the chatbot move. You type a question, it types an answer, and the conversation ends. An AI agent works differently. You hand it an outcome, and it does the work to get there: it plans the steps, uses tools, checks sources, builds things, and reports back when it is done.</p>
+    <div class="site-alert alert-info">
+      <span class="kicker">The shift in one sentence</span>
+      <p><strong>Stop asking for answers. Start handing over outcomes.</strong></p>
+    </div>
+    <table class="compare">
+      <tr><th></th><th>Chatbot</th><th>AI agent</th></tr>
+      <tr><th>You ask for</th><td data-label="Chatbot">An answer</td><td data-label="AI agent">An outcome</td></tr>
+      <tr><th>It does</th><td data-label="Chatbot">Writes a reply</td><td data-label="AI agent">Runs the errands, checks the sources, builds the thing</td></tr>
+      <tr><th>After you close the app</th><td data-label="Chatbot">Nothing</td><td data-label="AI agent">Keeps working and reports back</td></tr>
+      <tr><th>Best for</th><td data-label="Chatbot">Quick questions</td><td data-label="AI agent">Real tasks with real deliverables</td></tr>
+    </table>
+
+    <h2><span class="secnum">02</span>Meet your AI agent</h2>
+    <p>A personal AI agent is your own dedicated assistant with its own computer that keeps working between conversations. It remembers your context, keeps going in the background, and every conversation is one to one: just you and your agent. Examples include Muse (Meta's personal AI agent) and OpenClaw. This guide uses Muse as the running example, but the playbook works for any of them. Using a different agent? <a href="/guides/pick-your-agent/" style="color: var(--ink);">Guide 005 compares all nine major agents</a> and links to each one&apos;s setup walkthrough.</p>
+    <p>You reach Muse on the web at <strong>muse.ai</strong>, in the <strong>iOS and Android apps</strong>, or over <strong>WhatsApp</strong>. It is available in the US and Canada.</p>
+    <p>Think of it this way: a chatbot is a very smart stranger you meet fresh every time. An agent is a sharp assistant who already knows how you work.</p>
+
+    <h2><span class="secnum">03</span>See the difference: four before-and-after swaps</h2>
+    <p>The fastest way to feel the shift is to watch a chatbot request become an agent request.</p>
+
+    <h3>1. The hotel hunt</h3>
+    <div class="site-alert alert-info"><span class="plabel bad">Chatbot move</span><p>"What are some good hotels in Vegas?"</p></div>
+    <div class="site-alert alert-info"><span class="plabel good">Agent move</span><p>"Find the best Sunday-night hotel deal near the Strip for September 27, under $120, with free parking. Keep watching prices and tell me if something better shows up before Friday."</p></div>
+
+    <h3>2. The resume</h3>
+    <div class="site-alert alert-info"><span class="plabel bad">Chatbot move</span><p>"Write me a resume summary."</p></div>
+    <div class="site-alert alert-info"><span class="plabel good">Agent move</span><p>"Here is my work history. Build me a one-page resume tailored for office manager roles, and save it as both a PDF and a Word file."</p></div>
+
+    <h3>3. The side hustle</h3>
+    <div class="site-alert alert-info"><span class="plabel bad">Chatbot move</span><p>"How do I start a side business?"</p></div>
+    <div class="site-alert alert-info"><span class="plabel good">Agent move</span><p>"Research three side business ideas I can start with zero dollars and my background in customer service and design. Rank them by realistic first-month income and turn the winner into a one-page plan."</p></div>
+
+    <h3>4. The reminder that actually works</h3>
+    <div class="site-alert alert-info"><span class="plabel bad">Chatbot move</span><p>"Remind me to call the dentist."</p></div>
+    <div class="site-alert alert-info"><span class="plabel good">Agent move</span><p>"Remind me to call the dentist Tuesday at 9am. If I have not confirmed by 10, nudge me again."</p></div>
+
+    <h2><span class="secnum">04</span>What you can hand it today</h2>
+    <p>Six kinds of work where the agent version beats the chatbot version every time.</p>
+    <div class="cards">
+      <div class="card"><h3><span class="ico">&#9679;</span>Research and comparisons</h3><p>Deep dives with sources, price comparisons, best-of lists ranked by what actually matters to you.</p></div>
+      <div class="card"><h3><span class="ico">&#9679;</span>Documents and decks</h3><p>Reports, spreadsheets, presentations, resumes, one-pagers. It writes them and hands you the file.</p></div>
+      <div class="card"><h3><span class="ico">&#9679;</span>Build simple things</h3><p>Web pages, landing pages, small tools and prototypes you can open and use, not just read about.</p></div>
+      <div class="card"><h3><span class="ico">&#9679;</span>Watch things for you</h3><p>Prices, inboxes, listings, schedules. It checks on a schedule and only pings you when something real happens.</p></div>
+      <div class="card"><h3><span class="ico">&#9679;</span>Keep you on track</h3><p>Goals, trips, projects, reminders, morning briefings. It carries the plan so you do not have to.</p></div>
+      <div class="card"><h3><span class="ico">&#9679;</span>Draft your words</h3><p>Emails, messages, posts, replies. It drafts everything and nothing goes out without your say-so.</p></div>
+    </div>
+
+    <h2><span class="secnum">05</span>How to prompt it well: the delegation recipe</h2>
+    <p>Good agent prompts read like a good work assignment. Four ingredients:</p>
+    <ol>
+      <li><strong>The outcome.</strong> What does "done" look like? Name the deliverable.</li>
+      <li><strong>The context.</strong> Dates, budget, links, background. The stuff it cannot guess.</li>
+      <li><strong>The constraints.</strong> Budget, tone, length, what to avoid.</li>
+      <li><strong>The check.</strong> For anything outward-facing, say "show me before you send anything."</li>
+    </ol>
+    <div class="site-alert alert-info"><span class="plabel bad">Vague</span><p>"Plan my trip."</p></div>
+    <div class="site-alert alert-info"><span class="plabel good">Delegated</span><p>"Plan a 3-day weekend trip to San Diego, October 16 to 18, $600 total budget for two people. We like food and beaches and hate crowds. Give me a day-by-day plan with prices and links, and flag anything that needs booking ahead."</p></div>
+    <p>Notice the second one does not just ask a question. It hands over a job with a finish line.</p>
+
+    <h2><span class="secnum">06</span>Staying in control: the approval card</h2>
+    <p>Handing work to an agent does not mean handing over your judgment. When something needs your decision, you get an approval card that says exactly what it wants to do. Nothing moves until you say yes.</p>
+    <p>It will check with you before it spends money, sends a message, posts anything publicly, touches your accounts, or does anything hard to undo. Logins and keys go into a secure vault, never into the chat. You stay the decider. It stays the doer.</p>
+
+    <h2><span class="secnum">07</span>Your first week: five copy-paste starters</h2>
+    <p>Do not start with "what can you do." Start with one of these.</p>
+    <ol class="checklist">
+      <li data-n="1"><strong>Research something you are actually buying.</strong> "Research the 5 best noise-canceling headphones under $200 and rank them by comfort for long calls. Include prices and links."</li>
+      <li data-n="2"><strong>Turn messy notes into a clean doc.</strong> "Turn these notes into a clean one-page summary: [paste your notes]."</li>
+      <li data-n="3"><strong>Set a daily briefing.</strong> "Every morning, check the news on [your topic] and send me a 3-bullet briefing."</li>
+      <li data-n="4"><strong>Draft, do not send.</strong> "Draft an email to my landlord about the leaky faucet. Keep it short and polite. Do not send it."</li>
+      <li data-n="5"><strong>Build something small.</strong> "Build me a simple one-page site for my side project. Keep it clean and mobile-friendly."</li>
+    </ol>
+
+    <h2><span class="secnum">08</span>Getting started in three steps</h2>
+    <ol class="checklist">
+      <li data-n="1"><strong>Pick an agent and get the app.</strong> Start with Muse: open <strong>muse.ai</strong> on the web, or grab the iOS or Android app. If you live in the US or Canada, you are in. Other agents work the same way from here.</li>
+      <li data-n="2"><strong>Start with one real task</strong> from the list above, not a test question. Real stakes teach you the workflow faster.</li>
+      <li data-n="3"><strong>Manage it like a person.</strong> Give feedback the way you would to an assistant: "good, but shorter" or "redo this with the new dates." It learns how you like things.</li>
+    </ol>
+    <div class="site-alert alert-info"><span class="plabel good">Do it hands-on</span><p>The Muse tab on the setup page sets up your first AI agent in 10 minutes: account, app, and your first real task, step by step. <a href="/guides/setup/#muse" style="color: var(--ink);">Start setup &rarr;</a></p></div>
+
+    <div class="card">
+      <h3>Take this guide with you</h3>
+      <p>The full guide as a clean, shareable PDF. Send it to the friend who still thinks AI is just a chatbot.</p>
+      <a class="btn btn-primary" href="./ai-agents-beginners-guide.pdf" download>Download the PDF</a>
+    </div>
+    <a class="card" href="/guides/intermediate-guide-to-ai-agents/">
+      <span class="gnum">002</span>
+      <span>
+        <h3>Next: the intermediate guide</h3>
+        <p>From Tasks to Systems: stop assigning tasks and start building systems. Memory that matters, connected tools, schedules that stick, and five copy-paste plays.</p>
+        <span class="gmeta">Intermediate &middot; 10 min read &middot; PDF included</span>
+      </span>
+    </a>
+  </article>
+
+</main>
+<footer class="site-footer">
+  <p class="foot-nav"><a href="../../catalog/">Catalog</a> &middot; <a href="../../mcp/">MCP</a> &middot; <a href="../../components/">Components</a> &middot; <a href="../../guides/">Guides</a> &middot; <a href="../../stack/">My Stack</a></p>
+  <div class="foot-div" aria-hidden="true"></div>
+  <p>&copy; 2026 plugmyagent &middot; Made by <a href="https://x.com/hiddeninwest" rel="noopener">@hiddeninwest</a></p>
+  <p>An independent, hand-maintained catalog of free APIs for AI agents. No ads, no sponsored placements, just tools worth your time.</p>
+  <p><a href="https://hiddeninwest.com" rel="noopener">hiddeninwest.com</a> &middot; <a href="../../privacy/">Privacy Policy</a></p>
+</footer>
+<script src="../../topanga.js"></script>
+</body>
+</html>

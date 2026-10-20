@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<title>Agent Tools: Key Checker, Config Validator, Prompt Parts</title>
+<meta name="description" content="Three utilities for setting up your agent: check an API key shape, validate MCP config JSON, copy prompt parts." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Agent Tools: Key Checker, Config Validator, Prompt Parts" />
+<meta property="og:description" content="Three utilities for setting up your agent: check an API key shape, validate MCP config JSON, copy prompt parts." />
+<meta property="og:image" content="https://www.plugmyagent.com/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Agent Tools: Key Checker, Config Validator, Prompt Parts" />
+<meta name="twitter:description" content="Three utilities for setting up your agent: check an API key shape, validate MCP config JSON, copy prompt parts." />
+<meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="../logo-ink.svg" media="(prefers-color-scheme: light)" />
+<link rel="icon" type="image/svg+xml" href="../logo-cream.svg" media="(prefers-color-scheme: dark)" />
+<link rel="stylesheet" href="../topanga.css" />
+<script>try{var t=localStorage.getItem('topanga-theme');document.documentElement.setAttribute('data-theme',(t==='light'||t==='dark')?t:'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="wordmark" href="../"><img class="wm-logo wm-ink" src="../logo-ink.svg" alt="" aria-hidden="true" /><img class="wm-logo wm-cream" src="../logo-cream.svg" alt="" aria-hidden="true" />plugmyagent</a>
+    <nav class="topnav" aria-label="Primary"><a href="../catalog/">API Catalog <span class="nav-count">500+</span></a><a href="../mcp/">MCP <span class="nav-count">34</span></a><a href="../components/">Components <span class="nav-count">32</span></a><a href="../guides/">Guides <span class="nav-count">8</span></a><a href="../tools/" aria-current="page">Tools</a><a href="../skills/">Skills <span class="nav-count">20</span></a></nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark theme"><svg class="icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg><svg class="icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></button>
+    <a class="stack-icon-btn" href="../stack/" aria-label="My Stack"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 12 12 17 22 12"></polyline><polyline points="2 17 12 22 22 17"></polyline></svg><span class="stack-count" data-stack-count></span></a>
+    <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Mobile"><div class="mnav-inner"><a href="../catalog/"><span>API Catalog <span class="nav-count">500+</span></span></a><a href="../mcp/"><span>MCP <span class="nav-count">34</span></span></a><a href="../components/"><span>Components <span class="nav-count">32</span></span></a><a href="../guides/"><span>Guides <span class="nav-count">8</span></span></a><a href="../tools/" aria-current="page"><span>Tools</span></a><a href="../skills/"><span>Skills <span class="nav-count">20</span></span></a></div></nav>
+</header>
+<main id="main" class="layout">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li aria-current="page">Home</li><li aria-current="page">Tools</li></ol></nav>
+<h1>Agent <span class="neon">Tools</span></h1>
+<p class="lede">The workshop behind the warehouse. Three utilities you use while setting up your agent. Everything runs in your browser; nothing you paste is sent anywhere.</p>
+<section class="tool-panel" aria-label="API Key Checker">
+  <h2>API Key Checker</h2>
+  <p class="lede">Checks the shape of a key, not whether it works.</p>
+  <div class="field">
+    <label for="keyProvider">Provider</label>
+    <select id="keyProvider">
+      <option value="generic">Generic / unknown</option>
+      <option value="openai">OpenAI (sk-...)</option>
+      <option value="anthropic">Anthropic (sk-ant-...)</option>
+      <option value="google">Google (AIza...)</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="keyInput">API key</label>
+    <input id="keyInput" type="password" autocomplete="off" placeholder="Paste your key here" />
+  </div>
+  <div class="card-actions"><button class="btn btn-primary" type="button" id="keyCheckBtn">Check the key</button></div>
+  <div class="tool-result" id="keyResult" hidden></div>
+</section>
+<section class="tool-panel" aria-label="MCP Config Validator">
+  <h2>MCP Config Validator</h2>
+  <p class="lede">Paste your MCP server JSON. It checks the shape, not the connection.</p>
+  <div class="field">
+    <label for="configInput">MCP config JSON</label>
+    <textarea id="configInput" rows="8" spellcheck="false" placeholder='{"mcpServers": {"filesystem": {"command": "npx", "args": ["-y", "@modelcontextprotocol/server-filesystem", "/tmp"]}}}'></textarea>
+  </div>
+  <div class="card-actions"><button class="btn btn-primary" type="button" id="configCheckBtn">Validate config</button></div>
+  <div class="tool-result" id="configResult" hidden></div>
+</section>
+<section class="tool-panel" aria-label="Prompt Parts">
+  <h2>Prompt Parts</h2>
+  <p class="lede">Copy a piece, paste it into your agent. Combine them to shape how it works.</p>
+  <div class="prompt-list"><div class="prompt-item"><p>You are my operations assistant. You use the tools I connected. You never guess: if a tool call fails, you say so and try the next approach.</p><div class="card-actions"><button class="btn btn-secondary btn-sm" type="button" data-copy-text="You are my operations assistant. You use the tools I connected. You never guess: if a tool call fails, you say so and try the next approach.">Copy</button></div></div><div class="prompt-item"><p>Only use free tiers. Never spend money, never sign up for anything paid, and never share my API keys. If a task needs a paid tier, stop and tell me.</p><div class="card-actions"><button class="btn btn-secondary btn-sm" type="button" data-copy-text="Only use free tiers. Never spend money, never sign up for anything paid, and never share my API keys. If a task needs a paid tier, stop and tell me.">Copy</button></div></div><div class="prompt-item"><p>Before you call any tool, write a 3-step plan and wait for my OK. Then execute the plan, one step at a time, and report back after each step.</p><div class="card-actions"><button class="btn btn-secondary btn-sm" type="button" data-copy-text="Before you call any tool, write a 3-step plan and wait for my OK. Then execute the plan, one step at a time, and report back after each step.">Copy</button></div></div><div class="prompt-item"><p>Return your answer as a table with columns: What you did, What you found, What it costs. Keep each cell to one line.</p><div class="card-actions"><button class="btn btn-secondary btn-sm" type="button" data-copy-text="Return your answer as a table with columns: What you did, What you found, What it costs. Keep each cell to one line.">Copy</button></div></div></div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <p class="foot-nav"><a href="../catalog/">Catalog</a> &middot; <a href="../mcp/">MCP</a> &middot; <a href="../components/">Components</a> &middot; <a href="../guides/">Guides</a> &middot; <a href="../stack/">My Stack</a></p>
+  <div class="foot-div" aria-hidden="true"></div>
+  <p>&copy; 2026 plugmyagent &middot; Made by <a href="https://x.com/hiddeninwest" rel="noopener">@hiddeninwest</a></p>
+  <p>An independent, hand-maintained catalog of free APIs for AI agents. No ads, no sponsored placements, just tools worth your time.</p>
+  <p><a href="https://hiddeninwest.com" rel="noopener">hiddeninwest.com</a> &middot; <a href="../privacy/">Privacy Policy</a></p>
+</footer>
+<script src="../topanga.js"></script>
+</body>
+</html>

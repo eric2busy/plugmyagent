@@ -1,489 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PlugMyAgent: Give Your Agent New Skills</title>
-<meta name="description" content="Give your agent new skills with 450+ verified free APIs. Every one has a setup walkthrough, key verdict, and docs link. No signup, no paywalls.">
-<link rel="canonical" href="https://www.plugmyagent.com/">
-<meta name="theme-color" content="#0b0d0d">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="PlugMyAgent">
-<meta property="og:title" content="PlugMyAgent: Give Your Agent New Skills">
-<meta property="og:description" content="Give your agent new skills: 450+ verified free APIs with setup walkthroughs and key verdicts. No signup, no paywalls.">
-<meta property="og:url" content="https://www.plugmyagent.com/">
-<meta property="og:image" content="https://www.plugmyagent.com/og-card.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="PlugMyAgent: give your agent new skills with 450+ verified free APIs">
-<meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PlugMyAgent: Give Your Agent New Skills">
-<meta name="twitter:description" content="Give your agent new skills: 450+ verified free APIs with setup walkthroughs. No signup, no paywalls.">
-<link rel="icon" type="image/png" href="/plug-favicon.png">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"PlugMyAgent","url":"https://www.plugmyagent.com/","description":"Give your agent new skills with 450+ verified free APIs, setup walkthroughs, and key verdicts. No signup, no paywalls.","potentialAction":{"@type":"SearchAction","target":"https://www.plugmyagent.com/catalog/?q={search_term_string}","query-input":"required name=search_term_string"}}
-</script>
-<style>
-:root{
-  --asphalt:#0b0d0d;
-  --concrete:#131616;
-  --concrete-2:#181d1d;
-  --line:rgba(255,255,255,.09);
-  --line-soft:rgba(255,255,255,.055);
-  --neon:#ff6b1a;
-  --neon-dim:rgba(255,107,26,.14);
-  --amber:#ffb224;
-  --ink:#f4f7f7;
-  --muted:#9fb0b0;
-  --faint:#6b7a7a;
-  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
-  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,"Segoe UI",Roboto,sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:var(--sans);
-  background:var(--asphalt);
-  color:var(--ink);
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-/* blueprint grid backdrop */
-.grid-bg{
-  position:fixed;inset:0;z-index:-2;pointer-events:none;
-  background-image:
-    linear-gradient(var(--line-soft) 1px,transparent 1px),
-    linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);
-  background-size:48px 48px;
-  -webkit-mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 30%,transparent 100%);
-          mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 30%,transparent 100%);
-}
-.glow-top{
-  position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:
-    radial-gradient(640px 320px at 50% -40px,rgba(255,107,26,.13),transparent 70%),
-    radial-gradient(420px 260px at 82% 8%,rgba(255,178,36,.05),transparent 70%);
-}
-::selection{background:var(--neon);color:#38160a}
-.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
-.mono{font-family:var(--mono)}
-
-/* ---- status bar ---- */
-.statusbar{
-  border-bottom:1px solid var(--line-soft);
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
-  color:var(--faint);text-transform:uppercase;
-}
-.statusbar .wrap{display:flex;justify-content:space-between;align-items:center;height:34px}
-.statusbar .live{color:var(--neon);display:flex;align-items:center;gap:8px}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--neon);flex:none;animation:pulse 2.2s infinite}
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(255,107,26,.55)}
-  70%{box-shadow:0 0 0 9px rgba(255,107,26,0)}
-  100%{box-shadow:0 0 0 0 rgba(255,107,26,0)}
-}
-
-/* ---- header ---- */
-header.site{
-  position:sticky;top:0;z-index:50;
-  background:rgba(11,13,13,.82);
-  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line-soft);
-}
-header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:52px}
-.brand{display:flex;align-items:center;text-decoration:none}
-.brand img{height:26px;width:auto;display:block}
-.cart-link{position:relative;display:inline-flex;align-items:center;color:var(--ink);text-decoration:none;padding:8px;border-radius:10px}
-.cart-link:hover{color:var(--neon)}
-.cart-link svg{width:22px;height:22px;display:block}
-.cart-count{position:absolute;top:1px;right:-2px;min-width:18px;height:18px;border-radius:999px;background:var(--neon);color:#38160a;font:700 11px/18px "Azeret Mono",ui-monospace,monospace;text-align:center;padding:0 4px}
-
-nav.main{display:flex;gap:26px;align-items:center}
-nav.main a{
-  font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--muted);text-decoration:none;transition:color .18s;
-}
-nav.main a:hover{color:var(--neon)}
-/* ---- hamburger + mobile menu ---- */
-.burger{display:none;background:none;border:0;cursor:pointer;padding:12px 2px 12px 14px}
-.burger span{display:block;width:22px;height:2px;border-radius:2px;background:var(--ink);margin:5px 0;transition:transform .2s,opacity .2s,background .2s}
-.burger:hover span{background:var(--neon)}
-.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);background:var(--neon)}
-.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
-.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);background:var(--neon)}
-.mnav{display:none}
-@media (max-width:760px){
-  nav.main{display:none}
-  .burger{display:block}
-  .cart-link{margin-left:auto}
-  header.site .wrap{position:relative}
-  .mnav{
-    display:block;position:absolute;top:calc(100% + 8px);right:16px;min-width:230px;z-index:60;
-    background:var(--concrete);border:1px solid var(--line);border-radius:12px;padding:8px;
-    box-shadow:0 24px 60px rgba(0,0,0,.55);
-    opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .18s,transform .18s;
-  }
-  .mnav.open{opacity:1;transform:none;pointer-events:auto}
-  .mnav a{display:block;padding:12px 14px;border-radius:8px;
-    font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--muted);text-decoration:none}
-  .mnav a:hover{background:rgba(255,107,26,.08);color:var(--neon)}
-  .mnav a.cta{background:var(--neon);color:#38160a;font-weight:700;text-align:center;margin-bottom:4px}
-  .mnav a.cta:hover{background:var(--neon);color:#38160a}
-}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  font-weight:700;font-size:15px;text-decoration:none;cursor:pointer;border:0;
-  padding:13px 26px;border-radius:10px;transition:transform .15s,box-shadow .2s,background .2s;
-}
-.btn-neon{background:var(--neon);color:#38160a;box-shadow:0 0 22px rgba(255,107,26,.35)}
-.btn-neon:hover{transform:translateY(-1px);box-shadow:0 0 32px rgba(255,107,26,.55)}
-.btn-ghost{
-  background:transparent;color:var(--ink);
-  border:1px solid var(--line);padding:12px 24px;
-}
-.btn-ghost:hover{border-color:var(--neon);color:var(--neon)}
-.btn-sm{padding:10px 18px;font-size:13.5px}
-.btn-disabled{
-  background:transparent;color:var(--faint);
-  border:1px solid var(--line-soft);padding:12px 24px;
-  opacity:.55;cursor:not-allowed;
-}
-
-/* ---- hero ---- */
-.hero{padding:44px 0 60px;position:relative}
-.eyebrow{
-  font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--neon);display:flex;align-items:center;gap:10px;margin-bottom:26px;
-}
-.eyebrow::before{content:"";width:28px;height:2px;background:var(--neon);box-shadow:0 0 10px var(--neon)}
-.caret{display:inline-block;width:9px;height:18px;background:var(--neon);vertical-align:-3px;animation:blink 1.1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-h1{
-  font-size:clamp(36px,5.4vw,62px);
-  font-weight:800;letter-spacing:-.025em;line-height:1.04;
-  text-transform:uppercase;margin-bottom:20px;
-}
-h1 .neon{color:var(--neon);text-shadow:0 0 34px rgba(255,107,26,.5)}
-.lede{font-size:17px;line-height:1.65;color:var(--muted);max-width:620px;margin-bottom:34px}
-.lede strong{color:var(--ink);font-weight:600}
-
-/* command-bar search */
-.cmdbar{
-  display:flex;align-items:center;gap:0;max-width:640px;
-  background:var(--concrete);border:1px solid var(--line);border-radius:12px;
-  overflow:hidden;transition:border-color .2s,box-shadow .25s;
-}
-.cmdbar:focus-within{border-color:var(--neon);box-shadow:0 0 0 3px rgba(255,107,26,.18),0 0 28px rgba(255,107,26,.15)}
-.cmdbar .prompt{
-  font-family:var(--mono);font-size:18px;color:var(--neon);
-  padding:0 4px 0 20px;user-select:none;
-}
-.cmdbar input{
-  flex:1;background:transparent;border:0;outline:0;color:var(--ink);
-  font-family:var(--mono);font-size:16px;padding:18px 12px 18px 8px;min-width:0;
-}
-.cmdbar input::placeholder{color:var(--faint)}
-.cmdbar button{
-  background:var(--neon);color:#38160a;border:0;cursor:pointer;
-  font-weight:800;font-size:15px;padding:18px 28px;letter-spacing:.02em;
-  transition:box-shadow .2s;
-}
-.cmdbar button:hover{box-shadow:0 0 24px rgba(255,107,26,.6)}
-.search-hint{font-family:var(--mono);font-size:12px;color:var(--faint);margin-top:12px;letter-spacing:.04em}
-.search-hint a{color:var(--neon);text-decoration:none}
-
-/* dashboard stats */
-.dash{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
-  margin-top:56px;max-width:760px;
-}
-.stat{
-  background:var(--concrete);border:1px solid var(--line-soft);border-radius:12px;
-  padding:20px 22px;position:relative;overflow:hidden;
-}
-.stat::after{
-  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
-  background:var(--neon);box-shadow:0 0 12px var(--neon);
-}
-.stat .num{font-family:var(--mono);font-size:30px;font-weight:700;color:var(--neon);letter-spacing:-.02em}
-.stat .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-top:6px}
-
-/* ---- sections ---- */
-section.block{padding:60px 0;border-top:1px solid var(--line-soft)}
-.sector{
-  font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--faint);display:flex;align-items:center;gap:12px;margin-bottom:14px;
-}
-.sector .tag{color:#0b0d0d;background:var(--neon);padding:3px 10px;border-radius:4px;font-weight:700;letter-spacing:.14em}
-h2{font-size:clamp(24px,3.2vw,32px);font-weight:800;letter-spacing:-.02em;margin-bottom:12px;text-transform:uppercase}
-h2 .neon{color:var(--neon);text-shadow:0 0 26px rgba(255,107,26,.4)}
-.sub{color:var(--muted);font-size:16px;line-height:1.65;max-width:640px;margin-bottom:36px}
-
-/* pillar cards */
-.pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.card{
-  background:var(--concrete);border:1px solid var(--line-soft);border-radius:14px;
-  padding:30px;position:relative;overflow:hidden;
-  transition:transform .2s,border-color .2s,box-shadow .25s;
-  display:flex;flex-direction:column;
-}
-.card:hover{transform:translateY(-4px);border-color:rgba(255,107,26,.4);box-shadow:0 18px 44px rgba(0,0,0,.5),0 0 30px rgba(255,107,26,.08)}
-.card .idx{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--faint);margin-bottom:16px;display:flex;justify-content:space-between;align-items:center}
-.card h3{font-size:20px;font-weight:750;letter-spacing:-.01em;margin-bottom:10px}
-.card p{color:var(--muted);font-size:15px;line-height:1.65;flex:1;margin-bottom:22px}
-.card .rail{position:absolute;left:0;top:0;bottom:0;width:3px}
-.card.live .rail{background:var(--neon);box-shadow:0 0 14px var(--neon)}
-.card.soon .rail{background:repeating-linear-gradient(180deg,var(--amber) 0 8px,transparent 8px 16px);opacity:.85}
-.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding:5px 12px;border-radius:99px}
-.pill.live{color:var(--neon);border:1px solid rgba(255,107,26,.45);background:var(--neon-dim)}
-.pill.soon{color:var(--amber);border:1px solid rgba(255,178,36,.4);background:rgba(255,178,36,.08)}
-.card .actions{display:flex;gap:12px;flex-wrap:wrap}
-
-/* flow steps */
-.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.step{
-  background:var(--concrete);border:1px solid var(--line-soft);border-radius:14px;padding:28px;
-  position:relative;
-}
-.step .n{font-family:var(--mono);font-size:13px;color:var(--neon);letter-spacing:.18em;margin-bottom:14px}
-.step h3{font-size:19px;font-weight:700;margin-bottom:10px}
-.step p{color:var(--muted);font-size:15px;line-height:1.65}
-.step a{color:var(--neon);text-decoration:none;font-weight:600}
-
-/* trust chips */
-.chips{display:flex;flex-wrap:wrap;gap:12px}
-.chip{
-  font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;
-  border:1px solid var(--line);border-radius:99px;padding:10px 20px;color:var(--muted);
-  background:var(--concrete);display:flex;align-items:center;gap:9px;
-}
-.chip .tick{color:var(--neon);font-weight:700}
-
-/* ---- footer ---- */
-footer{border-top:1px solid var(--line-soft);padding:48px 0 40px;background:rgba(0,0,0,.25)}
-footer .wrap{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap}
-footer .brand img{height:24px}
-footer p{color:var(--faint);font-size:13.5px;line-height:1.7;margin-top:14px;max-width:340px}
-footer .xlink{
-  display:inline-flex;align-items:center;gap:10px;color:var(--muted);text-decoration:none;
-  font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;margin-top:18px;
-  border:1px solid var(--line);padding:10px 18px;border-radius:99px;transition:border-color .2s,color .2s;
-}
-footer .xlink:hover{border-color:var(--neon);color:var(--neon)}
-footer .base{width:100%;margin-top:36px;padding-top:20px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--faint);text-transform:uppercase}
-
-@media (max-width:760px){
-  nav.main a{display:none}
-  .statusbar .wrap span:last-child{display:none}
-  .statusbar .wrap{justify-content:flex-start}
-  .hero{padding:64px 0 52px}
-  .dash{grid-template-columns:1fr 1fr}
-  .pillars,.flow{grid-template-columns:1fr}
-  .cmdbar button{padding:18px 18px}
-}
-@media (max-width:480px){.dash{grid-template-columns:1fr}}
-</style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<title>PlugMyAgent: Free APIs for AI Agents</title>
+<meta name="description" content="An independent catalog of free APIs for AI agents. Browse 500+ free APIs, MCP servers, components, and guides." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="PlugMyAgent: Free APIs for AI Agents" />
+<meta property="og:description" content="An independent catalog of free APIs for AI agents. Browse 500+ free APIs, MCP servers, components, and guides." />
+<meta property="og:image" content="https://www.plugmyagent.com/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="PlugMyAgent: Free APIs for AI Agents" />
+<meta name="twitter:description" content="An independent catalog of free APIs for AI agents. Browse 500+ free APIs, MCP servers, components, and guides." />
+<meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="logo-ink.svg" media="(prefers-color-scheme: light)" />
+<link rel="icon" type="image/svg+xml" href="logo-cream.svg" media="(prefers-color-scheme: dark)" />
+<link rel="stylesheet" href="topanga.css" />
+<script>try{var t=localStorage.getItem('topanga-theme');document.documentElement.setAttribute('data-theme',(t==='light'||t==='dark')?t:'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}</script>
 </head>
-<body>
-<div class="grid-bg"></div>
-<div class="glow-top"></div>
-
-<div class="statusbar">
-  <div class="wrap">
-    <span class="live"><span class="dot"></span>All systems operational</span>
-    <span>Hub v2.0 // LA Grid</span>
+<body class="home-aero">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="wordmark" href=""><img class="wm-logo wm-ink" src="logo-ink.svg" alt="" aria-hidden="true" /><img class="wm-logo wm-cream" src="logo-cream.svg" alt="" aria-hidden="true" />plugmyagent</a>
+    <nav class="topnav" aria-label="Primary"><a href="catalog/">API Catalog <span class="nav-count">500+</span></a><a href="mcp/">MCP <span class="nav-count">34</span></a><a href="components/">Components <span class="nav-count">32</span></a><a href="guides/">Guides <span class="nav-count">8</span></a><a href="tools/">Tools</a><a href="skills/">Skills <span class="nav-count">20</span></a></nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark theme"><svg class="icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg><svg class="icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></button>
+    <a class="stack-icon-btn" href="stack/" aria-label="My Stack"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 12 12 17 22 12"></polyline><polyline points="2 17 12 22 22 17"></polyline></svg><span class="stack-count" data-stack-count></span></a>
+    <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
   </div>
-</div>
-
-<header class="site">
-  <div class="wrap">
-    <a class="brand" href="/"><img src="/plug-lockup-v2.png" alt="PlugMyAgent"></a>
-    <nav class="main">
-      <a href="/catalog/">Catalog</a>
-      <a href="/mcp/">MCP</a>
-      <a href="/components/">Components</a>
-      <a href="/guides/">Guides</a>
-      <a href="#pillars">Tools</a>
-      <a class="btn btn-neon btn-sm" href="/catalog/">Browse APIs</a>
-    </nav>
-    <a class="cart-link" href="/stack/" aria-label="My stack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M2.5 3.5h2.6l2.5 12.2a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.2L20.5 7H6"/></svg><span class="cart-count" data-cart-count style="display:none">0</span></a><button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
-    <nav class="mnav" id="mnav" aria-label="Mobile">
-      <a href="/stack/">My Stack</a>
-      <a class="cta" href="/catalog/">Browse APIs</a>
-      <a href="/catalog/">API Catalog</a>
-      <a href="/mcp/">MCP</a>
-      <a href="/components/">Components</a>
-      <a href="/guides/">Guides</a>
-      <a href="#pillars">Tools</a>
-    </nav>
-  </div>
+  <nav class="mnav" id="mnav" aria-label="Mobile"><div class="mnav-inner"><a href="catalog/"><span>API Catalog <span class="nav-count">500+</span></span></a><a href="mcp/"><span>MCP <span class="nav-count">34</span></span></a><a href="components/"><span>Components <span class="nav-count">32</span></span></a><a href="guides/"><span>Guides <span class="nav-count">8</span></span></a><a href="tools/"><span>Tools</span></a><a href="skills/"><span>Skills <span class="nav-count">20</span></span></a></div></nav>
 </header>
+<main id="main" class="layout">
+<div class="page-dots" aria-hidden="true"></div>
+<section class="hero" aria-label="Welcome">
+<div class="hero-content">
+<h1>Give your agent <span class="neon">real tools.</span></h1>
+<p class="lede">Every API in this catalog is free to start. Find the one your agent needs, read a plain-English setup, and get it working today.</p>
+<form class="hero-search" role="search" action="catalog/" method="get">
+  <label class="sr-only" for="heroSearch">Search the whole site</label>
+  <input id="heroSearch" type="search" name="q" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Search 500+ APIs, MCP servers, components, guides..." role="combobox" aria-expanded="false" aria-controls="heroResults" aria-autocomplete="list" />
+  <div id="heroResults" class="hero-results" role="listbox" hidden></div>
+</form>
+<p class="hero-try">Try: <button type="button" data-hero-try="telegram">telegram</button>, <button type="button" data-hero-try="maps">maps</button>, <button type="button" data-hero-try="weather">weather</button></p>
+</div>
+</section>
+<div class="stat-band" aria-label="Catalog at a glance">
+  <a class="stat-cell" href="catalog/"><span class="stat-row"><svg class="stat-glyph" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6M15 2v6M7 8h10v5a5 5 0 0 1-10 0V8zM12 18v3"></path></svg><b>500+</b></span><span class="stat-label">Free APIs</span></a>
+  <a class="stat-cell" href="mcp/"><span class="stat-row"><svg class="stat-glyph" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1"></rect><rect x="3" y="14" width="18" height="6" rx="1"></rect><circle cx="7.5" cy="7" r="1" fill="currentColor"></circle><circle cx="7.5" cy="17" r="1" fill="currentColor"></circle></svg><b>34</b></span><span class="stat-label">MCP servers</span></a>
+  <a class="stat-cell" href="components/"><span class="stat-row"><svg class="stat-glyph" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1.5"></rect><rect x="13" y="3" width="8" height="8" rx="1.5"></rect><rect x="3" y="13" width="8" height="8" rx="1.5"></rect><rect x="13" y="13" width="8" height="8" rx="1.5"></rect></svg><b>32</b></span><span class="stat-label">Components</span></a>
+</div>
+<h2>Start here</h2>
+<div class="pillar-grid"><section class="card " aria-label="API Catalog"><div class="card-top"><h3>API Catalog</h3><span class="badge badge-accent">500+ free APIs</span></div><p>Browse every free API in the catalog, with setup steps and working examples.</p><div class="card-actions"><a class="btn btn-secondary" href="catalog/">Browse the catalog</a></div></section><section class="card " aria-label="MCP"><div class="card-top"><h3>MCP</h3><span class="badge badge-accent">34 servers</span></div><p>One standard way to give your agent files, apps, and services.</p><div class="card-actions"><a class="btn btn-secondary" href="mcp/">See MCP servers</a></div></section><section class="card " aria-label="Components"><div class="card-top"><h3>Components</h3><span class="badge badge-accent">32 libraries</span></div><p>Free UI libraries and building blocks for agent interfaces.</p><div class="card-actions"><a class="btn btn-secondary" href="components/">See components</a></div></section><section class="card " aria-label="Guides"><div class="card-top"><h3>Guides</h3><span class="badge badge-accent">8 guides</span></div><p>Plain-English walkthroughs, from your first agent to your first API.</p><div class="card-actions"><a class="btn btn-secondary" href="guides/">Read the guides</a></div></section><section class="card " aria-label="Tools"><div class="card-top"><h3>Tools</h3><span class="badge badge-accent">3 utilities</span></div><p>Key checker, config validator, and prompt parts. The workshop behind the warehouse.</p><div class="card-actions"><a class="btn btn-secondary" href="tools/">Use the tools</a></div></section><section class="card " aria-label="Skills"><div class="card-top"><h3>Skills</h3><span class="badge badge-accent">20 skills</span></div><p>Installable instructions that teach your agent a workflow: design taste, frontend patterns, SEO, and more.</p><div class="card-actions"><a class="btn btn-secondary" href="skills/">Browse skills</a></div></section></div>
+<h2>Featured APIs</h2>
+<p class="muted">A sample from the catalog of 500+ free APIs.</p>
+<div class="entry-grid entry-grid-compact"><article class="entry-card"><div class="entry-top"><img class="logo-tile logo-tile-img" src="favicons/api-telegram-bot-api.png" alt="" aria-hidden="true" loading="lazy"><div class="entry-head"><h3><a href="api/telegram-bot-api/">Telegram Bot API</a></h3><span class="entry-cat">Messaging &amp; Chat</span></div></div><p class="entry-desc">Turn a Telegram bot into a free text-message channel for your business, alerts, or personal notifications.</p><div class="entry-actions"><a class="btn btn-secondary btn-sm" href="api/telegram-bot-api/">View details</a><a class="btn btn-secondary btn-sm" href="https://core.telegram.org/bots/api">Docs</a></div></article><article class="entry-card"><div class="entry-top"><img class="logo-tile logo-tile-img" src="favicons/api-discord-webhooks.png" alt="" aria-hidden="true" loading="lazy"><div class="entry-head"><h3><a href="api/discord-webhooks/">Discord Webhooks</a></h3><span class="entry-cat">Messaging &amp; Chat</span></div></div><p class="entry-desc">Post messages automatically into a Discord channel. The easiest free notification pipe for any project.</p><div class="entry-actions"><a class="btn btn-secondary btn-sm" href="api/discord-webhooks/">View details</a><a class="btn btn-secondary btn-sm" href="https://docs.discord.com/developers/resources/webhook">Docs</a></div></article><article class="entry-card"><div class="entry-top"><img class="logo-tile logo-tile-img" src="favicons/api-slack-incoming-webhooks.png" alt="" aria-hidden="true" loading="lazy"><div class="entry-head"><h3><a href="api/slack-incoming-webhooks/">Slack Incoming Webhooks</a></h3><span class="entry-cat">Messaging &amp; Chat</span></div></div><p class="entry-desc">Pipe notifications and alerts from any app straight into a Slack channel, free on every Slack plan.</p><div class="entry-actions"><a class="btn btn-secondary btn-sm" href="api/slack-incoming-webhooks/">View details</a><a class="btn btn-secondary btn-sm" href="https://docs.slack.dev/messaging/sending-messages-using-incoming-webhooks/">Docs</a></div></article><article class="entry-card"><div class="entry-top"><img class="logo-tile logo-tile-img" src="favicons/api-textbelt.png" alt="" aria-hidden="true" loading="lazy"><div class="entry-head"><h3><a href="api/textbelt/">Textbelt</a></h3><span class="entry-cat">Messaging &amp; Chat</span></div></div><p class="entry-desc">Send real text messages (SMS) from a simple web request. Free open-source version you can run yourself.</p><div class="entry-actions"><a class="btn btn-secondary btn-sm" href="api/textbelt/">View details</a><a class="btn btn-secondary btn-sm" href="https://github.com/typpo/textbelt">Docs</a></div></article><article class="entry-card"><div class="entry-top"><img class="logo-tile logo-tile-img" src="favicons/api-ntfy.png" alt="" aria-hidden="true" loading="lazy"><div class="entry-head"><h3><a href="api/ntfy/">ntfy</a></h3><span class="entry-cat">Push Notifications</span></div></div><p class="entry-desc">Push notifications to your phone from any script with one simple line. No signup, no cost, no key.</p><div class="entry-actions"><a class="btn btn-secondary btn-sm" href="api/ntfy/">View details</a><a class="btn btn-secondary btn-sm" href="https://ntfy.sh/docs/">Docs</a></div></article><article class="entry-card"><div class="entry-top"><img class="logo-tile logo-tile-img" src="favicons/api-gotify.png" alt="" aria-hidden="true" loading="lazy"><div class="entry-head"><h3><a href="api/gotify/">Gotify</a></h3><span class="entry-cat">Push Notifications</span></div></div><p class="entry-desc">Your own private push-notification server. Free, open source, with Android, web, and CLI apps.</p><div class="entry-actions"><a class="btn btn-secondary btn-sm" href="api/gotify/">View details</a><a class="btn btn-secondary btn-sm" href="https://gotify.net/docs/">Docs</a></div></article><article class="entry-card"><div class="entry-top"><img class="logo-tile logo-tile-img" src="favicons/api-resend.png" alt="" aria-hidden="true" loading="lazy"><div class="entry-head"><h3><a href="api/resend/">Resend</a></h3><span class="entry-cat">Email</span></div></div><p class="entry-desc">Send real emails from your app or website. 3,000 free emails a month, no credit card.</p><div class="entry-actions"><a class="btn btn-secondary btn-sm" href="api/resend/">View details</a><a class="btn btn-secondary btn-sm" href="https://resend.com/docs">Docs</a></div></article><article class="entry-card"><div class="entry-top"><img class="logo-tile logo-tile-img" src="favicons/api-sendgrid.png" alt="" aria-hidden="true" loading="lazy"><div class="entry-head"><h3><a href="api/sendgrid/">SendGrid</a></h3><span class="entry-cat">Email</span></div></div><p class="entry-desc">The long-running industry standard for sending email from apps. 100 free emails every day.</p><div class="entry-actions"><a class="btn btn-secondary btn-sm" href="api/sendgrid/">View details</a><a class="btn btn-secondary btn-sm" href="https://docs.sendgrid.com">Docs</a></div></article></div>
+<div class="card-actions"><a class="btn btn-primary" href="catalog/">Browse all 500+ APIs</a></div>
 
-<main>
-  <section class="hero">
-    <div class="wrap">
-      <div class="eyebrow">Sector 01 // Agent resource hub <span class="caret"></span></div>
-      <h1>Give your agent<br><span class="neon">new skills.</span></h1>
-      <p class="lede">Your agent is only as capable as the tools you give it. PlugMyAgent hands you <strong>450+ verified free APIs</strong> with setup walkthroughs and key verdicts, so your next build ships with superpowers. No signup. No paywalls. Just plug in and build.</p>
-
-      <form class="cmdbar" action="/catalog/" method="get" role="search">
-        <span class="prompt">&gt;_</span>
-        <input type="search" name="q" placeholder="what should your agent learn to do?" aria-label="Search the API catalog" autocomplete="off">
-        <button type="submit">Search</button>
-      </form>
-      <p class="search-hint">Try <a href="/catalog/?q=weather">weather</a>, <a href="/catalog/?q=music">music</a>, <a href="/catalog/?q=maps">maps</a> or <a href="/catalog/">browse all 450+</a></p>
-
-      <div class="dash">
-        <div class="stat"><div class="num">450+</div><div class="lbl">APIs live</div></div>
-        <div class="stat"><div class="num">05</div><div class="lbl">Pillars</div></div>
-        <div class="stat"><div class="num">00</div><div class="lbl">Signup needed</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="pillars">
-    <div class="wrap">
-      <div class="sector"><span class="tag">02</span> The pillars // five sectors, one grid</div>
-      <h2>An agent without tools<br><span class="neon">is just a chatbot.</span></h2>
-      <p class="sub">The catalog, MCP directory, component library directory, and guides are live now. Agent tools wire into the same grid as they ship.</p>
-      <div class="pillars">
-        <div class="card live">
-          <span class="rail"></span>
-          <div class="idx"><span>PILLAR / 01</span><span class="pill live"><span class="dot"></span>Live</span></div>
-          <h3>Free API Catalog</h3>
-          <p>450+ free APIs verified by hand, browsable by what you want your agent to do. Every listing shows what it unlocks, whether it needs a key, and exactly how to wire it up. Save winners to My Stack and share any API with its own page.</p>
-          <div class="actions">
-            <a class="btn btn-neon btn-sm" href="/catalog/">Find your API</a>
-          </div>
-        </div>
-        <div class="card live">
-          <span class="rail"></span>
-          <div class="idx"><span>PILLAR / 02</span><span class="pill live"><span class="dot"></span>Live</span></div>
-          <h3>MCP Server Directory</h3>
-          <p>One standard plug for files, apps, and services. A curated index of free MCP servers so your agent reaches everything through a single connection.</p>
-          <div class="actions">
-            <a class="btn btn-neon btn-sm" href="/mcp/">Browse servers</a>
-          </div>
-        </div>
-        <div class="card live">
-          <span class="rail"></span>
-          <div class="idx"><span>PILLAR / 03</span><span class="pill live"><span class="dot"></span>Live</span></div>
-          <h3>Component Library Directory</h3>
-          <p>Free, open-source UI component libraries for designers and builders. Ready-made buttons, cards, forms, and layouts for React, Vue, Tailwind, and more, with install commands and live demos.</p>
-          <div class="actions">
-            <a class="btn btn-neon btn-sm" href="/components/">Browse libraries</a>
-          </div>
-        </div>
-        <div class="card live">
-          <span class="rail"></span>
-          <div class="idx"><span>PILLAR / 04</span><span class="pill live"><span class="dot"></span>Live</span></div>
-          <h3>Guides</h3>
-          <p>Plain-English walkthroughs for the agentic era, from your first AI agent to power-user setups. First guide is live now: a beginner's guide to AI agents.</p>
-          <div class="actions">
-            <a class="btn btn-neon btn-sm" href="/guides/">Read the guides</a>
-          </div>
-        </div>
-        <div class="card soon">
-          <span class="rail"></span>
-          <div class="idx"><span>PILLAR / 05</span><span class="pill soon">Coming soon</span></div>
-          <h3>Agent Tools</h3>
-          <p>Key checkers, config validators, and prompt parts you drop straight into your setup. The workshop behind the warehouse.</p>
-          <div class="actions">
-            <button class="btn btn-sm btn-disabled" disabled>Coming soon</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="wrap">
-      <div class="sector"><span class="tag">03</span> Protocol // zero to plugged in</div>
-      <h2>Zero to <span class="neon">plugged in.</span></h2>
-      <p class="sub">Three moves. No guesswork. No computer science degree required.</p>
-      <div class="flow">
-        <div class="step">
-          <div class="n">01 &gt;</div>
-          <h3>Find your weapon</h3>
-          <p>Search 450+ free APIs or browse by what you want your agent to do. Every listing shows what it unlocks, what it costs (free), and the key situation before you commit.</p>
-        </div>
-        <div class="step">
-          <div class="n">02 &gt;</div>
-          <h3>Wire it up</h3>
-          <p>Each API page carries a 3-step setup and a docs link. Copy the pattern, paste your key, and watch your agent do something it could not do five minutes ago.</p>
-        </div>
-        <div class="step">
-          <div class="n">03 &gt;</div>
-          <h3>Stack and ship</h3>
-          <p>Save your build to <a href="/catalog/">My Stack</a>, share API pages with your team, and come back as new sectors plug into the grid.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="wrap">
-      <div class="sector"><span class="tag">04</span> Street cred // why builders stay</div>
-      <h2>Free <span class="neon">means free.</span></h2>
-      <p class="sub">Every API has a working free tier. Every setup is walked through by hand. This is the parts warehouse for the agent era, and the door is open.</p>
-      <div class="chips">
-        <span class="chip"><span class="tick">✓</span> 450+ APIs verified by hand</span>
-        <span class="chip"><span class="tick">✓</span> Every free tier confirmed</span>
-        <span class="chip"><span class="tick">✓</span> 3-step setup on every API</span>
-        <span class="chip"><span class="tick">✓</span> One shareable page per API</span>
-        <span class="chip"><span class="tick">✓</span> My Stack: save your build</span>
-        <span class="chip"><span class="tick">✓</span> No signup, no tracking games</span>
-      </div>
-      <div style="margin-top:36px">
-        <a class="btn btn-neon" href="/catalog/">Start building free</a>
-      </div>
-    </div>
-  </section>
 </main>
-
-<footer>
-  <div class="wrap">
-    <div>
-      <a class="brand" href="/"><img src="/plug-lockup-v2.png" alt="PlugMyAgent"></a>
-      <p>An independent, hand-maintained catalog of free APIs for AI agents. No ads, no sponsored placements, just tools worth your time.</p>
-      <a class="xlink" href="https://x.com/hiddeninwest">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        @hiddeninwest
-      </a>
-      <a class="xlink" href="mailto:contact@plugmyagent.com">contact@plugmyagent.com</a>
-    </div>
-    <div class="base" style="width:100%">
-      <span>© 2026 PlugMyAgent</span>
-      <span>Built in Los Angeles</span>
-    </div>
-  </div>
+<footer class="site-footer">
+  <p class="foot-nav"><a href="catalog/">Catalog</a> &middot; <a href="mcp/">MCP</a> &middot; <a href="components/">Components</a> &middot; <a href="guides/">Guides</a> &middot; <a href="stack/">My Stack</a></p>
+  <div class="foot-div" aria-hidden="true"></div>
+  <p>&copy; 2026 plugmyagent &middot; Made by <a href="https://x.com/hiddeninwest" rel="noopener">@hiddeninwest</a></p>
+  <p>An independent, hand-maintained catalog of free APIs for AI agents. No ads, no sponsored placements, just tools worth your time.</p>
+  <p><a href="https://hiddeninwest.com" rel="noopener">hiddeninwest.com</a> &middot; <a href="privacy/">Privacy Policy</a></p>
 </footer>
-<script>
-(function(){
-  var b=document.querySelector('.burger'),m=document.getElementById('mnav');
-  if(!b||!m)return;
-  function set(open){
-    m.classList.toggle('open',open);
-    b.setAttribute('aria-expanded',open?'true':'false');
-    b.setAttribute('aria-label',open?'Close menu':'Open menu');
-  }
-  b.addEventListener('click',function(e){e.stopPropagation();set(!m.classList.contains('open'))});
-  document.addEventListener('click',function(e){if(m.classList.contains('open')&&!m.contains(e.target))set(false)});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
-})();
-</script>
-<script>
-(function(){
-  var KEY = "plugmyagent_stack_v1";
-  function read(){ try { var v = JSON.parse(localStorage.getItem(KEY) || "[]"); return Array.isArray(v) ? v : []; } catch (_) { return []; } }
-  function paint(){ var n = read().length;
-    document.querySelectorAll("[data-cart-count]").forEach(function(b){ b.textContent = n; b.style.display = n > 0 ? "" : "none"; }); }
-  window.addEventListener("storage", function(e){ if (e.key === KEY) paint(); });
-  document.addEventListener("pma:stack", paint);
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", paint); else paint();
-})();
-</script>
+<script src="topanga.js"></script>
 </body>
 </html>

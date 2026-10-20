@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<title>Connect Your First API: Zero to Working Agent in 10 Minutes | PlugMyAgent</title>
+<meta name="description" content="A beginner-friendly setup guide for any AI agent: pick a free API, connect it, and run your first live test in 10 minutes. No signup needed on the fast path." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Connect Your First API: Zero to Working Agent in 10 Minutes | PlugMyAgent" />
+<meta property="og:description" content="A beginner-friendly setup guide for any AI agent: pick a free API, connect it, and run your first live test in 10 minutes. No signup needed on the fast path." />
+<meta property="og:image" content="https://www.plugmyagent.com/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Connect Your First API: Zero to Working Agent in 10 Minutes | PlugMyAgent" />
+<meta name="twitter:description" content="A beginner-friendly setup guide for any AI agent: pick a free API, connect it, and run your first live test in 10 minutes. No signup needed on the fast path." />
+<meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="../../logo-ink.svg" media="(prefers-color-scheme: light)" />
+<link rel="icon" type="image/svg+xml" href="../../logo-cream.svg" media="(prefers-color-scheme: dark)" />
+<link rel="stylesheet" href="../../topanga.css" />
+<script>try{var t=localStorage.getItem('topanga-theme');document.documentElement.setAttribute('data-theme',(t==='light'||t==='dark')?t:'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="wordmark" href="../../"><img class="wm-logo wm-ink" src="../../logo-ink.svg" alt="" aria-hidden="true" /><img class="wm-logo wm-cream" src="../../logo-cream.svg" alt="" aria-hidden="true" />plugmyagent</a>
+    <nav class="topnav" aria-label="Primary"><a href="../../catalog/">API Catalog <span class="nav-count">500+</span></a><a href="../../mcp/">MCP <span class="nav-count">34</span></a><a href="../../components/">Components <span class="nav-count">32</span></a><a href="../../guides/" aria-current="page">Guides <span class="nav-count">8</span></a><a href="../../tools/">Tools</a><a href="../../skills/">Skills <span class="nav-count">20</span></a></nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark theme"><svg class="icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg><svg class="icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></button>
+    <a class="stack-icon-btn" href="../../stack/" aria-label="My Stack"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 12 12 17 22 12"></polyline><polyline points="2 17 12 22 22 17"></polyline></svg><span class="stack-count" data-stack-count></span></a>
+    <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Mobile"><div class="mnav-inner"><a href="../../catalog/"><span>API Catalog <span class="nav-count">500+</span></span></a><a href="../../mcp/"><span>MCP <span class="nav-count">34</span></span></a><a href="../../components/"><span>Components <span class="nav-count">32</span></span></a><a href="../../guides/" aria-current="page"><span>Guides <span class="nav-count">8</span></span></a><a href="../../tools/"><span>Tools</span></a><a href="../../skills/"><span>Skills <span class="nav-count">20</span></span></a></div></nav>
+</header>
+<main id="main" class="layout">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li aria-current="page">Home</li><li><a href="../../guides/">Guides</a></li><li aria-current="page">Connect Your First API</li></ol></nav>
+<div class="hero"><h1>Connect your first API:<br><span class="neon">zero to working agent in 10 minutes.</span></h1><p class="lede">No signup on the fast path. No specific agent required. In ten minutes your agent will call a real API and bring back live data. That is the whole guide, and it works with whatever agent you already use.</p><div class="hero-cta">
+        <a class="btn btn-primary" href="#start">Start the 10 minutes</a>
+        <a class="btn btn-secondary" href="/catalog/">Browse the catalog</a>
+      </div></div>
+<article class="article" id="start">
+    <div class="site-alert alert-info">
+      <span class="kicker">The promise</span>
+      <p><strong>Ten minutes from now, you will ask your agent something it cannot answer from training data, and it will go fetch the real answer from a live API.</strong> A chatting agent is a toy. A working agent has tools. This guide connects the first one.</p>
+    </div>
+    <div class="site-alert alert-info"><span class="plabel">No agent yet?</span><p><a href="/guides/" style="color: var(--ink);">Pick a setup track on the guides page</a> (10 minutes), then come back here. This guide works with whichever agent you choose.</p></div>
+
+    <h2><span class="secnum">01</span>The finish line: what "working" looks like</h2>
+    <p>Right now your agent chats. After this guide, it acts. You will ask "what is the temperature in Berlin right now" and it will go get the number from a live weather API instead of guessing from memory.</p>
+    <p>That gap, between answering from memory and fetching live data, is the entire skill. Everything else on this site is a variation of it.</p>
+    <div class="site-alert alert-info"><span class="plabel good">Your minute-9 test</span><p>"What is the current temperature in Berlin?" If the answer is a live number, you are done. If it says "Berlin is usually around...", it guessed. Section 05 fixes that in one sentence.</p></div>
+
+    <h2><span class="secnum">02</span>Minutes 0 to 2: pick a boring API</h2>
+    <p>For the 10-minute path, pick an API that needs no signup and no key. In the catalog, these carry the <strong>no signup</strong> effort badge. No forms, no waiting for a key email, nothing between you and a working test.</p>
+    <ol class="checklist">
+      <li data-n="1"><strong>Open the catalog</strong> and look for the no signup badge.</li>
+      <li data-n="2"><strong>Pick one you understand.</strong> Weather, crypto prices, jokes, IP lookup. If you know what it should return, you will know instantly whether it worked.</li>
+      <li data-n="3"><strong>Copy the endpoint URL</strong> from the API page. That long https address is the tool's address. You hand it to your agent in the next step.</li>
+    </ol>
+    <div class="site-alert alert-info">
+      <span class="kicker">Boring is the point</span>
+      <p><strong>Your first API should be boring. You are testing the plumbing, not building the product.</strong> Fancy comes later, after the pattern is proven.</p>
+    </div>
+
+    <h2><span class="secnum">03</span>Minutes 2 to 4: the only three moves</h2>
+    <p>Every API on this site connects the same way. Three moves, no exceptions:</p>
+    <div class="cards">
+      <div class="card"><h3><span class="ico">&#9679;</span>1. Get access</h3><p>Copy the endpoint. Grab a key only if the API asks for one. Yours does not, which is why you picked it.</p></div>
+      <div class="card"><h3><span class="ico">&#9679;</span>2. Connect it</h3><p>Tell your agent the tool exists: its address and what it returns. Plain words work.</p></div>
+      <div class="card"><h3><span class="ico">&#9679;</span>3. Test it</h3><p>Ask one question only this API can answer. Live data back means it worked.</p></div>
+    </div>
+    <p>Keys, plug-ins, and libraries are all fancier versions of these three moves. Learn them here and you already know most of every setup on the site.</p>
+
+    <h2><span class="secnum">04</span>Minutes 4 to 7: hand the tool to your agent</h2>
+    <p>Your agent needs two things: the <strong>address</strong> (the endpoint URL you copied) and a <strong>description</strong> of what comes back. Open wherever your agent manages tools. It is usually called Tools, Integrations, Plugins, or Actions. Every agent has one.</p>
+    <p>Add it like this, using a real keyless weather API as the example:</p>
+    <div class="codeblock"><span class="cblabel">The tool, in plain words</span><button class="copy-btn" type="button">Copy</button><pre>Tool name: Current weather
+Address: https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m
+Use it when: I ask about weather or temperature anywhere.
+It returns: JSON with the current temperature in Celsius.</pre></div>
+    <p>If your agent takes tools as a chat message instead of a settings screen, send it exactly that text. If it has a tools screen, paste the address into the URL field and the rest into the description. Same information, either door.</p>
+    <div class="site-alert alert-info">
+      <span class="kicker">Why plain words work</span>
+      <p><strong>You are not programming. You are delegating.</strong> Brief it the way you would brief a person: here is the tool, here is when to use it, here is what good looks like. Agents are fluent in plain words.</p>
+    </div>
+
+    <h2><span class="secnum">05</span>Minutes 7 to 9: run the test</h2>
+    <p>Ask the one question:</p>
+    <div class="site-alert alert-info"><span class="plabel">The test</span><p>"What is the current temperature in Berlin?"</p></div>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>It answers with a specific number, in Celsius, that matches the real world right now. Check it against any weather site if you like. A live number means the tool fired. You have a working agent.</p>
+    </div>
+    <div class="site-alert alert-info"><span class="plabel bad">If it answers from memory</span><p>"Berlin is usually around 15 degrees this time of year" means it guessed without calling the tool. Fix it in one sentence: <strong>"No. Use the weather tool I just gave you and read the number from its response."</strong> Then ask again.</p></div>
+
+    <h2><span class="secnum">06</span>Minute 9 to 10: make it yours</h2>
+    <p>You now know the three moves. Add a second tool, a fun one this time: a joke API, a crypto price, the space station location. Same three moves, second rep. Two working tools means the pattern is yours, not luck.</p>
+    <p>And when you are ready for APIs that need a key, that is just move 1 with one extra step. Section 07 covers it in 60 seconds.</p>
+    <div class="cards">
+      <div class="card"><h3><span class="ico">&#9679;</span>Free API keys</h3><p>Most of the catalog. One extra step: the key travels in the request header. <a href="#keys" style="color: var(--ink);">The 60-second version &darr;</a></p></div>
+      <div class="card"><h3><span class="ico">&#9679;</span>MCP servers</h3><p>For agents that speak MCP: tools install with one command and a config block. <a href="/guides/walkthroughs/first-mcp-server/" style="color: var(--ink);">Walkthrough W03 does it in 5 minutes &rarr;</a></p></div>
+      <div class="card"><h3><span class="ico">&#9679;</span>Libraries</h3><p>JavaScript components install with npm and import in one line. <a href="/components/" style="color: var(--ink);">Browse the components &rarr;</a></p></div>
+    </div>
+
+    <h2 id="keys"><span class="secnum">07</span>The 60-second key version</h2>
+    <p>Your second API will probably ask for a free key. Get it from the provider's site (free tier, no card on this catalog's listings), then send it in the request header. Three patterns cover nearly every API on earth:</p>
+    <div class="codeblock"><span class="cblabel">Pattern 1: Bearer token (most common)</span><button class="copy-btn" type="button">Copy</button><pre>curl -H "Authorization: Bearer YOUR_KEY"   https://api.example.com/v1/data</pre></div>
+    <div class="codeblock"><span class="cblabel">Pattern 2: API key header</span><button class="copy-btn" type="button">Copy</button><pre>curl -H "x-api-key: YOUR_KEY"   https://api.example.com/v1/data</pre></div>
+    <div class="codeblock"><span class="cblabel">Pattern 3: Key in the URL</span><button class="copy-btn" type="button">Copy</button><pre>curl "https://api.example.com/v1/data?key=YOUR_KEY"</pre></div>
+    <p>Your API's page on this site shows which pattern it uses. Tell your agent the same way as before, plus one line: "Send my key in the Authorization header."</p>
+    <div class="site-alert alert-info">
+      <span class="kicker">Key hygiene, the short version</span>
+      <p><strong>Keys live in your agent's settings or secure vault. Never in a chat message, never in a screenshot, never in code you share.</strong> If a key leaks, revoke it and make a new one. Section 09 has the full rules.</p>
+    </div>
+
+    <h2><span class="secnum">08</span>When it breaks: the 3-minute fix list</h2>
+    <p>Something will go wrong once. It is almost always one of these five, and each takes under a minute to fix.</p>
+    <div class="site-alert alert-info"><span class="plabel bad">401 Unauthorized</span><p>The key is missing, wrong, or in the wrong header. Re-copy it from the provider dashboard and check the pattern in section 07.</p></div>
+    <div class="site-alert alert-info"><span class="plabel bad">404 Not Found</span><p>The endpoint URL has a typo. Compare it character by character with the API page. One wrong letter is enough.</p></div>
+    <div class="site-alert alert-info"><span class="plabel bad">429 Too Many Requests</span><p>You asked too fast. Free tiers are generous but not infinite. Wait a minute and try again.</p></div>
+    <div class="site-alert alert-info"><span class="plabel bad">It answers from memory</span><p>It did not call the tool. Say "use the [name] tool" explicitly, naming it. Agents sometimes need the nudge.</p></div>
+    <div class="site-alert alert-info"><span class="plabel bad">CORS error (browser only)</span><p>The API refused a direct browser call. Have your agent call it instead, or route it through a tiny server. This one is never your fault.</p></div>
+
+    <h2><span class="secnum">09</span>Key hygiene: the five rules</h2>
+    <ol class="checklist">
+      <li data-n="1"><strong>Keys live in settings or the vault.</strong> Your agent's secure settings, or an environment variable. That is the entire list of approved homes.</li>
+      <li data-n="2"><strong>Never in chat, screenshots, or shared code.</strong> If you would not print it on a t-shirt, do not paste it there.</li>
+      <li data-n="3"><strong>One key per project.</strong> If one leaks, you revoke one, not everything.</li>
+      <li data-n="4"><strong>Leaked means revoked.</strong> The moment a key escapes, delete it at the provider and make a new one. Do not debate it.</li>
+      <li data-n="5"><strong>Free tier, calendar reminder.</strong> If a key came with a trial, set a reminder before it ends. Surprise bills are a choice.</li>
+    </ol>
+
+    <div class="site-alert alert-info">
+      <span class="kicker">You are done</span>
+      <p><strong>Three moves: get access, connect it, test it.</strong> You did it in ten minutes with a boring weather API. The same three moves connect every listing on this site. Go collect tools.</p>
+    </div>
+
+    <a class="card" href="/guides/walkthroughs/first-mcp-server/">
+      <span class="gnum">W03</span>
+      <span>
+        <h3>Next: your first MCP server</h3>
+        <p>The plug-in version of what you just did: install the official Fetch MCP server with one command, five minutes, no API keys.</p>
+        <span class="gmeta">5 min &middot; Beginner &middot; Free</span>
+      </span>
+    </a>
+    <a class="card" href="/guides/intermediate-guide-to-ai-agents/">
+      <span class="gnum">002</span>
+      <span>
+        <h3>Then: the intermediate guide</h3>
+        <p>From Tasks to Systems: memory that matters, connected tools, schedules that stick, and five copy-paste plays for your newly working agent.</p>
+        <span class="gmeta">Intermediate &middot; 10 min read &middot; PDF included</span>
+      </span>
+    </a>
+  </article>
+
+</main>
+<footer class="site-footer">
+  <p class="foot-nav"><a href="../../catalog/">Catalog</a> &middot; <a href="../../mcp/">MCP</a> &middot; <a href="../../components/">Components</a> &middot; <a href="../../guides/">Guides</a> &middot; <a href="../../stack/">My Stack</a></p>
+  <div class="foot-div" aria-hidden="true"></div>
+  <p>&copy; 2026 plugmyagent &middot; Made by <a href="https://x.com/hiddeninwest" rel="noopener">@hiddeninwest</a></p>
+  <p>An independent, hand-maintained catalog of free APIs for AI agents. No ads, no sponsored placements, just tools worth your time.</p>
+  <p><a href="https://hiddeninwest.com" rel="noopener">hiddeninwest.com</a> &middot; <a href="../../privacy/">Privacy Policy</a></p>
+</footer>
+<script src="../../topanga.js"></script>
+</body>
+</html>

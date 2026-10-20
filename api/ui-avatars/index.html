@@ -1,118 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>UI Avatars | Free API on PlugMyAgent</title>
-<meta name="description" content="UI Avatars generates simple, professional profile pictures showing a person&#x27;s initials on a colored background. You control the name, colors, size, shape...">
-<link rel="canonical" href="https://www.plugmyagent.com/api/ui-avatars/">
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="PlugMyAgent">
-<meta property="og:title" content="UI Avatars - free API">
-<meta property="og:description" content="UI Avatars generates simple, professional profile pictures showing a person&#x27;s initials on a colored background. You control the name, colors, size, shape...">
-<meta property="og:url" content="https://www.plugmyagent.com/api/ui-avatars/">
-<meta property="og:image" content="https://www.plugmyagent.com/og-card.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="UI Avatars - free API">
-<meta name="twitter:description" content="UI Avatars generates simple, professional profile pictures showing a person&#x27;s initials on a colored background. You control the name, colors, size, shape...">
-<meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png">
-<link rel="stylesheet" href="/api-pages.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebAPI", "name": "UI Avatars", "description": "UI Avatars generates simple, professional profile pictures showing a person's initials on a colored background. You control the name, colors, size, shape...", "url": "https://www.plugmyagent.com/api/ui-avatars/", "documentationUrl": "https://ui-avatars.com", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<title>UI Avatars: Free API for AI Agents</title>
+<meta name="description" content="Makes clean initials-based avatars for any name, instantly." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="UI Avatars: Free API for AI Agents" />
+<meta property="og:description" content="Makes clean initials-based avatars for any name, instantly." />
+<meta property="og:image" content="https://www.plugmyagent.com/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="UI Avatars: Free API for AI Agents" />
+<meta name="twitter:description" content="Makes clean initials-based avatars for any name, instantly." />
+<meta name="twitter:image" content="https://www.plugmyagent.com/og-card.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="../../logo-ink.svg" media="(prefers-color-scheme: light)" />
+<link rel="icon" type="image/svg+xml" href="../../logo-cream.svg" media="(prefers-color-scheme: dark)" />
+<link rel="stylesheet" href="../../topanga.css" />
+<script>try{var t=localStorage.getItem('topanga-theme');document.documentElement.setAttribute('data-theme',(t==='light'||t==='dark')?t:'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}</script>
 </head>
 <body>
-<div class="site-header"><div class="site-header-inner"><a class="brandmark" href="/" aria-label="PlugMyAgent home"><img src="/plug-lockup-v2.png" alt="PlugMyAgent"></a><nav class="cnav" aria-label="Primary"><a href="/catalog/">Catalog</a><a href="/mcp/">MCP</a><a href="/components/">Components</a><a href="/guides/">Guides</a></nav><a class="cart-link" href="/stack/" aria-label="My stack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M2.5 3.5h2.6l2.5 12.2a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.2L20.5 7H6"/></svg><span class="cart-count" data-cart-count style="display:none">0</span></a></div></div>
-<div class="d-hero has-img" style="background-image:linear-gradient(180deg, rgba(5,7,7,.60) 0%, rgba(5,7,7,.88) 100%), url(/api/img/ui-avatars.jpg)">
-<div class="wrap">
-<p class="crumb"><a href="/">Home</a> / <a href="/catalog/">Catalog</a> / Avatars &amp; Images / UI Avatars</p>
-<div class="d-meta"><span class="d-category">Avatars &amp; Images</span><span class="badge no-signup">No signup</span></div>
-<h1>UI Avatars</h1>
-<p class="d-tagline">Makes clean initials-based avatars for any name, instantly.</p>
-<div class="d-actions">
-<button class="quick-btn" id="stackBtn" type="button" aria-pressed="false">+ Stack</button>
-<button class="quick-btn" id="shareBtn" type="button" aria-label="Share UI Avatars"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M5 12v8h14v-8"/></svg><span>Share</span></button>
-</div>
-</div>
-</div>
-<main class="wrap d-body">
-<section>
-<h2>What it does</h2>
-<p class="d-desc">UI Avatars generates simple, professional profile pictures showing a person&#x27;s initials on a colored background. You control the name, colors, size, shape (square or rounded), and format through the URL. No account, no key, no tracking. It&#x27;s the go-to default avatar for dashboards, admin panels, and apps where users haven&#x27;t uploaded a photo.</p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="wordmark" href="../../"><img class="wm-logo wm-ink" src="../../logo-ink.svg" alt="" aria-hidden="true" /><img class="wm-logo wm-cream" src="../../logo-cream.svg" alt="" aria-hidden="true" />plugmyagent</a>
+    <nav class="topnav" aria-label="Primary"><a href="../../catalog/" aria-current="page">API Catalog <span class="nav-count">500+</span></a><a href="../../mcp/">MCP <span class="nav-count">34</span></a><a href="../../components/">Components <span class="nav-count">32</span></a><a href="../../guides/">Guides <span class="nav-count">8</span></a><a href="../../tools/">Tools</a><a href="../../skills/">Skills <span class="nav-count">20</span></a></nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark theme"><svg class="icon icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg><svg class="icon icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></button>
+    <a class="stack-icon-btn" href="../../stack/" aria-label="My Stack"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 12 12 17 22 12"></polyline><polyline points="2 17 12 22 22 17"></polyline></svg><span class="stack-count" data-stack-count></span></a>
+    <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Mobile"><div class="mnav-inner"><a href="../../catalog/" aria-current="page"><span>API Catalog <span class="nav-count">500+</span></span></a><a href="../../mcp/"><span>MCP <span class="nav-count">34</span></span></a><a href="../../components/"><span>Components <span class="nav-count">32</span></span></a><a href="../../guides/"><span>Guides <span class="nav-count">8</span></span></a><a href="../../tools/"><span>Tools</span></a><a href="../../skills/"><span>Skills <span class="nav-count">20</span></span></a></div></nav>
+</header>
+<main id="main" class="layout">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li aria-current="page">Home</li><li><a href="../../catalog/">API Catalog</a></li><li aria-current="page">UI Avatars</li></ol></nav>
+<div class="detail-head"><div><h1>UI Avatars</h1>
+<p><span class="badge badge-accent">Avatars &amp; Images</span> <span class="badge">No key</span></p></div></div>
+<div class="detail-cards">
+<section class="card" aria-label="About">
+  <h3>About</h3>
+  <p>UI Avatars generates simple, professional profile pictures showing a person&#x27;s initials on a colored background. You control the name, colors, size, shape (square or rounded), and format through the URL. No account, no key, no tracking. It&#x27;s the go-to default avatar for dashboards, admin panels, and apps where users haven&#x27;t uploaded a photo.</p>
 </section>
-<section>
-<h2>What you can do with it</h2>
-<ul class="use-list"><li>Auto-generate default profile pictures for new accounts in an app</li><li>Show consistent team member icons in project tools and dashboards</li><li>Add professional-looking avatars to email signatures or contact lists</li></ul>
+<section class="card" aria-label="Details">
+  <h3>Details</h3>
+  <p class="spec-explainer">No key needed. You can call it right away.</p>
+  <p><strong>Auth:</strong> No key</p>
+  <p><strong>Rate limit:</strong> Free with no hard cap; the site asks you not to abuse it. Cache or download images for heavy use</p>
+  <p><strong>Verified:</strong> 2026-09-13</p>
+  <p><strong>Best for:</strong> <span class="badge">personal</span> <span class="badge">business</span> <span class="badge">developer</span> </p>
+  <div class="card-actions"><a class="btn btn-primary" href="https://ui-avatars.com">Read the docs</a> <button class="btn btn-secondary" type="button" data-add-stack="ui-avatars">Add to stack</button> <a class="btn btn-secondary" href="../../catalog/">Back to catalog</a></div>
 </section>
-<section>
-<h2>Set it up</h2>
-<div class="d-setup">
-<div class="d-step"><span class="d-num">1</span><div>
-<h3>Open the official guide</h3><p>This API works without an account or key. Open the guide to see what it offers.</p><a class="primary-link" href="https://ui-avatars.com" rel="noopener">Open UI Avatars docs ↗</a>
-</div></div>
-<div class="d-step"><span class="d-num">2</span><div>
-<h3>Follow the quick-start steps</h3><p>Use the provider's instructions below. There's no secret key to manage.</p><ol class="provider-steps"><li>Paste the example URL into a browser to see an avatar for the name</li><li>Customize with options like &amp;background=0D8ABC&amp;color=fff&amp;size=128&amp;rounded=true</li><li>Use &amp;background=random for a different color per person</li><li>Drop the URL into your app as the default avatar image</li></ol>
-</div></div>
-<div class="d-step"><span class="d-num">3</span><div>
-<h3>Tell your agent</h3><p>Copy the message, paste it into ChatGPT, Claude, Grok, or a similar agent. No code needed. Replace PASTE_KEY_HERE with your key first. Your agent will either set it up directly or hand you the exact command to run.</p>
-<div class="agent-message"><span id="agentMsg">Set up UI Avatars for me so you can use it.
-
-HOW TO CALL IT
-https://ui-avatars.com/api/?name=Elon+Musk
-
-AUTH: none needed. No signup, no key.
-
-FREE LIMIT: Free with no hard cap; the site asks you not to abuse it. Cache or download images for heavy use
-
-TEST: once it&#x27;s set up, ask it to look something up for you.
-If you can&#x27;t make web requests yourself, give me the exact curl command with my key filled in so I can run it.
-
-Docs if you get stuck: https://ui-avatars.com</span><button class="copy-btn" id="copyMsg" type="button">Copy</button></div>
-
-</div></div>
 </div>
-</section>
-<section class="d-example"><h2>Example request</h2><pre>https://ui-avatars.com/api/?name=Elon+Musk</pre></section>
-<section>
-<h2>The fine print</h2>
-<div class="d-fine"><div class="d-fact"><b>Access</b><span>No key</span></div><div class="d-fact"><b>Rate limit</b><span>Free with no hard cap; the site asks you not to abuse it. Cache or download images for heavy use</span></div><div class="d-fact"><b>Best for</b><span>personal, business, developer</span></div><div class="d-fact"><b>Category</b><span>Avatars &amp; Images</span></div></div>
-</section>
-<details><summary>For advanced users</summary><div class="d-adv"><a class="primary-link" href="https://ui-avatars.com" rel="noopener">Official docs ↗</a></div></details>
-<p class="verified">Last verified 2026-09-13 by the PlugMyAgent team.</p>
+<div class="tablist" role="tablist" aria-label="API details">
+  <button class="tab-btn active" role="tab" id="tab-setup" aria-selected="true" aria-controls="panel-setup" tabindex="0">Setup</button>
+  <button class="tab-btn" role="tab" id="tab-example" aria-selected="false" aria-controls="panel-example" tabindex="-1">Example</button>
+  <button class="tab-btn" role="tab" id="tab-use" aria-selected="false" aria-controls="panel-use" tabindex="-1">Use cases</button>
+</div>
+<div class="tab-panel" role="tabpanel" id="panel-setup" aria-labelledby="tab-setup">
+  <h3>Setup</h3>
+  <ol><li>Paste the example URL into a browser to see an avatar for the name</li><li>Customize with options like &amp;background=0D8ABC&amp;color=fff&amp;size=128&amp;rounded=true</li><li>Use &amp;background=random for a different color per person</li><li>Drop the URL into your app as the default avatar image</li></ol>
+  <div class="card-actions"><a class="btn btn-secondary" href="https://ui-avatars.com">Sign up</a></div>
+</div>
+<div class="tab-panel" role="tabpanel" id="panel-example" aria-labelledby="tab-example" hidden>
+  <div class="browser-frame"><div class="browser-chrome"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-title">Example</span><button class="copy-btn" type="button" data-copy="#exampleCode">Copy</button></div>
+  <pre><code id="exampleCode">https://ui-avatars.com/api/?name=Elon+Musk</code></pre></div>
+</div>
+<div class="tab-panel" role="tabpanel" id="panel-use" aria-labelledby="tab-use" hidden>
+  <h3>Use cases</h3>
+  <ul><li>Auto-generate default profile pictures for new accounts in an app</li><li>Show consistent team member icons in project tools and dashboards</li><li>Add professional-looking avatars to email signatures or contact lists</li></ul>
+</div>
+
 </main>
-<footer><div class="wrap">
-<a href="/">PlugMyAgent</a> - every listing free to start. &copy; 2026 hiddeninwest
-</div></footer>
-<script>
-(function(){
-var b=document.getElementById('shareBtn');if(!b)return;
-function fallback(u,btn){var t=document.createElement('textarea');t.value=u;document.body.appendChild(t);
-t.select();try{document.execCommand('copy');}catch(e){}t.remove();
-var o=btn.querySelector('span').textContent;btn.querySelector('span').textContent='Copied';
-setTimeout(function(){btn.querySelector('span').textContent=o;},1600);}
-b.addEventListener('click',function(){
-var u=document.querySelector('link[rel="canonical"]').href;
-if(navigator.share){navigator.share({title:document.title,url:u}).then(function(){},function(err){
-if(err&&err.name==='AbortError')return;fallback(u,b);});return;}
-fallback(u,b);});})();
-(function(){
-var KEY='plugmyagent_stack_v1',NAME="UI Avatars";
-function read(){try{var v=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(v)?v:[];}catch(e){return [];}}
-function write(a){try{localStorage.setItem(KEY,JSON.stringify(a));}catch(e){}document.dispatchEvent(new CustomEvent('pma:stack'));}
-function paint(){var n=read().length;var els=document.querySelectorAll('[data-cart-count]');for(var i=0;i<els.length;i++){var b=els[i];b.textContent=n;b.style.display=n>0?'':'none';}}
-function paintBtn(){var b=document.getElementById('stackBtn');if(!b)return;var has=read().indexOf(NAME)>=0;b.textContent=has?'✓ In stack':'+ Stack';b.setAttribute('aria-pressed',String(has));}
-var sb=document.getElementById('stackBtn');
-if(sb){sb.addEventListener('click',function(){var s=read();var i=s.indexOf(NAME);if(i>=0){s.splice(i,1);}else{s.push(NAME);}write(s);paintBtn();});}
-document.addEventListener('pma:stack',function(){paint();paintBtn();});
-window.addEventListener('storage',function(e){if(e.key===KEY){paint();paintBtn();}});
-paint();paintBtn();})();
-(function(){
-var c=document.getElementById('copyMsg');if(!c)return;
-c.addEventListener('click',function(){
-var t=document.getElementById('agentMsg').textContent;
-function done(){var o=c.textContent;c.textContent='Copied';setTimeout(function(){c.textContent=o;},1800);}
-function fallback(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);
-ta.select();try{document.execCommand('copy');}catch(e){}ta.remove();done();}
-if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback();});}
-else{fallback();}});})();
-</script>
+<footer class="site-footer">
+  <p class="foot-nav"><a href="../../catalog/">Catalog</a> &middot; <a href="../../mcp/">MCP</a> &middot; <a href="../../components/">Components</a> &middot; <a href="../../guides/">Guides</a> &middot; <a href="../../stack/">My Stack</a></p>
+  <div class="foot-div" aria-hidden="true"></div>
+  <p>&copy; 2026 plugmyagent &middot; Made by <a href="https://x.com/hiddeninwest" rel="noopener">@hiddeninwest</a></p>
+  <p>An independent, hand-maintained catalog of free APIs for AI agents. No ads, no sponsored placements, just tools worth your time.</p>
+  <p><a href="https://hiddeninwest.com" rel="noopener">hiddeninwest.com</a> &middot; <a href="../../privacy/">Privacy Policy</a></p>
+</footer>
+<script src="../../topanga.js"></script>
 </body>
 </html>
