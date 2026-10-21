@@ -1,0 +1,964 @@
+{
+ "DietrichGebert/ponytail": {
+  "stars": 169310,
+  "forks": 9208,
+  "license": "MIT",
+  "pushed_at": "2026-10-18",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 49,
+  "sources": [
+   "api:Ponytail"
+  ]
+ },
+ "Flux159/mcp-server-kubernetes": {
+  "stars": 1607,
+  "forks": 284,
+  "license": "MIT",
+  "pushed_at": "2026-10-14",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 11,
+  "sources": [
+   "mcp:kubernetes"
+  ]
+ },
+ "HackerNews/API": {
+  "stars": 13362,
+  "forks": 762,
+  "license": "MIT",
+  "pushed_at": "2025-01-01",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 5,
+  "sources": [
+   "api:Hacker News API"
+  ]
+ },
+ "MarkusPfundstein/mcp-obsidian": {
+  "stars": 4482,
+  "forks": 506,
+  "license": "MIT",
+  "pushed_at": "2026-08-31",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 107,
+  "sources": [
+   "mcp:obsidian"
+  ]
+ },
+ "NVIDIA-NeMo/Guardrails": {
+  "stars": 7335,
+  "forks": 876,
+  "license": "NOASSERTION",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "develop",
+  "open_issues": 269,
+  "sources": [
+   "api:NeMo Guardrails"
+  ]
+ },
+ "OpenWonderLabs/SwitchBotAPI": {
+  "stars": 1229,
+  "forks": 84,
+  "license": null,
+  "pushed_at": "2026-10-08",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 187,
+  "sources": [
+   "api:SwitchBot Open API v1.1"
+  ]
+ },
+ "Panniantong/Agent-Reach": {
+  "stars": 100220,
+  "forks": 8852,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 231,
+  "sources": [
+   "api:Agent-Reach"
+  ]
+ },
+ "R3l3ntl3ss/Meme_Api": {
+  "stars": 5,
+  "forks": 1,
+  "license": null,
+  "pushed_at": "2020-10-01",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 0,
+  "sources": [
+   "api:Meme API"
+  ]
+ },
+ "adobe/react-spectrum": {
+  "stars": 15967,
+  "forks": 1611,
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 643,
+  "sources": [
+   "lib:React Spectrum"
+  ]
+ },
+ "affaan-m/ECC": {
+  "stars": 284720,
+  "forks": 42263,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 249,
+  "sources": [
+   "api:ECC"
+  ]
+ },
+ "alirezarezvani/claude-skills": {
+  "stars": 28447,
+  "forks": 4055,
+  "license": "MIT",
+  "pushed_at": "2026-08-30",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 35,
+  "sources": [
+   "api:Claude Skills Pack"
+  ]
+ },
+ "ant-design/ant-design": {
+  "stars": 99827,
+  "forks": 54661,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 1115,
+  "sources": [
+   "lib:Ant Design"
+  ]
+ },
+ "apify/actors-mcp-server": {
+  "stars": 12240,
+  "forks": 490,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 223,
+  "sources": [
+   "mcp:apify"
+  ]
+ },
+ "awslabs/mcp": {
+  "stars": 9799,
+  "forks": 1816,
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 237,
+  "sources": [
+   "mcp:aws-documentation"
+  ]
+ },
+ "blazickjp/arxiv-mcp-server": {
+  "stars": 3226,
+  "forks": 269,
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-08",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 7,
+  "sources": [
+   "mcp:arxiv"
+  ]
+ },
+ "brave/brave-search-mcp-server": {
+  "stars": 1515,
+  "forks": 212,
+  "license": "MIT",
+  "pushed_at": "2026-10-17",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 45,
+  "sources": [
+   "mcp:brave-search"
+  ]
+ },
+ "callstack/react-native-paper": {
+  "stars": 14472,
+  "forks": 2250,
+  "license": "MIT",
+  "pushed_at": "2026-10-12",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 497,
+  "sources": [
+   "lib:React Native Paper"
+  ]
+ },
+ "carbon-design-system/carbon": {
+  "stars": 9566,
+  "forks": 2293,
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 1072,
+  "sources": [
+   "lib:Carbon Design System"
+  ]
+ },
+ "chakra-ui/ark": {
+  "stars": 5426,
+  "forks": 222,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 9,
+  "sources": [
+   "lib:Ark UI"
+  ]
+ },
+ "chakra-ui/chakra-ui": {
+  "stars": 40698,
+  "forks": 3652,
+  "license": "MIT",
+  "pushed_at": "2026-10-17",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 17,
+  "sources": [
+   "lib:Chakra UI"
+  ]
+ },
+ "cheatsnake/emojihub": {
+  "stars": 222,
+  "forks": 28,
+  "license": "MIT",
+  "pushed_at": "2025-09-27",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 0,
+  "sources": [
+   "api:EmojiHub"
+  ]
+ },
+ "chroma-core/chroma-mcp": {
+  "stars": 600,
+  "forks": 117,
+  "license": "Apache-2.0",
+  "pushed_at": "2025-09-17",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 35,
+  "sources": [
+   "mcp:chroma"
+  ]
+ },
+ "confident-ai/deepeval": {
+  "stars": 18991,
+  "forks": 2104,
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-19",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 755,
+  "sources": [
+   "api:DeepEval"
+  ]
+ },
+ "dicebear/api": {
+  "stars": 146,
+  "forks": 55,
+  "license": "MIT",
+  "pushed_at": "2026-09-07",
+  "archived": false,
+  "default_branch": "4.x",
+  "open_issues": 0,
+  "sources": [
+   "api:DiceBear Avatars"
+  ]
+ },
+ "dpflucas/mysql-mcp-server": {
+  "stars": 73,
+  "forks": 11,
+  "license": "MIT",
+  "pushed_at": "2026-09-22",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 3,
+  "sources": [
+   "mcp:mysql"
+  ]
+ },
+ "element-plus/element-plus": {
+  "stars": 27819,
+  "forks": 19802,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "dev",
+  "open_issues": 1169,
+  "sources": [
+   "lib:Element Plus"
+  ]
+ },
+ "exa-labs/exa-mcp-server": {
+  "stars": 5151,
+  "forks": 414,
+  "license": "MIT",
+  "pushed_at": "2026-10-19",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 21,
+  "sources": [
+   "mcp:exa"
+  ]
+ },
+ "getsentry/sentry-mcp": {
+  "stars": 935,
+  "forks": 165,
+  "license": "NOASSERTION",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 163,
+  "sources": [
+   "mcp:sentry"
+  ]
+ },
+ "github/github-mcp-server": {
+  "stars": 33799,
+  "forks": 5323,
+  "license": "MIT",
+  "pushed_at": "2026-10-19",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 380,
+  "sources": [
+   "mcp:github"
+  ]
+ },
+ "gluestack/gluestack-ui": {
+  "stars": 5328,
+  "forks": 238,
+  "license": null,
+  "pushed_at": "2026-09-02",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 20,
+  "sources": [
+   "lib:Gluestack UI"
+  ]
+ },
+ "google/ax": {
+  "stars": 14003,
+  "forks": 727,
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 88,
+  "sources": [
+   "api:google/ax"
+  ]
+ },
+ "grommet/grommet": {
+  "stars": 8352,
+  "forks": 1039,
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 491,
+  "sources": [
+   "lib:Grommet"
+  ]
+ },
+ "hardcoverapp/hardcover-docs": {
+  "stars": 73,
+  "forks": 30,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 9,
+  "sources": [
+   "api:Hardcover API"
+  ]
+ },
+ "heroui-inc/heroui": {
+  "stars": 30969,
+  "forks": 2236,
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "v3",
+  "open_issues": 24,
+  "sources": [
+   "lib:HeroUI"
+  ]
+ },
+ "htmlstreamofficial/preline": {
+  "stars": 6495,
+  "forks": 414,
+  "license": "NOASSERTION",
+  "pushed_at": "2026-08-31",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 14,
+  "sources": [
+   "lib:Preline UI"
+  ]
+ },
+ "jgthms/bulma": {
+  "stars": 50039,
+  "forks": 3869,
+  "license": "MIT",
+  "pushed_at": "2026-09-21",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 531,
+  "sources": [
+   "lib:Bulma"
+  ]
+ },
+ "komoot/photon": {
+  "stars": 3128,
+  "forks": 379,
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-19",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 42,
+  "sources": [
+   "api:Photon"
+  ]
+ },
+ "langchain-ai/new-langgraph-project": {
+  "stars": 298,
+  "forks": 504,
+  "license": "MIT",
+  "pushed_at": "2026-10-19",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 8,
+  "sources": [
+   "api:LangGraph Project Template"
+  ]
+ },
+ "letta-ai/letta": {
+  "stars": 25206,
+  "forks": 2650,
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-18",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 0,
+  "sources": [
+   "api:Letta"
+  ]
+ },
+ "lobsters/lobsters": {
+  "stars": 4854,
+  "forks": 995,
+  "license": "NOASSERTION",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 240,
+  "sources": [
+   "api:Lobsters"
+  ]
+ },
+ "mailjet/mailjet-apiv3-nodejs": {
+  "stars": 256,
+  "forks": 72,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 18,
+  "sources": [
+   "api:Mailjet"
+  ]
+ },
+ "makenotion/notion-mcp-server": {
+  "stars": 4672,
+  "forks": 638,
+  "license": "MIT",
+  "pushed_at": "2026-09-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 203,
+  "sources": [
+   "mcp:notion"
+  ]
+ },
+ "mantinedev/mantine": {
+  "stars": 31846,
+  "forks": 2398,
+  "license": "MIT",
+  "pushed_at": "2026-10-18",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 28,
+  "sources": [
+   "lib:Mantine"
+  ]
+ },
+ "mendableai/firecrawl-mcp-server": {
+  "stars": 7647,
+  "forks": 928,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 176,
+  "sources": [
+   "mcp:firecrawl"
+  ]
+ },
+ "microsoft/fluentui": {
+  "stars": 20330,
+  "forks": 2948,
+  "license": "NOASSERTION",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 820,
+  "sources": [
+   "lib:Fluent UI"
+  ]
+ },
+ "microsoft/playwright-mcp": {
+  "stars": 38422,
+  "forks": 3289,
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-19",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 0,
+  "sources": [
+   "api:Playwright MCP",
+   "mcp:playwright"
+  ]
+ },
+ "modelcontextprotocol/servers": {
+  "stars": 91416,
+  "forks": 11826,
+  "license": "NOASSERTION",
+  "pushed_at": "2026-10-19",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 136,
+  "sources": [
+   "api:MCP Reference Servers",
+   "mcp:everything",
+   "mcp:fetch",
+   "mcp:filesystem",
+   "mcp:git",
+   "mcp:memory",
+   "mcp:sequential-thinking",
+   "mcp:time"
+  ]
+ },
+ "modelcontextprotocol/servers-archived": {
+  "stars": 305,
+  "forks": 170,
+  "license": "MIT",
+  "pushed_at": "2025-05-28",
+  "archived": true,
+  "default_branch": "main",
+  "open_issues": 0,
+  "sources": [
+   "mcp:gdrive",
+   "mcp:gitlab",
+   "mcp:google-maps",
+   "mcp:postgres",
+   "mcp:slack",
+   "mcp:sqlite"
+  ]
+ },
+ "mongodb-js/mongodb-mcp-server": {
+  "stars": 1146,
+  "forks": 307,
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 34,
+  "sources": [
+   "mcp:mongodb"
+  ]
+ },
+ "mui/material-ui": {
+  "stars": 99254,
+  "forks": 32495,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 1517,
+  "sources": [
+   "lib:MUI (Material UI)"
+  ]
+ },
+ "mvschwarz/openrig": {
+  "stars": 7981,
+  "forks": 638,
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 167,
+  "sources": [
+   "api:OpenRig"
+  ]
+ },
+ "nickclyde/duckduckgo-mcp-server": {
+  "stars": 1547,
+  "forks": 194,
+  "license": "MIT",
+  "pushed_at": "2026-09-04",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 7,
+  "sources": [
+   "mcp:duckduckgo"
+  ]
+ },
+ "open-multi-agent/open-multi-agent": {
+  "stars": 7008,
+  "forks": 2457,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 5,
+  "sources": [
+   "api:open-multi-agent"
+  ]
+ },
+ "openai/openai-agents-python": {
+  "stars": 30180,
+  "forks": 5014,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 23,
+  "sources": [
+   "api:OpenAI Agents SDK"
+  ]
+ },
+ "primefaces/primereact": {
+  "stars": 8310,
+  "forks": 1231,
+  "license": "MIT",
+  "pushed_at": "2026-09-24",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 323,
+  "sources": [
+   "lib:PrimeReact"
+  ]
+ },
+ "promptfoo/promptfoo": {
+  "stars": 26191,
+  "forks": 2524,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 804,
+  "sources": [
+   "api:Promptfoo"
+  ]
+ },
+ "qdrant/mcp-server-qdrant": {
+  "stars": 1551,
+  "forks": 315,
+  "license": "Apache-2.0",
+  "pushed_at": "2026-09-04",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 81,
+  "sources": [
+   "mcp:qdrant"
+  ]
+ },
+ "quasarframework/quasar": {
+  "stars": 27201,
+  "forks": 3663,
+  "license": "MIT",
+  "pushed_at": "2026-10-19",
+  "archived": false,
+  "default_branch": "dev",
+  "open_issues": 52,
+  "sources": [
+   "lib:Quasar"
+  ]
+ },
+ "radix-ui/primitives": {
+  "stars": 19411,
+  "forks": 1279,
+  "license": "MIT",
+  "pushed_at": "2026-10-14",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 241,
+  "sources": [
+   "lib:Radix UI"
+  ]
+ },
+ "react-bootstrap/react-bootstrap": {
+  "stars": 22607,
+  "forks": 3566,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 239,
+  "sources": [
+   "lib:React Bootstrap"
+  ]
+ },
+ "remotive-com/remote-jobs-api": {
+  "stars": 84,
+  "forks": 6,
+  "license": null,
+  "pushed_at": "2022-04-02",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 0,
+  "sources": [
+   "api:Remotive Remote Jobs API"
+  ]
+ },
+ "saadeghi/daisyui": {
+  "stars": 42638,
+  "forks": 1712,
+  "license": "MIT",
+  "pushed_at": "2026-10-17",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 33,
+  "sources": [
+   "lib:DaisyUI"
+  ]
+ },
+ "salesforce-ux/design-system": {
+  "stars": 3704,
+  "forks": 851,
+  "license": "NOASSERTION",
+  "pushed_at": "2026-06-02",
+  "archived": true,
+  "default_branch": "main",
+  "open_issues": 41,
+  "sources": [
+   "lib:Lightning Design System"
+  ]
+ },
+ "shadcn-ui/ui": {
+  "stars": 126048,
+  "forks": 13387,
+  "license": "MIT",
+  "pushed_at": "2026-10-19",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 1785,
+  "sources": [
+   "lib:shadcn/ui"
+  ]
+ },
+ "shoelace-style/webawesome": {
+  "stars": 1372,
+  "forks": 203,
+  "license": "MIT",
+  "pushed_at": "2026-10-19",
+  "archived": false,
+  "default_branch": "next",
+  "open_issues": 83,
+  "sources": [
+   "lib:Web Awesome"
+  ]
+ },
+ "sooperset/mcp-atlassian": {
+  "stars": 6022,
+  "forks": 1410,
+  "license": "MIT",
+  "pushed_at": "2026-09-19",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 312,
+  "sources": [
+   "mcp:atlassian"
+  ]
+ },
+ "ssllabs/ssllabs-scan": {
+  "stars": 1768,
+  "forks": 248,
+  "license": "Apache-2.0",
+  "pushed_at": "2024-08-05",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 294,
+  "sources": [
+   "api:SSL Labs Server Test API"
+  ]
+ },
+ "stablyai/orca": {
+  "stars": 99510,
+  "forks": 6332,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 8605,
+  "sources": [
+   "api:Orca"
+  ]
+ },
+ "stanfordnlp/dspy": {
+  "stars": 38705,
+  "forks": 3438,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 809,
+  "sources": [
+   "api:DSPy"
+  ]
+ },
+ "supabase-community/supabase-mcp": {
+  "stars": 2966,
+  "forks": 420,
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 136,
+  "sources": [
+   "mcp:supabase"
+  ]
+ },
+ "tailwindlabs/headlessui": {
+  "stars": 28783,
+  "forks": 1212,
+  "license": "MIT",
+  "pushed_at": "2026-04-13",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 114,
+  "sources": [
+   "lib:Headless UI"
+  ]
+ },
+ "tamagui/tamagui": {
+  "stars": 14268,
+  "forks": 626,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 92,
+  "sources": [
+   "lib:Tamagui"
+  ]
+ },
+ "tavily-ai/tavily-mcp": {
+  "stars": 2445,
+  "forks": 303,
+  "license": "MIT",
+  "pushed_at": "2026-10-15",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 60,
+  "sources": [
+   "mcp:tavily"
+  ]
+ },
+ "themesberg/flowbite": {
+  "stars": 9367,
+  "forks": 867,
+  "license": "MIT",
+  "pushed_at": "2026-06-27",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 258,
+  "sources": [
+   "lib:Flowbite"
+  ]
+ },
+ "tusen-ai/naive-ui": {
+  "stars": 18572,
+  "forks": 1861,
+  "license": "MIT",
+  "pushed_at": "2026-10-05",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 708,
+  "sources": [
+   "lib:Naive UI"
+  ]
+ },
+ "typpo/textbelt": {
+  "stars": 3389,
+  "forks": 585,
+  "license": "MIT",
+  "pushed_at": "2024-03-28",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 67,
+  "sources": [
+   "api:Textbelt"
+  ]
+ },
+ "uikit/uikit": {
+  "stars": 18532,
+  "forks": 2284,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "develop",
+  "open_issues": 611,
+  "sources": [
+   "lib:UIkit"
+  ]
+ },
+ "upstash/context7": {
+  "stars": 63368,
+  "forks": 3119,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 52,
+  "sources": [
+   "api:Context7 MCP",
+   "mcp:context7"
+  ]
+ },
+ "vuetifyjs/vuetify": {
+  "stars": 41033,
+  "forks": 7111,
+  "license": "NOASSERTION",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "master",
+  "open_issues": 341,
+  "sources": [
+   "lib:Vuetify"
+  ]
+ }
+}

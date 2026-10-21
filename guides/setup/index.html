@@ -38,10 +38,506 @@
 </header>
 <main id="main" class="layout">
 <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li aria-current="page">Home</li><li><a href="../../guides/">Guides</a></li><li aria-current="page">Setup</li></ol></nav>
-<div class="hero"><h1>Set up your agent:<br><span class="neon">one page, every agent.</span></h1><p class="lede">Pick your tab, follow the steps, end with a working agent. Same playbook for all nine: account, app, first tool, first test. Then <a href="/guides/connect-your-first-api/">connect your first API</a>.</p></div>
+<div class="hero"><h1>Set up your agent:<br><span class="neon">one page, every agent.</span></h1><p class="lede">Pick your tab, follow the steps, end with a working agent. Same playbook for all fourteen: account, app, first tool, first test. Then <a href="/guides/connect-your-first-api/">connect your first API</a>.</p></div>
 <div data-hash-tabs>
-<div class="tablist" role="tablist" aria-label="Choose your agent"><button class="tab-btn active" role="tab" data-tab="muse" id="tab-muse" aria-selected="true" aria-controls="panel-muse" tabindex="0">Muse</button><button class="tab-btn" role="tab" data-tab="openclaw" id="tab-openclaw" aria-selected="false" aria-controls="panel-openclaw" tabindex="-1">OpenClaw</button><button class="tab-btn" role="tab" data-tab="chatgpt" id="tab-chatgpt" aria-selected="false" aria-controls="panel-chatgpt" tabindex="-1">ChatGPT</button><button class="tab-btn" role="tab" data-tab="claude" id="tab-claude" aria-selected="false" aria-controls="panel-claude" tabindex="-1">Claude</button><button class="tab-btn" role="tab" data-tab="grok" id="tab-grok" aria-selected="false" aria-controls="panel-grok" tabindex="-1">Grok</button><button class="tab-btn" role="tab" data-tab="manus" id="tab-manus" aria-selected="false" aria-controls="panel-manus" tabindex="-1">Manus</button><button class="tab-btn" role="tab" data-tab="genspark" id="tab-genspark" aria-selected="false" aria-controls="panel-genspark" tabindex="-1">Genspark</button><button class="tab-btn" role="tab" data-tab="poke" id="tab-poke" aria-selected="false" aria-controls="panel-poke" tabindex="-1">Poke</button><button class="tab-btn" role="tab" data-tab="instinct" id="tab-instinct" aria-selected="false" aria-controls="panel-instinct" tabindex="-1">Instinct</button></div>
-<div role="tabpanel" id="panel-muse" data-panel="muse" aria-labelledby="tab-muse"><article class="article"><h2 class="panel-title">Muse</h2><div class="wmeta"><span class="hot">10 minutes</span><span>Beginner</span><span>Free to start</span></div>
+<div class="tablist" role="tablist" aria-label="Choose your agent"><button class="tab-btn active" role="tab" data-tab="chatgpt" id="tab-chatgpt" aria-selected="true" aria-controls="panel-chatgpt" tabindex="0">ChatGPT</button><button class="tab-btn" role="tab" data-tab="claude" id="tab-claude" aria-selected="false" aria-controls="panel-claude" tabindex="-1">Claude</button><button class="tab-btn" role="tab" data-tab="codex" id="tab-codex" aria-selected="false" aria-controls="panel-codex" tabindex="-1">Codex</button><button class="tab-btn" role="tab" data-tab="copilot" id="tab-copilot" aria-selected="false" aria-controls="panel-copilot" tabindex="-1">Copilot</button><button class="tab-btn" role="tab" data-tab="cursor" id="tab-cursor" aria-selected="false" aria-controls="panel-cursor" tabindex="-1">Cursor</button><button class="tab-btn" role="tab" data-tab="devin-desktop" id="tab-devin-desktop" aria-selected="false" aria-controls="panel-devin-desktop" tabindex="-1">Devin Desktop</button><button class="tab-btn" role="tab" data-tab="gemini" id="tab-gemini" aria-selected="false" aria-controls="panel-gemini" tabindex="-1">Gemini</button><button class="tab-btn" role="tab" data-tab="genspark" id="tab-genspark" aria-selected="false" aria-controls="panel-genspark" tabindex="-1">Genspark</button><button class="tab-btn" role="tab" data-tab="grok" id="tab-grok" aria-selected="false" aria-controls="panel-grok" tabindex="-1">Grok</button><button class="tab-btn" role="tab" data-tab="instinct" id="tab-instinct" aria-selected="false" aria-controls="panel-instinct" tabindex="-1">Instinct</button><button class="tab-btn" role="tab" data-tab="manus" id="tab-manus" aria-selected="false" aria-controls="panel-manus" tabindex="-1">Manus</button><button class="tab-btn" role="tab" data-tab="muse" id="tab-muse" aria-selected="false" aria-controls="panel-muse" tabindex="-1">Muse</button><button class="tab-btn" role="tab" data-tab="openclaw" id="tab-openclaw" aria-selected="false" aria-controls="panel-openclaw" tabindex="-1">OpenClaw</button><button class="tab-btn" role="tab" data-tab="poke" id="tab-poke" aria-selected="false" aria-controls="panel-poke" tabindex="-1">Poke</button></div>
+<div role="tabpanel" id="panel-chatgpt" data-panel="chatgpt" aria-labelledby="tab-chatgpt"><article class="article"><h2 class="panel-title">ChatGPT</h2><div class="wmeta"><span class="hot">10 minutes</span><span>Beginner</span><span>Free to start</span></div>
+    
+    
+    <div class="site-alert alert-info">
+      <span class="kicker">What you end up with</span>
+      <p><strong>ChatGPT with tools connected, ready to fetch live data.</strong> Free tier works for chat; connecting your own tools (MCP) needs a paid plan. Start free, upgrade when you want tools.</p>
+    </div>
+    <h2><span class="secnum">01</span>Create your account</h2>
+    <p>Open <strong>chatgpt.com</strong> in your browser and sign up. Use an email address you actually check: login codes and important notices go there.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You are logged in at chatgpt.com and you see the chat window.</p>
+    </div>
+
+    <h2><span class="secnum">02</span>Get the app</h2>
+    <p>Install the ChatGPT app from the App Store (iPhone) or Google Play (Android) and log in with the same account. The app adds voice, image, and camera input on top of chat.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You are logged in on your phone. Same agent, same history, two places.</p>
+    </div>
+
+    <h2><span class="secnum">03</span>Connect your first tool</h2>
+    <p>Open Settings and look for Apps / Connectors. Start with a prebuilt one: Gmail, Google Drive, or Calendar. Grant access once and ChatGPT can read from it when you ask.</p>
+    <p>For your own tools (APIs, MCP servers), you need a paid plan: Plus, Pro, or Business. On a paid plan, turn on Developer Mode in Settings, then add a remote MCP server by its URL. The server&apos;s tools appear in your chats.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You ask about something only the connected tool knows, and it answers with live data instead of guessing.</p>
+    </div>
+
+    <h2><span class="secnum">04</span>Run the test</h2>
+    <p>Ask one question only the connected tool can answer. Then read <a href="/guides/connect-your-first-api/">guide 004</a> to connect your first API in 10 minutes: the same three moves (get access, connect it, test it) work here.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>A live answer from your tool, not a guess from memory. You have a working agent.</p>
+    </div>
+
+    <div class="trouble">
+      <h3>When something goes wrong</h3>
+      <details>
+        <summary>I cannot find Developer Mode / MCP</summary>
+        <p>Custom MCP servers need a paid plan (Plus, Pro, or Business) and Developer Mode on. On the free plan, use the prebuilt Apps instead.</p>
+      </details>
+      <details>
+        <summary>It answered from memory instead of using the tool</summary>
+        <p>Name the tool explicitly: "Use the [name] tool and read the number from its response." Then ask again. <a href="/guides/connect-your-first-api/">Guide 004, section 05</a> covers this fix.</p>
+      </details>
+    </div>
+
+    <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
+  </article></div><div role="tabpanel" id="panel-claude" data-panel="claude" aria-labelledby="tab-claude" hidden><article class="article"><h2 class="panel-title">Claude</h2><div class="wmeta"><span class="hot">10 minutes</span><span>Beginner</span><span>Free to start</span></div>
+    
+    
+    <div class="site-alert alert-info">
+      <span class="kicker">What you end up with</span>
+      <p><strong>Claude with tools connected, ready to fetch live data.</strong> Free tier to start; paid Pro and Max tiers raise the limits. Claude Code (the coding agent) connects tools from the terminal.</p>
+    </div>
+    <h2><span class="secnum">01</span>Create your account</h2>
+    <p>Open <strong>claude.ai</strong> in your browser and sign up. Use an email address you actually check: login codes and important notices go there.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You are logged in at claude.ai and you see the chat window.</p>
+    </div>
+
+    <h2><span class="secnum">02</span>Get the app</h2>
+    <p>Install the Claude app from the App Store (iPhone) or Google Play (Android) and log in with the same account.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You are logged in on your phone. Same agent, same history, two places.</p>
+    </div>
+
+    <h2><span class="secnum">03</span>Connect your first tool</h2>
+    <p>Open Settings &rarr; Connectors. Start with a built-in one: Gmail, Calendar, Google Drive, Slack, or Notion. Grant access once and Claude can read from it when you ask.</p>
+    <p>For your own tools, add a custom MCP server: in Connectors, add a remote MCP server by its URL. For local servers and coding work, use Claude Code from the terminal: <code>claude mcp add</code> walks you through it.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You ask about something only the connected tool knows, and it answers with live data instead of guessing.</p>
+    </div>
+
+    <h2><span class="secnum">04</span>Run the test</h2>
+    <p>Ask one question only the connected tool can answer. Then read <a href="/guides/connect-your-first-api/">guide 004</a> to connect your first API in 10 minutes: the same three moves (get access, connect it, test it) work here.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>A live answer from your tool, not a guess from memory. You have a working agent.</p>
+    </div>
+
+    <div class="trouble">
+      <h3>When something goes wrong</h3>
+      <details>
+        <summary>Claude Code is not installed</summary>
+        <p>Claude Code is a separate terminal tool from the chat app. Install it from Anthropic&apos;s docs, then run <code>claude mcp add</code> to connect a server. The chat app&apos;s Connectors cover the non-coding path.</p>
+      </details>
+      <details>
+        <summary>It answered from memory instead of using the tool</summary>
+        <p>Name the tool explicitly: "Use the [name] tool and read the number from its response." Then ask again. <a href="/guides/connect-your-first-api/">Guide 004, section 05</a> covers this fix.</p>
+      </details>
+    </div>
+
+    <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
+  </article></div><div role="tabpanel" id="panel-codex" data-panel="codex" aria-labelledby="tab-codex" hidden><article class="article"><h2 class="panel-title">Codex</h2><div class="wmeta"><span class="hot">15 minutes</span><span>Intermediate</span><span>Needs a paid ChatGPT plan</span></div>
+    <div class="site-alert alert-info">
+      <span class="kicker">What you end up with</span>
+      <p><strong>OpenAI's coding agent working in your projects, with your tools connected.</strong> Codex is not a separate subscription: it is included with ChatGPT Plus, Pro, Business, and Edu plans. It runs in a desktop app, in your editor, and in the terminal, and all three share one config file.</p>
+    </div>
+    <h2><span class="secnum">01</span>Create your account</h2>
+    <p>Sign up at <strong>chatgpt.com</strong> if you have not already. Codex rides on that account, so there is nothing new to register. On a free plan you may see limited trial access; the full agent unlocks on Plus or higher.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You are logged in at chatgpt.com on a plan that includes Codex.</p>
+    </div>
+    <h2><span class="secnum">02</span>Get the app</h2>
+    <p>Install the Codex app for your computer, or install the CLI with <code>npm i -g @openai/codex</code> if you prefer the terminal. Sign in with your ChatGPT account when it asks. The app, the CLI, and the editor extension all read the same settings.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>Codex opens, shows your account, and is ready in an empty project.</p>
+    </div>
+    <h2><span class="secnum">03</span>Connect your first tool</h2>
+    <p>Codex reads MCP servers from <code>~/.codex/config.toml</code>, and note the format: TOML, not the JSON most other agents use. The easy path is to run <code>codex mcp add</code> and let the CLI write the entry. By hand, a server is a block that starts with <code>[mcp_servers.name]</code> followed by its command or URL. Restart Codex after editing the file.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>Run <code>/mcp</code> in Codex and your server is listed as connected.</p>
+    </div>
+    <h2><span class="secnum">04</span>Run the test</h2>
+    <p>Give it one small job that needs the connected tool, in a project you can afford to experiment on. Then read <a href="/guides/connect-your-first-api/">guide 004</a> to connect your first API: the same three moves work here.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>Codex calls the tool, shows you the result, and any change it made is one you can review and undo.</p>
+    </div>
+    <div class="trouble">
+      <h3>When something goes wrong</h3>
+      <details>
+        <summary>My server never shows up</summary>
+        <p>The usual cause is a JSON block pasted into the TOML file. Codex config is TOML with a <code>[mcp_servers.name]</code> header. Fix the format, save, and restart Codex.</p>
+      </details>
+      <details>
+        <summary>It says my plan does not include Codex</summary>
+        <p>Free and Go plans get limited trial access at most. Codex is included with Plus, Pro, Business, and Edu; there is no separate Codex plan to buy.</p>
+      </details>
+    </div>
+    <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
+  </article></div><div role="tabpanel" id="panel-copilot" data-panel="copilot" aria-labelledby="tab-copilot" hidden><article class="article"><h2 class="panel-title">Copilot</h2><div class="wmeta"><span class="hot">10 minutes</span><span>Beginner</span><span>Free to start</span></div>
+    <div class="site-alert alert-info">
+      <span class="kicker">What you end up with</span>
+      <p><strong>GitHub Copilot in agent mode, calling your tools from inside VS Code.</strong> Copilot has a free tier for light use, and paid plans raise the limits. The agent lives in your editor, so setup means VS Code, your GitHub account, and one config file.</p>
+    </div>
+    <h2><span class="secnum">01</span>Create your account</h2>
+    <p>Sign up at <strong>github.com</strong>. Copilot activates against that account, and the free tier is enough to follow this whole guide.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You are logged in to GitHub and can open your profile.</p>
+    </div>
+    <h2><span class="secnum">02</span>Get the app</h2>
+    <p>Install <strong>VS Code</strong>, sign in with your GitHub account, and add the GitHub Copilot and Copilot Chat extensions from the marketplace. Open the Chat view and pick <strong>Agent</strong> in the mode dropdown.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>The Chat view answers you, and Agent is one of the modes you can pick.</p>
+    </div>
+    <h2><span class="secnum">03</span>Connect your first tool</h2>
+    <p>Add an MCP server in a file named <code>.vscode/mcp.json</code> inside your project. Heads up: the top-level key in this file is <code>"servers"</code>, not the <code>"mcpServers"</code> most other agents use. Or run the Command Palette action <strong>MCP: Add Server</strong> and let VS Code draft it. Connected tools appear in the agent's tool picker.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>Your server starts without an error and its tools show in the picker.</p>
+    </div>
+    <h2><span class="secnum">04</span>Run the test</h2>
+    <p>Ask the agent one question only the connected tool can answer. Then read <a href="/guides/connect-your-first-api/">guide 004</a> to connect your first API: the same three moves work here.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>The agent calls the tool and answers from live data, not a guess.</p>
+    </div>
+    <div class="trouble">
+      <h3>When something goes wrong</h3>
+      <details>
+        <summary>There is no Agent mode in the dropdown</summary>
+        <p>Update VS Code and both Copilot extensions, and confirm you are signed in to GitHub. Agent mode needs current versions of all three.</p>
+      </details>
+      <details>
+        <summary>My server shows an error</summary>
+        <p>Check the JSON in mcp.json first. Then run the server's command in a terminal yourself: if it fails there, it will fail for Copilot too, and the terminal shows the real error.</p>
+      </details>
+    </div>
+    <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
+  </article></div><div role="tabpanel" id="panel-cursor" data-panel="cursor" aria-labelledby="tab-cursor" hidden><article class="article"><h2 class="panel-title">Cursor</h2><div class="wmeta"><span class="hot">10 minutes</span><span>Beginner</span><span>Free to start</span></div>
+    <div class="site-alert alert-info">
+      <span class="kicker">What you end up with</span>
+      <p><strong>Cursor editing your codebase with your MCP tools one prompt away.</strong> Cursor is an AI code editor: you chat with an agent that can read and change your project. Its free tier is enough to set up and test your first tool.</p>
+    </div>
+    <h2><span class="secnum">01</span>Create your account</h2>
+    <p>Sign up at <strong>cursor.com</strong>, or create the account inside the app when it first opens. Use an email you actually check.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You are signed in and Cursor shows your account in Settings.</p>
+    </div>
+    <h2><span class="secnum">02</span>Get the app</h2>
+    <p>Download Cursor for Mac, Windows, or Linux and sign in. Open one of your project folders so the agent has something real to work on.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>Your project is open and the agent panel answers a hello.</p>
+    </div>
+    <h2><span class="secnum">03</span>Connect your first tool</h2>
+    <p>Open Settings, find <strong>MCP</strong>, and choose Add new global MCP server. Or edit <code>~/.cursor/mcp.json</code> directly and add your server under <code>"mcpServers"</code>. For one project only, put the same file at <code>.cursor/mcp.json</code> in the repo. A green toggle next to the server means its tools are live.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>The server's toggle is green and its tools are listed under it.</p>
+    </div>
+    <h2><span class="secnum">04</span>Run the test</h2>
+    <p>Ask the agent one question only the connected tool can answer. Then read <a href="/guides/connect-your-first-api/">guide 004</a> to connect your first API: the same three moves work here.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>The agent calls the tool and answers from its response.</p>
+    </div>
+    <div class="trouble">
+      <h3>When something goes wrong</h3>
+      <details>
+        <summary>The server toggle is red</summary>
+        <p>The command failed to start. Run the same command in a terminal to see the real error, and use absolute paths in args: relative paths resolve differently inside the editor.</p>
+      </details>
+      <details>
+        <summary>The agent ignores my tools</summary>
+        <p>Cursor caps how many tools the agent can see at once. Disable servers you are not using in Settings, then ask again and name the tool you want used.</p>
+      </details>
+    </div>
+    <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
+  </article></div><div role="tabpanel" id="panel-devin-desktop" data-panel="devin-desktop" aria-labelledby="tab-devin-desktop" hidden><article class="article"><h2 class="panel-title">Devin Desktop</h2><div class="wmeta"><span class="hot">10 minutes</span><span>Beginner</span><span>Free to start</span></div>
+    <div class="site-alert alert-info">
+      <span class="kicker">What you end up with</span>
+      <p><strong>The Cascade agent set up in Devin Desktop, with your tools connected.</strong> First, a rename worth knowing: the editor called Windsurf became Devin Desktop in 2026. Same editor, same Cascade agent, new name on the door. Old Windsurf guides mostly still apply, with one config move covered below.</p>
+    </div>
+    <h2><span class="secnum">01</span>Create your account</h2>
+    <p>Sign up in the app or at <strong>devin.ai</strong> with the account you will code with.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You are signed in and the editor opens to your account.</p>
+    </div>
+    <h2><span class="secnum">02</span>Get the app</h2>
+    <p>Download Devin Desktop for your computer and sign in. Open a project folder and find the <strong>Cascade</strong> panel: that chat is your agent.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>Cascade answers a test message about your open project.</p>
+    </div>
+    <h2><span class="secnum">03</span>Connect your first tool</h2>
+    <p>In the Cascade panel, open the <strong>...</strong> menu in the MCPs section and choose <strong>Open MCP config file</strong>. Current versions keep it at <code>~/.config/devin/mcp_config.json</code> (older Windsurf installs used <code>~/.codeium/windsurf/mcp_config.json</code>). Add servers under <code>"mcpServers"</code>. One gotcha: remote servers take the key <code>"serverUrl"</code> here, not <code>"url"</code>.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>Your server appears in the MCPs list and Cascade can call its tools.</p>
+    </div>
+    <h2><span class="secnum">04</span>Run the test</h2>
+    <p>Ask Cascade one question only the connected tool can answer. Then read <a href="/guides/connect-your-first-api/">guide 004</a> to connect your first API: the same three moves work here.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>Cascade calls the tool and answers from its response.</p>
+    </div>
+    <div class="trouble">
+      <h3>When something goes wrong</h3>
+      <details>
+        <summary>My Windsurf setup stopped working after the rename</summary>
+        <p>Your config file moved. Copy the <code>"mcpServers"</code> block from <code>~/.codeium/windsurf/mcp_config.json</code> into <code>~/.config/devin/mcp_config.json</code> and restart the app.</p>
+      </details>
+      <details>
+        <summary>My remote server is ignored</summary>
+        <p>Check the key name: remote servers need <code>"serverUrl"</code> in this app. A block copied from a Cursor guide with <code>"url"</code> will be silently skipped.</p>
+      </details>
+    </div>
+    <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
+  </article></div><div role="tabpanel" id="panel-gemini" data-panel="gemini" aria-labelledby="tab-gemini" hidden><article class="article"><h2 class="panel-title">Gemini</h2><div class="wmeta"><span class="hot">10 minutes</span><span>Beginner</span><span>Free to start</span></div>
+    <div class="site-alert alert-info">
+      <span class="kicker">What you end up with</span>
+      <p><strong>Gemini for everyday help in the app, plus the Gemini CLI for connecting your own tools.</strong> One Google account covers both. The app connects Google's own services; your own MCP servers plug into the free Gemini CLI, and this tab sets up both halves.</p>
+    </div>
+    <h2><span class="secnum">01</span>Create your account</h2>
+    <p>A Google account is the whole signup. Open <strong>gemini.google.com</strong> and sign in with it.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>Gemini greets you by account and the chat window is ready.</p>
+    </div>
+    <h2><span class="secnum">02</span>Get the app</h2>
+    <p>Install the Gemini app on your phone for chat and voice. For tools, install the CLI on your computer with <code>npm i -g @google/gemini-cli</code> and sign in with the same Google account; the CLI includes a free tier.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>The app is signed in on your phone, and the CLI answers a test prompt in your terminal.</p>
+    </div>
+    <h2><span class="secnum">03</span>Connect your first tool</h2>
+    <p>In the app, open Settings and turn on the connected apps you want (Gmail, Drive, Maps). For your own MCP servers, open <code>~/.gemini/settings.json</code> and add them under <code>"mcpServers"</code>, then start the CLI and run <code>/mcp</code> to confirm they loaded.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p><code>/mcp</code> lists your server as connected, with its tools.</p>
+    </div>
+    <h2><span class="secnum">04</span>Run the test</h2>
+    <p>Ask the CLI one question only your tool can answer. Then read <a href="/guides/connect-your-first-api/">guide 004</a> to connect your first API: the same three moves work here.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>The CLI calls the tool and answers from live data.</p>
+    </div>
+    <div class="trouble">
+      <h3>When something goes wrong</h3>
+      <details>
+        <summary>/mcp does not list my server</summary>
+        <p>Almost always the JSON: one bad comma and the whole settings file is skipped. The CLI also prints config errors at startup, so scroll up in the terminal after launching it.</p>
+      </details>
+      <details>
+        <summary>The app cannot see my server</summary>
+        <p>That split is by design today: custom MCP servers live in the Gemini CLI, not the consumer app. Use the CLI for tool work, and the app for chat.</p>
+      </details>
+    </div>
+    <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
+  </article></div><div role="tabpanel" id="panel-genspark" data-panel="genspark" aria-labelledby="tab-genspark" hidden><article class="article"><h2 class="panel-title">Genspark</h2><div class="wmeta"><span class="hot">10 minutes</span><span>Beginner</span><span>Free to start</span></div>
+    
+    
+    <div class="site-alert alert-info">
+      <span class="kicker">What you end up with</span>
+      <p><strong>Genspark with tools connected, ready to fetch live data.</strong> Free tier with credits to start; Plus plan for heavier use.</p>
+    </div>
+    <h2><span class="secnum">01</span>Create your account</h2>
+    <p>Open <strong>genspark.ai</strong> in your browser and sign up. Use an email address you actually check: login codes and important notices go there.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You are logged in at genspark.ai and you see the workspace.</p>
+    </div>
+
+    <h2><span class="secnum">02</span>Pick your first job</h2>
+    <p>Genspark has a lot of surfaces: chat, research, slides, sheets, images, video, browser. Do not try them all at once. Pick one real job: a research brief, a slide deck, or a comparison sheet. One finished artifact teaches you the workflow faster than five half-started ones.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>It hands back a finished artifact (a brief, a deck, a sheet), not just a chat reply.</p>
+    </div>
+
+    <h2><span class="secnum">03</span>Connect your first tool</h2>
+    <p>Open the Tools section / MCP Store. Start with a service you already use: Gmail, Calendar, Notion, Slack, Outlook, X, or Reddit. Grant access once and Genspark can read from it when you ask. The MCP Store lists hundreds of tools; add the ones that solve problems you actually have.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You ask about something only the connected tool knows, and it answers with live data instead of guessing.</p>
+    </div>
+
+    <h2><span class="secnum">04</span>Run the test</h2>
+    <p>Ask one question only the connected tool can answer. Then read <a href="/guides/connect-your-first-api/">guide 004</a> to connect your first API in 10 minutes: the same three moves (get access, connect it, test it) work here.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>A live answer from your tool, not a guess from memory. You have a working agent.</p>
+    </div>
+
+    <div class="trouble">
+      <h3>When something goes wrong</h3>
+      <details>
+        <summary>I am drowning in features</summary>
+        <p>Ignore everything except the one job you picked in step 02. Genspark rewards depth on one task, not breadth across all of them.</p>
+      </details>
+      <details>
+        <summary>It answered from memory instead of using the tool</summary>
+        <p>Name the tool explicitly: "Use the [name] tool and read the number from its response." Then ask again. <a href="/guides/connect-your-first-api/">Guide 004, section 05</a> covers this fix.</p>
+      </details>
+    </div>
+
+    <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
+  </article></div><div role="tabpanel" id="panel-grok" data-panel="grok" aria-labelledby="tab-grok" hidden><article class="article"><h2 class="panel-title">Grok</h2><div class="wmeta"><span class="hot">10 minutes</span><span>Beginner</span><span>Free to start</span></div>
+    
+    
+    <div class="site-alert alert-info">
+      <span class="kicker">What you end up with</span>
+      <p><strong>Grok with tools connected, ready to fetch live data.</strong> Free tier for chat. Grok Bot is the separate always-on desktop teammate; this walkthrough covers the main grok.com path first.</p>
+    </div>
+    <h2><span class="secnum">01</span>Create your account</h2>
+    <p>Open <strong>grok.com</strong> in your browser and sign up, or open the Grok app and sign in. You can also reach Grok inside the X app.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You are logged in at grok.com and you see the chat window.</p>
+    </div>
+
+    <h2><span class="secnum">02</span>Get the app</h2>
+    <p>Install the Grok app from the App Store (iPhone) or Google Play (Android) and log in with the same account.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You are logged in on your phone. Same agent, same history, two places.</p>
+    </div>
+
+    <h2><span class="secnum">03</span>Connect your first tool</h2>
+    <p>On grok.com, open Connectors, then New Connector, then Custom. Add a remote MCP server by its URL. The server&apos;s tools appear in your chats.</p>
+    <p>Want the teammate version? Grok Bot is a separate desktop app with its own plugins and skills, under Settings &rarr; Plugins. Start with grok.com first; add Grok Bot when you want an always-on teammate.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You ask about something only the connected tool knows, and it answers with live data instead of guessing.</p>
+    </div>
+
+    <h2><span class="secnum">04</span>Run the test</h2>
+    <p>Ask one question only the connected tool can answer. Then read <a href="/guides/connect-your-first-api/">guide 004</a> to connect your first API in 10 minutes: the same three moves (get access, connect it, test it) work here.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>A live answer from your tool, not a guess from memory. You have a working agent.</p>
+    </div>
+
+    <div class="trouble">
+      <h3>When something goes wrong</h3>
+      <details>
+        <summary>I cannot find Connectors</summary>
+        <p>Connectors live on grok.com in the settings area. If you are in the X app&apos;s Grok view, open grok.com in a browser for the full settings.</p>
+      </details>
+      <details>
+        <summary>It answered from memory instead of using the tool</summary>
+        <p>Name the tool explicitly: "Use the [name] tool and read the number from its response." Then ask again. <a href="/guides/connect-your-first-api/">Guide 004, section 05</a> covers this fix.</p>
+      </details>
+    </div>
+
+    <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
+  </article></div><div role="tabpanel" id="panel-instinct" data-panel="instinct" aria-labelledby="tab-instinct" hidden><article class="article"><h2 class="panel-title">Instinct</h2><div class="wmeta"><span class="hot">10 minutes</span><span>Beginner</span><span>Free during beta</span></div>
+    
+    
+    <div class="site-alert alert-info">
+      <span class="kicker">What you end up with</span>
+      <p><strong>An Instinct agent with its own phone number and email, connected to your accounts, ready to act for you.</strong> Instinct is invite-only: you join the waitlist or get an invite link from an existing member.</p>
+    </div>
+    <h2><span class="secnum">01</span>Get an invite</h2>
+    <p>Two doors. Door one: join the waitlist at <strong>app.instinct.com</strong> and wait for your invite. Door two: get an invite link from someone who already has Instinct. Each member gets 5 invites to share. If you know a member, door two is faster.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You have an invite link and can sign up.</p>
+    </div>
+
+    <h2><span class="secnum">02</span>Sign up with your phone</h2>
+    <p>Open your invite link and sign in with your phone number plus a text code. You must be 18 or older. There is no app to install: Instinct lives in your messages (iMessage, WhatsApp, SMS) and on calls.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You are signed in and your Instinct agent has its own phone number and email address.</p>
+    </div>
+
+    <h2><span class="secnum">03</span>Connect your accounts</h2>
+    <p>Connect your email, calendar, and messaging apps. This is what turns Instinct from a chatbot into an agent: with your accounts connected, it can book, buy, follow up, and call on your behalf instead of just answering questions.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You ask about something only your connected accounts know, and it answers with live data instead of guessing.</p>
+    </div>
+
+    <h2><span class="secnum">04</span>Hand it one real job</h2>
+    <p>Give it something that needs action, not just an answer: book a table, follow up on an email thread, research and buy a product. Instinct&apos;s agents coordinate with each other through a trusted network (Instinct-to-Instinct only), including group chats where your friends do not need accounts.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>It does the job and reports back with proof, not just a plan. You have a working agent.</p>
+    </div>
+
+    <div class="trouble">
+      <h3>When something goes wrong</h3>
+      <details>
+        <summary>I have no invite and the waitlist is slow</summary>
+        <p>Ask around: every member gets 5 invites. One invite link from a member skips the waitlist entirely.</p>
+      </details>
+      <details>
+        <summary>It answered instead of acting</summary>
+        <p>Be explicit about the outcome: "Book the table for two on Friday at 7pm and send me the confirmation." The delegation recipe from <a href="/guides/beginners-guide-to-ai-agents/">guide 001</a> applies here: outcome, context, constraints, check.</p>
+      </details>
+    </div>
+
+    <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
+  </article></div><div role="tabpanel" id="panel-manus" data-panel="manus" aria-labelledby="tab-manus" hidden><article class="article"><h2 class="panel-title">Manus</h2><div class="wmeta"><span class="hot">15 minutes</span><span>Intermediate</span><span>Free to start</span></div>
+    
+    
+    <div class="site-alert alert-info">
+      <span class="kicker">What you end up with</span>
+      <p><strong>Manus 2.0 running in your browser, with its own Cloud Computer and your first connected tool.</strong> Manus is built to run long tasks on its own and report back.</p>
+    </div>
+    <h2><span class="secnum">01</span>Create your account</h2>
+    <p>Open <strong>manus.im</strong> in your browser and sign up. Use an email address you actually check: login codes and important notices go there.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You are logged in at manus.im and you see the Manus workspace with its Cloud Computer.</p>
+    </div>
+
+    <h2><span class="secnum">02</span>Give it one real task</h2>
+    <p>Do not start with a test question. Hand it something from your actual life: research a purchase, plan a trip, organize a project. Manus works best when it has a job with a finish line, not a chat to fill.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>It hands back a finished deliverable, not just advice. It works on its Cloud Computer while you do other things.</p>
+    </div>
+
+    <h2><span class="secnum">03</span>Connect your first tool</h2>
+    <p>Open Settings &rarr; Integrations. Start with an OAuth Connector (a service you already use), or add a custom MCP server: Custom MCP Servers takes a hosted HTTPS URL plus a Bearer token. The server&apos;s tools appear in your Manus chats. Skills (imported from GitHub or uploaded) extend what it can do.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>You ask about something only the connected tool knows, and it answers with live data instead of guessing.</p>
+    </div>
+
+    <h2><span class="secnum">04</span>Run the test</h2>
+    <p>Ask one question only the connected tool can answer. Then read <a href="/guides/connect-your-first-api/">guide 004</a> to connect your first API in 10 minutes: the same three moves (get access, connect it, test it) work here.</p>
+    <div class="success">
+      <span class="k">What success looks like</span>
+      <p>A live answer from your tool, not a guess from memory. You have a working agent.</p>
+    </div>
+
+    <div class="trouble">
+      <h3>When something goes wrong</h3>
+      <details>
+        <summary>What is Cue, and how do I get it?</summary>
+        <p>Cue is Manus&apos;s standalone personal-agent app (each agent gets its own email, phone number, wallet, and computer). It is in early access via invite: try the public code MEETCUE at cue.im. If it is full, join the waitlist.</p>
+      </details>
+      <details>
+        <summary>It answered from memory instead of using the tool</summary>
+        <p>Name the tool explicitly: "Use the [name] tool and read the number from its response." Then ask again. <a href="/guides/connect-your-first-api/">Guide 004, section 05</a> covers this fix.</p>
+      </details>
+    </div>
+
+    <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
+  </article></div><div role="tabpanel" id="panel-muse" data-panel="muse" aria-labelledby="tab-muse" hidden><article class="article"><h2 class="panel-title">Muse</h2><div class="wmeta"><span class="hot">10 minutes</span><span>Beginner</span><span>Free to start</span></div>
     
     
     <div class="site-alert alert-info">
@@ -189,249 +685,6 @@
     </div>
 
     <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
-  </article></div><div role="tabpanel" id="panel-chatgpt" data-panel="chatgpt" aria-labelledby="tab-chatgpt" hidden><article class="article"><h2 class="panel-title">ChatGPT</h2><div class="wmeta"><span class="hot">10 minutes</span><span>Beginner</span><span>Free to start</span></div>
-    
-    
-    <div class="site-alert alert-info">
-      <span class="kicker">What you end up with</span>
-      <p><strong>ChatGPT with tools connected, ready to fetch live data.</strong> Free tier works for chat; connecting your own tools (MCP) needs a paid plan. Start free, upgrade when you want tools.</p>
-    </div>
-    <h2><span class="secnum">01</span>Create your account</h2>
-    <p>Open <strong>chatgpt.com</strong> in your browser and sign up. Use an email address you actually check: login codes and important notices go there.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>You are logged in at chatgpt.com and you see the chat window.</p>
-    </div>
-
-    <h2><span class="secnum">02</span>Get the app</h2>
-    <p>Install the ChatGPT app from the App Store (iPhone) or Google Play (Android) and log in with the same account. The app adds voice, image, and camera input on top of chat.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>You are logged in on your phone. Same agent, same history, two places.</p>
-    </div>
-
-    <h2><span class="secnum">03</span>Connect your first tool</h2>
-    <p>Open Settings and look for Apps / Connectors. Start with a prebuilt one: Gmail, Google Drive, or Calendar. Grant access once and ChatGPT can read from it when you ask.</p>
-    <p>For your own tools (APIs, MCP servers), you need a paid plan: Plus, Pro, or Business. On a paid plan, turn on Developer Mode in Settings, then add a remote MCP server by its URL. The server&apos;s tools appear in your chats.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>You ask about something only the connected tool knows, and it answers with live data instead of guessing.</p>
-    </div>
-
-    <h2><span class="secnum">04</span>Run the test</h2>
-    <p>Ask one question only the connected tool can answer. Then read <a href="/guides/connect-your-first-api/">guide 004</a> to connect your first API in 10 minutes: the same three moves (get access, connect it, test it) work here.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>A live answer from your tool, not a guess from memory. You have a working agent.</p>
-    </div>
-
-    <div class="trouble">
-      <h3>When something goes wrong</h3>
-      <details>
-        <summary>I cannot find Developer Mode / MCP</summary>
-        <p>Custom MCP servers need a paid plan (Plus, Pro, or Business) and Developer Mode on. On the free plan, use the prebuilt Apps instead.</p>
-      </details>
-      <details>
-        <summary>It answered from memory instead of using the tool</summary>
-        <p>Name the tool explicitly: "Use the [name] tool and read the number from its response." Then ask again. <a href="/guides/connect-your-first-api/">Guide 004, section 05</a> covers this fix.</p>
-      </details>
-    </div>
-
-    <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
-  </article></div><div role="tabpanel" id="panel-claude" data-panel="claude" aria-labelledby="tab-claude" hidden><article class="article"><h2 class="panel-title">Claude</h2><div class="wmeta"><span class="hot">10 minutes</span><span>Beginner</span><span>Free to start</span></div>
-    
-    
-    <div class="site-alert alert-info">
-      <span class="kicker">What you end up with</span>
-      <p><strong>Claude with tools connected, ready to fetch live data.</strong> Free tier to start; paid Pro and Max tiers raise the limits. Claude Code (the coding agent) connects tools from the terminal.</p>
-    </div>
-    <h2><span class="secnum">01</span>Create your account</h2>
-    <p>Open <strong>claude.ai</strong> in your browser and sign up. Use an email address you actually check: login codes and important notices go there.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>You are logged in at claude.ai and you see the chat window.</p>
-    </div>
-
-    <h2><span class="secnum">02</span>Get the app</h2>
-    <p>Install the Claude app from the App Store (iPhone) or Google Play (Android) and log in with the same account.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>You are logged in on your phone. Same agent, same history, two places.</p>
-    </div>
-
-    <h2><span class="secnum">03</span>Connect your first tool</h2>
-    <p>Open Settings &rarr; Connectors. Start with a built-in one: Gmail, Calendar, Google Drive, Slack, or Notion. Grant access once and Claude can read from it when you ask.</p>
-    <p>For your own tools, add a custom MCP server: in Connectors, add a remote MCP server by its URL. For local servers and coding work, use Claude Code from the terminal: <code>claude mcp add</code> walks you through it.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>You ask about something only the connected tool knows, and it answers with live data instead of guessing.</p>
-    </div>
-
-    <h2><span class="secnum">04</span>Run the test</h2>
-    <p>Ask one question only the connected tool can answer. Then read <a href="/guides/connect-your-first-api/">guide 004</a> to connect your first API in 10 minutes: the same three moves (get access, connect it, test it) work here.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>A live answer from your tool, not a guess from memory. You have a working agent.</p>
-    </div>
-
-    <div class="trouble">
-      <h3>When something goes wrong</h3>
-      <details>
-        <summary>Claude Code is not installed</summary>
-        <p>Claude Code is a separate terminal tool from the chat app. Install it from Anthropic&apos;s docs, then run <code>claude mcp add</code> to connect a server. The chat app&apos;s Connectors cover the non-coding path.</p>
-      </details>
-      <details>
-        <summary>It answered from memory instead of using the tool</summary>
-        <p>Name the tool explicitly: "Use the [name] tool and read the number from its response." Then ask again. <a href="/guides/connect-your-first-api/">Guide 004, section 05</a> covers this fix.</p>
-      </details>
-    </div>
-
-    <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
-  </article></div><div role="tabpanel" id="panel-grok" data-panel="grok" aria-labelledby="tab-grok" hidden><article class="article"><h2 class="panel-title">Grok</h2><div class="wmeta"><span class="hot">10 minutes</span><span>Beginner</span><span>Free to start</span></div>
-    
-    
-    <div class="site-alert alert-info">
-      <span class="kicker">What you end up with</span>
-      <p><strong>Grok with tools connected, ready to fetch live data.</strong> Free tier for chat. Grok Bot is the separate always-on desktop teammate; this walkthrough covers the main grok.com path first.</p>
-    </div>
-    <h2><span class="secnum">01</span>Create your account</h2>
-    <p>Open <strong>grok.com</strong> in your browser and sign up, or open the Grok app and sign in. You can also reach Grok inside the X app.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>You are logged in at grok.com and you see the chat window.</p>
-    </div>
-
-    <h2><span class="secnum">02</span>Get the app</h2>
-    <p>Install the Grok app from the App Store (iPhone) or Google Play (Android) and log in with the same account.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>You are logged in on your phone. Same agent, same history, two places.</p>
-    </div>
-
-    <h2><span class="secnum">03</span>Connect your first tool</h2>
-    <p>On grok.com, open Connectors, then New Connector, then Custom. Add a remote MCP server by its URL. The server&apos;s tools appear in your chats.</p>
-    <p>Want the teammate version? Grok Bot is a separate desktop app with its own plugins and skills, under Settings &rarr; Plugins. Start with grok.com first; add Grok Bot when you want an always-on teammate.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>You ask about something only the connected tool knows, and it answers with live data instead of guessing.</p>
-    </div>
-
-    <h2><span class="secnum">04</span>Run the test</h2>
-    <p>Ask one question only the connected tool can answer. Then read <a href="/guides/connect-your-first-api/">guide 004</a> to connect your first API in 10 minutes: the same three moves (get access, connect it, test it) work here.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>A live answer from your tool, not a guess from memory. You have a working agent.</p>
-    </div>
-
-    <div class="trouble">
-      <h3>When something goes wrong</h3>
-      <details>
-        <summary>I cannot find Connectors</summary>
-        <p>Connectors live on grok.com in the settings area. If you are in the X app&apos;s Grok view, open grok.com in a browser for the full settings.</p>
-      </details>
-      <details>
-        <summary>It answered from memory instead of using the tool</summary>
-        <p>Name the tool explicitly: "Use the [name] tool and read the number from its response." Then ask again. <a href="/guides/connect-your-first-api/">Guide 004, section 05</a> covers this fix.</p>
-      </details>
-    </div>
-
-    <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
-  </article></div><div role="tabpanel" id="panel-manus" data-panel="manus" aria-labelledby="tab-manus" hidden><article class="article"><h2 class="panel-title">Manus</h2><div class="wmeta"><span class="hot">15 minutes</span><span>Intermediate</span><span>Free to start</span></div>
-    
-    
-    <div class="site-alert alert-info">
-      <span class="kicker">What you end up with</span>
-      <p><strong>Manus 2.0 running in your browser, with its own Cloud Computer and your first connected tool.</strong> Manus is built to run long tasks on its own and report back.</p>
-    </div>
-    <h2><span class="secnum">01</span>Create your account</h2>
-    <p>Open <strong>manus.im</strong> in your browser and sign up. Use an email address you actually check: login codes and important notices go there.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>You are logged in at manus.im and you see the Manus workspace with its Cloud Computer.</p>
-    </div>
-
-    <h2><span class="secnum">02</span>Give it one real task</h2>
-    <p>Do not start with a test question. Hand it something from your actual life: research a purchase, plan a trip, organize a project. Manus works best when it has a job with a finish line, not a chat to fill.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>It hands back a finished deliverable, not just advice. It works on its Cloud Computer while you do other things.</p>
-    </div>
-
-    <h2><span class="secnum">03</span>Connect your first tool</h2>
-    <p>Open Settings &rarr; Integrations. Start with an OAuth Connector (a service you already use), or add a custom MCP server: Custom MCP Servers takes a hosted HTTPS URL plus a Bearer token. The server&apos;s tools appear in your Manus chats. Skills (imported from GitHub or uploaded) extend what it can do.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>You ask about something only the connected tool knows, and it answers with live data instead of guessing.</p>
-    </div>
-
-    <h2><span class="secnum">04</span>Run the test</h2>
-    <p>Ask one question only the connected tool can answer. Then read <a href="/guides/connect-your-first-api/">guide 004</a> to connect your first API in 10 minutes: the same three moves (get access, connect it, test it) work here.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>A live answer from your tool, not a guess from memory. You have a working agent.</p>
-    </div>
-
-    <div class="trouble">
-      <h3>When something goes wrong</h3>
-      <details>
-        <summary>What is Cue, and how do I get it?</summary>
-        <p>Cue is Manus&apos;s standalone personal-agent app (each agent gets its own email, phone number, wallet, and computer). It is in early access via invite: try the public code MEETCUE at cue.im. If it is full, join the waitlist.</p>
-      </details>
-      <details>
-        <summary>It answered from memory instead of using the tool</summary>
-        <p>Name the tool explicitly: "Use the [name] tool and read the number from its response." Then ask again. <a href="/guides/connect-your-first-api/">Guide 004, section 05</a> covers this fix.</p>
-      </details>
-    </div>
-
-    <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
-  </article></div><div role="tabpanel" id="panel-genspark" data-panel="genspark" aria-labelledby="tab-genspark" hidden><article class="article"><h2 class="panel-title">Genspark</h2><div class="wmeta"><span class="hot">10 minutes</span><span>Beginner</span><span>Free to start</span></div>
-    
-    
-    <div class="site-alert alert-info">
-      <span class="kicker">What you end up with</span>
-      <p><strong>Genspark with tools connected, ready to fetch live data.</strong> Free tier with credits to start; Plus plan for heavier use.</p>
-    </div>
-    <h2><span class="secnum">01</span>Create your account</h2>
-    <p>Open <strong>genspark.ai</strong> in your browser and sign up. Use an email address you actually check: login codes and important notices go there.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>You are logged in at genspark.ai and you see the workspace.</p>
-    </div>
-
-    <h2><span class="secnum">02</span>Pick your first job</h2>
-    <p>Genspark has a lot of surfaces: chat, research, slides, sheets, images, video, browser. Do not try them all at once. Pick one real job: a research brief, a slide deck, or a comparison sheet. One finished artifact teaches you the workflow faster than five half-started ones.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>It hands back a finished artifact (a brief, a deck, a sheet), not just a chat reply.</p>
-    </div>
-
-    <h2><span class="secnum">03</span>Connect your first tool</h2>
-    <p>Open the Tools section / MCP Store. Start with a service you already use: Gmail, Calendar, Notion, Slack, Outlook, X, or Reddit. Grant access once and Genspark can read from it when you ask. The MCP Store lists hundreds of tools; add the ones that solve problems you actually have.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>You ask about something only the connected tool knows, and it answers with live data instead of guessing.</p>
-    </div>
-
-    <h2><span class="secnum">04</span>Run the test</h2>
-    <p>Ask one question only the connected tool can answer. Then read <a href="/guides/connect-your-first-api/">guide 004</a> to connect your first API in 10 minutes: the same three moves (get access, connect it, test it) work here.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>A live answer from your tool, not a guess from memory. You have a working agent.</p>
-    </div>
-
-    <div class="trouble">
-      <h3>When something goes wrong</h3>
-      <details>
-        <summary>I am drowning in features</summary>
-        <p>Ignore everything except the one job you picked in step 02. Genspark rewards depth on one task, not breadth across all of them.</p>
-      </details>
-      <details>
-        <summary>It answered from memory instead of using the tool</summary>
-        <p>Name the tool explicitly: "Use the [name] tool and read the number from its response." Then ask again. <a href="/guides/connect-your-first-api/">Guide 004, section 05</a> covers this fix.</p>
-      </details>
-    </div>
-
-    <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
   </article></div><div role="tabpanel" id="panel-poke" data-panel="poke" aria-labelledby="tab-poke" hidden><article class="article"><h2 class="panel-title">Poke</h2><div class="wmeta"><span class="hot">10 minutes</span><span>Beginner</span><span>Negotiated price</span></div>
     
     
@@ -476,54 +729,6 @@
       <details>
         <summary>It answered from memory instead of using the integration</summary>
         <p>Name the integration explicitly: "Check my [calendar / email / Notion] and read the answer from there." Then ask again. <a href="/guides/connect-your-first-api/">Guide 004, section 05</a> covers this fix.</p>
-      </details>
-    </div>
-
-    <p><a href="/guides/connect-your-first-api/">Next: connect your first API &rarr;</a></p>
-  </article></div><div role="tabpanel" id="panel-instinct" data-panel="instinct" aria-labelledby="tab-instinct" hidden><article class="article"><h2 class="panel-title">Instinct</h2><div class="wmeta"><span class="hot">10 minutes</span><span>Beginner</span><span>Free during beta</span></div>
-    
-    
-    <div class="site-alert alert-info">
-      <span class="kicker">What you end up with</span>
-      <p><strong>An Instinct agent with its own phone number and email, connected to your accounts, ready to act for you.</strong> Instinct is invite-only: you join the waitlist or get an invite link from an existing member.</p>
-    </div>
-    <h2><span class="secnum">01</span>Get an invite</h2>
-    <p>Two doors. Door one: join the waitlist at <strong>app.instinct.com</strong> and wait for your invite. Door two: get an invite link from someone who already has Instinct. Each member gets 5 invites to share. If you know a member, door two is faster.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>You have an invite link and can sign up.</p>
-    </div>
-
-    <h2><span class="secnum">02</span>Sign up with your phone</h2>
-    <p>Open your invite link and sign in with your phone number plus a text code. You must be 18 or older. There is no app to install: Instinct lives in your messages (iMessage, WhatsApp, SMS) and on calls.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>You are signed in and your Instinct agent has its own phone number and email address.</p>
-    </div>
-
-    <h2><span class="secnum">03</span>Connect your accounts</h2>
-    <p>Connect your email, calendar, and messaging apps. This is what turns Instinct from a chatbot into an agent: with your accounts connected, it can book, buy, follow up, and call on your behalf instead of just answering questions.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>You ask about something only your connected accounts know, and it answers with live data instead of guessing.</p>
-    </div>
-
-    <h2><span class="secnum">04</span>Hand it one real job</h2>
-    <p>Give it something that needs action, not just an answer: book a table, follow up on an email thread, research and buy a product. Instinct&apos;s agents coordinate with each other through a trusted network (Instinct-to-Instinct only), including group chats where your friends do not need accounts.</p>
-    <div class="success">
-      <span class="k">What success looks like</span>
-      <p>It does the job and reports back with proof, not just a plan. You have a working agent.</p>
-    </div>
-
-    <div class="trouble">
-      <h3>When something goes wrong</h3>
-      <details>
-        <summary>I have no invite and the waitlist is slow</summary>
-        <p>Ask around: every member gets 5 invites. One invite link from a member skips the waitlist entirely.</p>
-      </details>
-      <details>
-        <summary>It answered instead of acting</summary>
-        <p>Be explicit about the outcome: "Book the table for two on Friday at 7pm and send me the confirmation." The delegation recipe from <a href="/guides/beginners-guide-to-ai-agents/">guide 001</a> applies here: outcome, context, constraints, check.</p>
       </details>
     </div>
 

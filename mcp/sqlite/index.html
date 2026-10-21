@@ -40,6 +40,10 @@
 <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li aria-current="page">Home</li><li><a href="../../mcp/">MCP</a></li><li aria-current="page">SQLite</li></ol></nav>
 <div class="detail-head"><img class="logo-tile logo-tile-lg logo-tile-img" src="../../favicons/mcp-sqlite.png" alt="" aria-hidden="true" loading="lazy"><div><h1>SQLite</h1>
 <p><span class="badge badge-accent">Databases</span> <span class="badge">See docs</span></p></div></div>
+<section class="facts-panel" aria-label="Project facts">
+  <div class="facts-grid"><div class="fact"><span class="fact-label">GitHub stars</span><span class="fact-value">305</span></div><div class="fact"><span class="fact-label">Forks</span><span class="fact-value">170</span></div><div class="fact"><span class="fact-label">License</span><span class="fact-value">MIT</span></div><div class="fact"><span class="fact-label">Last activity</span><span class="fact-value">May 28, 2025</span></div><div class="fact"><span class="fact-label">Open issues</span><span class="fact-value">0</span></div></div>
+  <p class="facts-src">Repository: <a href="https://github.com/modelcontextprotocol/servers-archived">modelcontextprotocol/servers-archived</a> · Data checked Oct 2026</p><p class="facts-warn">The upstream repository is archived, so it no longer receives updates. It still works, but expect no new features or fixes.</p>
+</section>
 <div class="detail-cards">
 <section class="card" aria-label="About">
   <h3>About</h3>
@@ -48,17 +52,103 @@
 <section class="card" aria-label="Details">
   <h3>Details</h3>
   <div class="entry-code"><code>uvx mcp-server-sqlite --db-path /path/to/db.sqlite</code><button class="copy-btn" type="button" data-copy-text="uvx mcp-server-sqlite --db-path /path/to/db.sqlite">Copy</button></div>
+  <p class="verified-line">Checked by plugmyagent · Sep 19, 2026</p>
   <div class="card-actions"><a class="btn btn-primary" href="https://github.com/modelcontextprotocol/servers-archived/tree/main/src/sqlite">Source</a> <a class="btn btn-secondary" href="../">Back to MCP</a></div>
 </section>
 </div>
+<section class="card" aria-label="Config for your agent">
+  <h3>Config for your agent</h3>
+  <p>Pick your agent and copy the block into its MCP config file. The <a href="../../guides/setup/">setup guide</a> shows where that file lives for each agent.</p>
+  <div class="tablist" role="tablist" data-cfgtabs><button class="tab-btn active" role="tab" aria-selected="true" data-cfg-btn="claude-code" type="button">Claude Code</button><button class="tab-btn" role="tab" aria-selected="false" data-cfg-btn="claude-desktop" type="button">Claude Desktop</button><button class="tab-btn" role="tab" aria-selected="false" data-cfg-btn="codex" type="button">Codex</button><button class="tab-btn" role="tab" aria-selected="false" data-cfg-btn="cursor" type="button">Cursor</button><button class="tab-btn" role="tab" aria-selected="false" data-cfg-btn="devin-desktop" type="button">Devin Desktop</button><button class="tab-btn" role="tab" aria-selected="false" data-cfg-btn="gemini-cli" type="button">Gemini CLI</button><button class="tab-btn" role="tab" aria-selected="false" data-cfg-btn="grok" type="button">Grok</button><button class="tab-btn" role="tab" aria-selected="false" data-cfg-btn="vscode" type="button">VS Code / Copilot</button></div>
+  <div class="codeblock cfgblock" data-cfg-panel="claude-code"><button class="copy-btn" type="button">Copy</button><pre><code>{
+  &quot;mcpServers&quot;: {
+    &quot;sqlite&quot;: {
+      &quot;args&quot;: [
+        &quot;mcp-server-sqlite&quot;,
+        &quot;--db-path&quot;,
+        &quot;/path/to/db.sqlite&quot;
+      ],
+      &quot;command&quot;: &quot;uvx&quot;
+    }
+  }
+}</code></pre></div><div class="codeblock cfgblock" data-cfg-panel="claude-desktop" hidden><button class="copy-btn" type="button">Copy</button><pre><code>{
+  &quot;mcpServers&quot;: {
+    &quot;sqlite&quot;: {
+      &quot;args&quot;: [
+        &quot;mcp-server-sqlite&quot;,
+        &quot;--db-path&quot;,
+        &quot;/path/to/db.sqlite&quot;
+      ],
+      &quot;command&quot;: &quot;uvx&quot;
+    }
+  }
+}</code></pre></div><div class="codeblock cfgblock" data-cfg-panel="codex" hidden><button class="copy-btn" type="button">Copy</button><pre><code>[mcp_servers.sqlite]
+command = &quot;uvx&quot;
+args = [&quot;mcp-server-sqlite&quot;, &quot;--db-path&quot;, &quot;/path/to/db.sqlite&quot;]</code></pre></div><div class="codeblock cfgblock" data-cfg-panel="cursor" hidden><button class="copy-btn" type="button">Copy</button><pre><code>{
+  &quot;mcpServers&quot;: {
+    &quot;sqlite&quot;: {
+      &quot;args&quot;: [
+        &quot;mcp-server-sqlite&quot;,
+        &quot;--db-path&quot;,
+        &quot;/path/to/db.sqlite&quot;
+      ],
+      &quot;command&quot;: &quot;uvx&quot;
+    }
+  }
+}</code></pre></div><div class="codeblock cfgblock" data-cfg-panel="devin-desktop" hidden><button class="copy-btn" type="button">Copy</button><pre><code>{
+  &quot;mcpServers&quot;: {
+    &quot;sqlite&quot;: {
+      &quot;args&quot;: [
+        &quot;mcp-server-sqlite&quot;,
+        &quot;--db-path&quot;,
+        &quot;/path/to/db.sqlite&quot;
+      ],
+      &quot;command&quot;: &quot;uvx&quot;
+    }
+  }
+}</code></pre></div><div class="codeblock cfgblock" data-cfg-panel="gemini-cli" hidden><button class="copy-btn" type="button">Copy</button><pre><code>{
+  &quot;mcpServers&quot;: {
+    &quot;sqlite&quot;: {
+      &quot;args&quot;: [
+        &quot;mcp-server-sqlite&quot;,
+        &quot;--db-path&quot;,
+        &quot;/path/to/db.sqlite&quot;
+      ],
+      &quot;command&quot;: &quot;uvx&quot;
+    }
+  }
+}</code></pre></div><div class="codeblock cfgblock" data-cfg-panel="grok" hidden><button class="copy-btn" type="button">Copy</button><pre><code>[mcp_servers.sqlite]
+command = &quot;uvx&quot;
+args = [&quot;mcp-server-sqlite&quot;, &quot;--db-path&quot;, &quot;/path/to/db.sqlite&quot;]</code></pre></div><div class="codeblock cfgblock" data-cfg-panel="vscode" hidden><button class="copy-btn" type="button">Copy</button><pre><code>{
+  &quot;servers&quot;: {
+    &quot;sqlite&quot;: {
+      &quot;args&quot;: [
+        &quot;mcp-server-sqlite&quot;,
+        &quot;--db-path&quot;,
+        &quot;/path/to/db.sqlite&quot;
+      ],
+      &quot;command&quot;: &quot;uvx&quot;
+    }
+  }
+}</code></pre></div>
+</section>
 <section class="card" aria-label="How to use it">
   <h3>How to use it</h3>
   <ol>
-    <li>Copy the install command above.</li>
-    <li>Add it to your agent's MCP config. The <a href="../../guides/setup/">setup guide</a> shows where that lives for your agent.</li>
+    <li>Copy the config block above for your agent.</li>
+    <li>Paste it into your agent's MCP config file.</li>
     <li>Restart your agent so it picks up the new server.</li>
     <li>Ask your agent to use it.</li>
   </ol>
+</section>
+<section class="card" aria-label="Help and troubleshooting">
+  <h3>Before you install</h3>
+  <dl>
+    <div class="qa"><dt>Is it free?</dt><dd>SQLite is open source under the MIT license and free to run. Check the source docs for whether the service it connects to needs an account.</dd></div>
+    <div class="qa"><dt>What do I need first?</dt><dd>the uv tool from Astral (which provides uvx).</dd></div>
+  </dl>
+  <h3>If it does not show up</h3>
+  <ul><li>Fully quit and relaunch your agent app after editing the config. Closing the window is not always enough for desktop apps.</li><li>Check the JSON is valid: one trailing comma breaks the whole file. Our <a href="../../tools/#config-validator">MCP Config Validator</a> checks it in your browser.</li><li>If the log says "uvx: command not found", the runtime above is missing or the app cannot see your PATH. Install it, then relaunch the app.</li><li>Replace placeholder paths in the config (like /path/to/folder) with real folders on your machine, and use absolute paths.</li></ul>
 </section>
 
 </main>

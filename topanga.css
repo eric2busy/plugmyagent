@@ -652,3 +652,8 @@ p, li, td, dd, blockquote { overflow-wrap: break-word; }
 .qa dt { font-weight: 700; }
 .qa dd { margin: 2px 0 0; color: var(--color-muted); }
 .verified-line { margin: 10px 0 0; font-size: 0.8125rem; color: var(--color-muted); }
+
+/* Detail pages: stacked cards keep the same 16px rhythm as the grids above them */
+main > section.card { margin-bottom: 16px; }
+/* Tab strips (setup agents, config clients): horizontal scrolling only */
+.tablist { overflow-y: hidden; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }

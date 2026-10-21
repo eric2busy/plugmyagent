@@ -383,6 +383,25 @@
     });
   }
 
+  // Per-client config tabs on detail pages.
+  document.querySelectorAll('[data-cfgtabs]').forEach(function (group) {
+    var card = group.closest('section') || document;
+    var btns = group.querySelectorAll('[data-cfg-btn]');
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var target = btn.getAttribute('data-cfg-btn');
+        btns.forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        card.querySelectorAll('[data-cfg-panel]').forEach(function (p) {
+          p.hidden = p.getAttribute('data-cfg-panel') !== target;
+        });
+      });
+    });
+  });
+
   // Codeblock copy buttons (makeover pattern: button + sibling <pre>).
   document.querySelectorAll('.codeblock .copy-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
