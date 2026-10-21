@@ -960,5 +960,257 @@
   "sources": [
    "lib:Vuetify"
   ]
+ },
+ "BagelHole/DevOps-Security-Agent-Skills": {
+  "stars": 1169,
+  "forks": 170,
+  "license": "MIT",
+  "pushed_at": "2026-05-22",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 5,
+  "sources": [
+   "skill:DevOps & Security Agent Skills"
+  ]
+ },
+ "K-Dense-AI/scientific-agent-skills": {
+  "stars": 53272,
+  "forks": 4707,
+  "license": "MIT",
+  "pushed_at": "2026-10-19",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 50,
+  "sources": [
+   "skill:Scientific Agent Skills"
+  ]
+ },
+ "Kotlin/kotlin-agent-skills": {
+  "stars": 1089,
+  "forks": 43,
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 23,
+  "sources": [
+   "skill:Kotlin Agent Skills"
+  ]
+ },
+ "Ryze-AI-Adgent/open-seo-mcp-skills": {
+  "stars": 6264,
+  "forks": 376,
+  "license": "MIT",
+  "pushed_at": "2026-10-13",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 4,
+  "sources": [
+   "skill:Open SEO MCP Skills"
+  ]
+ },
+ "WordPress/agent-skills": {
+  "stars": 2274,
+  "forks": 333,
+  "license": "NOASSERTION",
+  "pushed_at": "2026-10-19",
+  "archived": false,
+  "default_branch": "trunk",
+  "open_issues": 53,
+  "sources": [
+   "skill:WordPress Agent Skills"
+  ]
+ },
+ "addyosmani/agent-skills": {
+  "stars": 108996,
+  "forks": 11364,
+  "license": "MIT",
+  "pushed_at": "2026-10-13",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 146,
+  "sources": [
+   "skill:Addy Osmani Agent Skills"
+  ]
+ },
+ "anthropics/skills": {
+  "stars": 182504,
+  "forks": 21626,
+  "license": null,
+  "pushed_at": "2026-10-09",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 1425,
+  "sources": [
+   "skill:Anthropic Skills"
+  ]
+ },
+ "apify/agent-skills": {
+  "stars": 2447,
+  "forks": 274,
+  "license": null,
+  "pushed_at": "2026-10-19",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 45,
+  "sources": [
+   "skill:Apify Agent Skills"
+  ]
+ },
+ "callstackincubator/agent-skills": {
+  "stars": 1678,
+  "forks": 117,
+  "license": "MIT",
+  "pushed_at": "2026-10-08",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 8,
+  "sources": [
+   "skill:Callstack Agent Skills"
+  ]
+ },
+ "eric2busy/Oeste": {
+  "stars": 0,
+  "forks": 0,
+  "license": "MIT",
+  "pushed_at": "2026-10-18",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 0,
+  "sources": [
+   "lib:Oeste"
+  ]
+ },
+ "hashicorp/agent-skills": {
+  "stars": 903,
+  "forks": 132,
+  "license": "MPL-2.0",
+  "pushed_at": "2026-10-05",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 14,
+  "sources": [
+   "skill:HashiCorp Agent Skills"
+  ]
+ },
+ "itsmostafa/aws-agent-skills": {
+  "stars": 1167,
+  "forks": 446,
+  "license": "MIT",
+  "pushed_at": "2026-10-19",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 7,
+  "sources": [
+   "skill:AWS Agent Skills"
+  ]
+ },
+ "mattpocock/skills": {
+  "stars": 298706,
+  "forks": 25084,
+  "license": "MIT",
+  "pushed_at": "2026-10-19",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 202,
+  "sources": [
+   "skill:Matt Pocock Skills"
+  ]
+ },
+ "nextlevelbuilder/ui-ux-pro-max-skill": {
+  "stars": 138013,
+  "forks": 14640,
+  "license": "MIT",
+  "pushed_at": "2026-10-15",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 91,
+  "sources": [
+   "skill:UI UX Pro Max"
+  ]
+ },
+ "obra/superpowers": {
+  "stars": 302618,
+  "forks": 26983,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 347,
+  "sources": [
+   "skill:Superpowers"
+  ]
+ },
+ "openclaw/agent-skills": {
+  "stars": 1108,
+  "forks": 110,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 3,
+  "sources": [
+   "skill:OpenClaw Agent Skills"
+  ]
+ },
+ "oxylabs/agent-skills": {
+  "stars": 876,
+  "forks": 2,
+  "license": "MIT",
+  "pushed_at": "2026-10-16",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 1,
+  "sources": [
+   "skill:Oxylabs Agent Skills"
+  ]
+ },
+ "plugin87/ux-ui-agent-skills": {
+  "stars": 2542,
+  "forks": 251,
+  "license": "MIT",
+  "pushed_at": "2026-10-20",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 7,
+  "sources": [
+   "skill:UX/UI Agent Skills"
+  ]
+ },
+ "sunbigfly/ppt-agent-skills": {
+  "stars": 914,
+  "forks": 91,
+  "license": "NOASSERTION",
+  "pushed_at": "2026-06-08",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 3,
+  "sources": [
+   "skill:PPT Agent"
+  ]
+ },
+ "supabase/agent-skills": {
+  "stars": 2894,
+  "forks": 253,
+  "license": "MIT",
+  "pushed_at": "2026-10-02",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 520,
+  "sources": [
+   "skill:Supabase Agent Skills"
+  ]
+ },
+ "vercel-labs/agent-skills": {
+  "stars": 32719,
+  "forks": 2859,
+  "license": null,
+  "pushed_at": "2026-10-14",
+  "archived": false,
+  "default_branch": "main",
+  "open_issues": 181,
+  "sources": [
+   "skill:Vercel Agent Skills"
+  ]
  }
 }

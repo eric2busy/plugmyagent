@@ -40,6 +40,10 @@
 <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li aria-current="page">Home</li><li><a href="../../catalog/">API Catalog</a></li><li aria-current="page">Open Topo Data</li></ol></nav>
 <div class="detail-head"><img class="logo-tile logo-tile-lg logo-tile-img" src="../../favicons/api-open-topo-data.png" alt="" aria-hidden="true" loading="lazy"><div><h1>Open Topo Data</h1>
 <p><span class="badge badge-accent">Maps &amp; Geocoding</span> <span class="badge">No key</span></p></div></div>
+<section class="facts-panel" aria-label="Service facts">
+  <div class="facts-grid"><div class="fact"><span class="fact-label">Authentication</span><span class="fact-value">No key</span></div><div class="fact"><span class="fact-label">Rate limit</span><span class="fact-value">Max 100 locations per request, 1 call per second, 1,000 calls per day on the free public API.</span></div></div>
+  <p class="facts-src">Documentation: <a href="https://www.opentopodata.org/">www.opentopodata.org</a> · Checked Sep 13, 2026</p>
+</section>
 <div class="detail-cards">
 <section class="card" aria-label="About">
   <h3>About</h3>
@@ -62,7 +66,7 @@
 </div>
 <div class="tab-panel" role="tabpanel" id="panel-setup" aria-labelledby="tab-setup">
   <h3>Setup</h3>
-  <ol><li>1. No signup. Call the public API directly.</li><li>2. Pick a dataset: srtm30m for most of the world, ned10m for the US.</li><li>3. Pass up to 100 locations at once, separated by pipes, e.g. locations=34.05,-118.24|35.68,139.69.</li><li>4. Stay under 1 call per second, or host your own copy with Docker for unlimited use.</li></ol>
+  <ol><li>No signup. Call the public API directly.</li><li>Pick a dataset: srtm30m for most of the world, ned10m for the US.</li><li>Pass up to 100 locations at once, separated by pipes, e.g. locations=34.05,-118.24|35.68,139.69.</li><li>Stay under 1 call per second, or host your own copy with Docker for unlimited use.</li></ol>
   <div class="card-actions"><a class="btn btn-secondary" href="https://www.opentopodata.org/">Sign up</a></div>
 </div>
 <div class="tab-panel" role="tabpanel" id="panel-example" aria-labelledby="tab-example" hidden>
@@ -80,7 +84,7 @@
   <div class="foot-div" aria-hidden="true"></div>
   <p>&copy; 2026 plugmyagent &middot; Made by <a href="https://x.com/hiddeninwest" rel="noopener">@hiddeninwest</a></p>
   <p>An independent, hand-maintained catalog of free APIs for AI agents. No ads, no sponsored placements, just tools worth your time.</p>
-  <p><a href="https://hiddeninwest.com" rel="noopener">hiddeninwest.com</a> &middot; <a href="../../privacy/">Privacy Policy</a></p>
+  <p><a href="https://hiddeninwest.com" rel="noopener">hiddeninwest.com</a> &middot; <a href="../../privacy/">Privacy Policy</a> &middot; <a href="https://github.com/eric2busy/plugmyagent" rel="noopener">GitHub</a></p>
 </footer>
 <script src="../../topanga.js"></script>
 </body>
