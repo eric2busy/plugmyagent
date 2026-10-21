@@ -218,7 +218,7 @@
       }
       return heroLoading;
     }
-    function heroClose() { heroResults.hidden = true; heroInput.setAttribute('aria-expanded', 'false'); heroActive = -1; heroItems = []; }
+    function heroClose() { heroResults.hidden = true; heroInput.setAttribute('aria-expanded', 'false'); heroActive = -1; heroItems = []; document.body.classList.remove('search-open'); }
     function heroEsc(x) { return String(x == null ? '' : x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
     function heroTile(name) {
       return '';
@@ -242,6 +242,7 @@
         heroResults.innerHTML = html;
       }
       heroResults.hidden = false;
+      document.body.classList.add('search-open');
       heroInput.setAttribute('aria-expanded', 'true');
       heroItems = Array.prototype.slice.call(heroResults.querySelectorAll('.hero-result'));
     }

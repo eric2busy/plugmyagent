@@ -314,16 +314,39 @@ html[data-theme="dark"] .logo-tile.logo-tile-img { background: transparent; }
 .hero-search { position: relative; max-width: 640px; margin: 0 0 24px; }
 .hero-search input { width: 100%; min-height: 52px; font-size: 1rem; padding: 0 16px; border: 1px solid var(--color-border); border-radius: 12px; background: var(--color-surface); color: var(--color-text); }
 .hero-search input:focus { outline: 2px solid var(--color-accent); outline-offset: 0; border-color: var(--color-accent); }
-.hero-results { position: absolute; top: calc(100% + 8px); left: 0; right: 0; z-index: 50; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; box-shadow: var(--shadow-card); max-height: 60vh; overflow-y: auto; }
+.hero-results { position: absolute; top: calc(100% + 8px); left: 0; right: 0; z-index: 50; background: var(--color-surface); border: 1px solid color-mix(in srgb, var(--color-text) 28%, var(--color-border)); border-radius: 12px; box-shadow: 0 24px 70px rgba(5, 3, 10, .6); max-height: 60vh; overflow-y: auto; }
 .hero-result-group { padding: 8px 0; border-bottom: 1px solid var(--color-border); }
 .hero-result-group:last-child { border-bottom: 0; }
-.hero-result-head { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-muted); padding: 4px 16px; }
+.hero-result-head { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-muted); padding: 4px 16px; }
 .hero-result { display: block; padding: 8px 16px; text-decoration: none; color: var(--color-text); }
 .hero-result:hover, .hero-result.active { background: color-mix(in srgb, var(--color-text) 6%, transparent); }
 .hero-result .r-title { display: block; font-weight: 700; }
 .hero-result .r-snip { display: block; font-size: 0.875rem; color: var(--color-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .hero-results-empty { padding: 16px; color: var(--color-muted); }
 .hero-results-empty a { color: var(--color-muted); }
+html[data-theme="light"] .hero-results { box-shadow: 0 24px 70px rgba(28, 25, 23, .25); }
+
+/* Search-open scrim: while the hero results are open, the page behind them
+   dims and blurs so the panel reads as its own layer (Eric, 2026-10-20).
+   Under the header (z 50); the search wrap lifts above it. */
+body.search-open::before { content: ""; position: fixed; inset: 0; z-index: 30; background: rgba(13, 9, 23, .64); backdrop-filter: blur(3px) saturate(.8); -webkit-backdrop-filter: blur(3px) saturate(.8); }
+html[data-theme="light"] body.search-open::before { background: rgba(238, 235, 230, .62); }
+body.search-open .hero { z-index: 31; }
+
+/* Home glass (Eric, 2026-10-21): home cards, the stat band, and the search
+   field are semi-transparent with a backdrop blur, so they take on the
+   color of the hero photo behind them as they scroll. (Explored and
+   rejected the same day: fully transparent cards, background-color fill
+   with a top fade veil and transparent header. This glass is the design.)
+   Home only; inner pages keep solid surface cards. */
+body.home-aero .card, body.home-aero .stat-band, body.home-aero .hero-search input {
+  background: rgba(252, 250, 247, .6);
+  backdrop-filter: blur(16px) saturate(1.1);
+  -webkit-backdrop-filter: blur(16px) saturate(1.1);
+}
+html[data-theme="dark"] body.home-aero .card, html[data-theme="dark"] body.home-aero .stat-band, html[data-theme="dark"] body.home-aero .hero-search input {
+  background: rgba(34, 26, 56, .52);
+}
 
 /* Empty-state button: centered (its .card-actions row is flex, so the
    parent's text-align does not center it). */
@@ -420,16 +443,16 @@ html[data-theme="dark"] .pill.active { background: #F06292; color: #1C1917; bord
 
 /* Home hero: no box. Full-bleed dot grid behind the text, fading out at the bottom. */
 .hero { position: relative; z-index: 10; margin: 0 0 8px; padding: 40px 0 20px; }
-/* Fixed line grid: home page background. Starts at the viewport top, never scrolls.
-   (Eric, 2026-10-19: lines instead of the dot grid; same fade mask.) */
+/* Fixed film grain: home page background. Starts at the viewport top, never scrolls.
+   (Eric, 2026-10-20: film grain over the hero photo instead of the line grid; same fade mask.) */
 .page-dots { position: fixed; top: 0; left: 0; right: 0; height: 100vh; height: 100lvh; z-index: -1; pointer-events: none;
-  background-image: linear-gradient(to right, rgba(24, 17, 40, .13) 1px, transparent 1px), linear-gradient(to bottom, rgba(24, 17, 40, .13) 1px, transparent 1px), url("aerochrome-clear.webp");
-  background-size: 32px 32px, 32px 32px, cover;
-  background-position: 0 0, 0 0, 15% top;
-  background-repeat: repeat, repeat, no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27160%27%20height%3D%27160%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.9%27%20numOctaves%3D%272%27%2F%3E%3CfeColorMatrix%20type%3D%27saturate%27%20values%3D%270%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27160%27%20height%3D%27160%27%20filter%3D%27url%28%23n%29%27%20opacity%3D%270.16%27%2F%3E%3C%2Fsvg%3E"), url("aerochrome-clear.webp");
+  background-size: 160px 160px, cover;
+  background-position: 0 0, 15% top;
+  background-repeat: repeat, no-repeat;
   -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 95%);
   mask-image: linear-gradient(to bottom, #000 55%, transparent 95%); }
-html[data-theme="dark"] .page-dots { background-image: linear-gradient(to right, rgba(245, 243, 239, .14) 1px, transparent 1px), linear-gradient(to bottom, rgba(245, 243, 239, .14) 1px, transparent 1px), url("aerochrome.jpg"); background-size: 32px 32px, 32px 32px, cover; background-position: 0 0, 0 0, 15% top; background-repeat: repeat, repeat, no-repeat; }
+html[data-theme="dark"] .page-dots { background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27160%27%20height%3D%27160%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.9%27%20numOctaves%3D%272%27%2F%3E%3CfeColorMatrix%20type%3D%27saturate%27%20values%3D%270%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27160%27%20height%3D%27160%27%20filter%3D%27url%28%23n%29%27%20opacity%3D%270.16%27%2F%3E%3C%2Fsvg%3E"), url("aerochrome.jpg"); background-size: 160px 160px, cover; background-position: 0 0, 15% top; background-repeat: repeat, no-repeat; }
 /* Home aero header: transparent over the photo with white logo/icons;
    .hdr-solid (JS, on scroll) restores the standard solid bar. */
 body.home-aero .topbar { background: transparent; border-bottom-color: transparent;
@@ -657,3 +680,34 @@ p, li, td, dd, blockquote { overflow-wrap: break-word; }
 main > section.card { margin-bottom: 16px; }
 /* Tab strips (setup agents, config clients): horizontal scrolling only */
 .tablist { overflow-y: hidden; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
+.insp-top { display: flex; justify-content: space-between; gap: 12px; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--color-muted); padding-bottom: 10px; border-bottom: 1px solid var(--color-line); }
+.insp-verdict { font-family: Manrope, sans-serif; font-weight: 700; font-size: 1.75rem; letter-spacing: -0.03em; line-height: 1.1; margin: 14px 0 4px; }
+.insp-summary { color: var(--color-muted); margin: 0 0 12px; }
+.insp-meter { display: flex; gap: 4px; margin: 0 0 6px; }
+.insp-meter i { flex: 1; height: 4px; border-radius: 2px; background: var(--color-line); }
+.insp-meter i.g-strong { background: var(--color-accent); }
+.insp-meter i.g-weak { background: #b45309; }
+html[data-theme="dark"] .insp-meter i.g-weak { background: #fbbf24; }
+.insp-row { padding: 9px 0 8px; border-top: 1px solid var(--color-line); }
+.insp-line { display: flex; align-items: baseline; gap: 8px; }
+.insp-dim { font-weight: 700; font-size: .92rem; white-space: nowrap; }
+.insp-dots { flex: 1; border-bottom: 2px dotted var(--color-line); transform: translateY(-3px); }
+.insp-grade { font-weight: 700; font-size: .8rem; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; }
+.insp-grade.g-strong { color: var(--color-accent); }
+.insp-grade.g-fair { color: var(--color-muted); }
+.insp-grade.g-weak { color: #b45309; }
+html[data-theme="dark"] .insp-grade.g-weak { color: #fbbf24; }
+.insp-fact { color: var(--color-muted); font-size: .88rem; margin-top: 2px; }
+.insp-foot { font-size: .82rem; color: var(--color-muted); margin-top: 12px; }
+.insp-foot a { color: var(--color-muted); text-decoration: underline; }
+.rel { margin: 20px 0 8px; }
+.rel-title { font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--color-muted); margin: 0 0 2px; }
+.rel-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 34px; }
+.rel-row { display: flex; align-items: baseline; gap: 12px; padding: 10px 0 9px; border-top: 1px solid var(--color-line); text-decoration: none; color: inherit; }
+.rel-num { font-size: .82rem; font-weight: 700; color: var(--color-accent); }
+.rel-main { flex: 1; min-width: 0; }
+.rel-main strong { display: block; font-size: 1rem; }
+.rel-main span { display: block; color: var(--color-muted); font-size: .87rem; margin-top: 1px; }
+.rel-arrow { color: var(--color-muted); }
+@media (max-width: 700px) { .rel-list { grid-template-columns: 1fr; } }
+
